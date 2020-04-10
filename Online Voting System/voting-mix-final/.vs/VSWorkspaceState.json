@@ -1,0 +1,24 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\public",
+    "\\src\\public\\js",
+    "\\src\\server",
+    "\\src\\server\\data",
+    "\\src\\server\\routers",
+    "\\src\\server\\routers\\admin",
+    "\\src\\server\\routers\\voting",
+    "\\src\\server\\views",
+    "\\src\\server\\views\\pages",
+    "\\src\\server\\views\\pages\\admin",
+    "\\src\\server\\views\\pages\\admin\\candidates",
+    "\\src\\server\\views\\pages\\admin\\parties",
+    "\\src\\server\\views\\pages\\admin\\results",
+    "\\src\\server\\views\\pages\\admin\\statistics",
+    "\\src\\server\\views\\pages\\admin\\Voters",
+    "\\src\\server\\views\\pages\\admin\\Voters\\voter"
+  ],
+  "SelectedNode": "\\src\\server\\views\\pages\\admin\\Voters\\voter\\view.ejs",
+  "PreviewInSolutionExplorer": false
+}

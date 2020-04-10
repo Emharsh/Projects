@@ -1,0 +1,36 @@
+<!-- views/pages/admin/view_results.ejs -->
+
+<% let title = "Statistics" %>
+<% let id = "statistics" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="table-<%-page.id%>" class="blox-container blox-row">
+			<div class="table">
+				<div class="table-header">
+					<span class="info">All Statistics</span>
+				</div>
+				<div id="voter-choose-election" class="table-container choose-election voter border">
+					<ul>
+						<li class="table-col-header sep-bot"><ul class="table-row">
+							<li class="table-sz-norm"><span>Image</span></li>
+							<li class="table-sz-date"><span>Party</span></li>
+							<li class="table-sz-date"><span>Information</span></li>
+							<li class="table-sz-small"><span>End Date</span></li>
+							<li class="table-sz-small"><span>Vote Count</span></li>
+							<li class="table-sz-button"><span></span></li>
+						</ul></li>
+					</ul>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

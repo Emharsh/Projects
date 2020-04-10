@@ -1,0 +1,41 @@
+<!-- views/pages/admin/populate_election.ejs -->
+
+<% let title = "Populate Election" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="basic_form">
+		<form action="#" method="POST" id="populate_election">
+			<ul class="flex-outer">
+				<li class="flex-inner">
+					<label>Candidate Name:</label>
+					<input type="text" name="name" pattern="[a-zA-Z]">
+				</li>
+				<li class="flex-inner">
+					<label>Party:</label>
+					<select name="party">
+						<option value="party1">party1</option>
+						<option value="party2">party2</option>
+						<option value="party3">party3</option>
+						<option value="party4">party4</option>
+					</select>
+				</li>
+				<li class="flex-inner">
+					<label>Image:</label>
+					<input type="file" name="image" accept="image/*">
+				</li>
+				<li class="flex-inner">
+					<input type="submit" value="Submit">
+				</li>
+			</ul>
+		</form>
+
+		<textarea name="information" form="populate_election" placeholder="Information..."></textarea>
+	</div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

@@ -1,0 +1,38 @@
+<RCC>
+  <qresource prefix="images">
+    <file>images/snapshot180.png</file>
+    <file>images/snapshot181.png</file>
+    <file>images/snapshot182.png</file>
+    <file>images/snapshot183.png</file>
+    <file>images/snapshot184.png</file>
+    <file>images/snapshot185.png</file>
+    <file>images/snapshot186.png</file>
+    <file>images/snapshot187.png</file>
+    <file>images/snapshot189.png</file>
+    <file>images/snapshot190.png</file>
+    <file>images/snapshot193.png</file>
+    <file>images/snapshot193.xcf</file>
+    <file>images/snapshot195.png</file>
+    <file>images/snapshot196.png</file>
+    <file>images/snapshot197.png</file>
+    <file>images/snapshot198.png</file>
+    <file>images/snapshot199.png</file>
+    <file>images/snapshot200.png</file>
+    <file>images/Media.png</file>
+    <file>images/CreatingSustainableFutures.png</file>
+    <file>images/Ethics.png</file>
+    <file>images/MindAndBody.png</file>
+    <file>images/Power1.png</file>
+    <file>images/Science.png</file>
+    <file>images/Technology.png</file>
+    <file>images/PersonalDevelopment.png</file>
+    <file>images/fb.ico</file>
+    <file>images/twitter_.png</file>
+    <file>images/linkedin_.png</file>
+    <file>images/g+.ico</file>
+    <file>images/contact.png</file>
+
+    <file>University of Leeds discovery themes about broadening.mp4</file>	
+	
+  </qresource>
+</RCC>

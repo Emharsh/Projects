@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="container">
+    <h2>LIBRARY</h2>
+    <h3>"When in doubt, ask a Librarian"</h3>
+    <h3>This is {{ session['email'] }}'s profile page</h3>
+    <div class="jumbotron">
+      <p>Library </p>
+      <p>List of Books</p>
+      <a href="listBooks.html"><button type="button">List all books</button></a><br>
+      <a href="createBook.html"><button type="button">Add new book</button></a><br>
+      <a href="updateBook.html"><button type="button">Update a book</button></a><br>
+      <a href="deleteBooks.html"><button type="button">Delete a book</button></a><br><br>
+      <button type="button" onclick="Book.clearData()">Clear database</button><br><br>
+      <button type="button" onclick="Book.createTestData()">Create Test(UnitTesting)</button><br>
+    </div>
+  </div>
+{% endblock %}

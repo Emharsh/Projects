@@ -1,0 +1,32 @@
+<!-- views/pages/admin/view_election.ejs -->
+
+<% let title = "Party" %>
+<% let id = "party" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="view-<%-page.id%>" class="blox-container border">
+			<div class="blox-item"><div class="blox-label"><span>Picture</span></div>
+			<div class="blox-contents img-sthumb-container cover party-logo"><img class="party-logo" src="<%= party.picture %>" /></div></div>
+			
+			<div class="blox-item"><div class="blox-label"><span>Name</span></div>
+			<div class="blox-contents"><%= party.name %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>ID</span></div>
+			<div class="blox-contents"><%= party.id %></div></div>
+		</div>
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../" role="button">Return</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="./edit/" role="button">Edit</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-danger" href="./archive/" role="button">Archive</a></div>
+		</div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

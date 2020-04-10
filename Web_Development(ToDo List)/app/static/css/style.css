@@ -1,0 +1,165 @@
+/****************************style.css************************************/
+
+/****************************css for Index.html***************************/
+/*class="topnav"*/
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {
+  float: left;
+}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 8px 8px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.topnav li a:hover {background-color: #555;}
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+div
+{
+  text-align: center;
+  padding: 10px;
+}
+
+body
+{
+  margin:0;
+}
+
+input[type="text"], textarea
+{
+  width: 25%;
+  max-width:25%;
+}
+
+table {
+
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 90%;
+    border: 0.250em solid #ddd;
+    margin: 0 auto 0 auto;
+}
+
+th, td {
+    border: 0.250em solid #ddd;
+    text-align: auto;
+    padding: 0.375em;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+button
+{
+  background-color: #008CBA;
+  cursor: pointer;
+  padding: 0.9em 1.57em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.875em;
+  border-radius: 0.500em;
+  border: 0.125em solid #000;
+}
+ button:hover {
+  background-color: #DCDCDC;
+  box-shadow: 0.01em 0.563em #008CBA;
+  transform: translateY(0.250em);
+ }
+
+button#button1 {
+  font-size: 50%;
+  width: 5%;
+  height:0;
+  padding-bottom: 5%;
+  border-radius: 50%;
+  border:0.006em solid #000;
+  overflow:hidden;  
+  background: #FF0000; 
+  box-shadow: 0 0 0.0188;
+}
+
+button#button2 {
+  font-size: 50%;
+  width: 5%;
+  height:0;
+  padding-bottom: 5%;
+  border-radius: 50%;
+  border:0.006em solid #000;
+  overflow:hidden;  
+  background: #6495ED; 
+  box-shadow: 0 0 0.00188;
+}
+
+button#button3 {
+
+  background-color: #008CBA;
+  cursor: pointer;
+  padding: 0.9em 1.57em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.875em;
+  border-radius: 0.500em;
+  border: 0.125em solid #000;
+}
+
+button#button3:hover {
+  background-color: #DCDCDC;
+  box-shadow: 0.01em 0.563em #008CBA;
+  transform: translateY(0.250em);
+}
+
+.footer {
+  color: white;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.10em;
+  background-color: #262626;
+  text-align: center;
+}
+
+

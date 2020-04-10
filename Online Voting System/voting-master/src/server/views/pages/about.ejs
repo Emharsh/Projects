@@ -1,0 +1,24 @@
+<!-- views/pages/about.ejs -->
+
+<% let title = "About" %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+
+<div id="content">
+	<div class="row">
+		<div class="text-center">
+			<h3>About the Elections:</h3>
+			<p>This website is to allow members of the public to vote for local canidates. Each indiviudal member of the public can submit only one vote per election. You will need to register to vote before being able to submit a vote online. You will only be able to regiser to vote if you are 16 years old or above and live in England, Wales or Northern Ireland. You will only be able to cast a vote in an election if you are 18 years old or above. Once You have been registered you will be added to the electoral register. </p>
+			<h3>How to register:</h3>
+			<p>In order to be able to vote you will need to attend your local voting station where you will be asked to fill out a form with your details. You will also need to provide the station with photographic ID and national insurance number. Upon completion of this you will be provided with a USB that contains your encryted password that will enable you to vote from home.</p>
+			<h3>How to vote:</h3>
+			<p>To vote in an election, go to the log in page and enter your details and upload the file on your USB drive you recieved. Once logged in you will be able to view the candidates, make your choice and submit your vote. Once the deadline for voting has passed you will no longer be able to submit a vote. Upon completion of the election the results will be able to be viewed on the results page.</p>
+		</div>
+	</div>
+</div>
+
+
+<%- include("../partials/footer" , {title, globals}); %>

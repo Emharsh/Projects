@@ -1,0 +1,13 @@
+checks:
+  method-complexity:
+    enabled: false
+  method-lines:
+    enabled: false
+  identical-code:
+    enabled: false
+  similar-code:
+    enabled: false
+
+plugins: 
+  eslint:
+    enabled: true

@@ -1,0 +1,83 @@
+<!-- views/pages/parties.ejs -->
+
+<% let title = "Parties" %>
+<% let id = "parties" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="table-<%-page.id%>" class="blox-container blox-row">
+			<div class="table">
+				<div class="table-header">
+					<span class="info">Parties</span>
+				</div>
+				<div id="voter-choose-election" class="table-container choose-party voter border">
+					<ul>
+						<li class="table-col-header table-section sep-bot"><div class="table-row">
+							<div class="table-section table-entries">
+								<div class="table-sz-smthumb"><span>Image</span></div>
+								<div class="table-sz-norm"><span>Name</span></div>
+								<div class="table-sz-vsmall"></div>
+							</div>
+							<div class="table-section table-buttons">
+								<div class="table-sz-button"><span></span></div>
+								<div class="table-sz-button"><span></span></div>
+								<div class="table-sz-button"><span></span></div>
+							</div>
+						</div></li>
+						<li class="table-contents" >
+						<% for (const party of parties) { %>
+						<div class="table-row table-item">
+							<div class="table-section table-entries" data-link="./<%- party.id %>/">
+								<div class="table-sz-smthumb thumb img-sthumb-container cover party-logo">
+									<div class="table-field-title">
+										<span>ID</span>
+									</div>
+										<div class="table-field-title">
+									<img class="party-logo" src="<%= party.picture %>" />
+									</div>
+								</div>
+								<div class="table-sz-norm table-row-header">
+									<div class="table-field-title">
+										<span>ID</span>
+									</div>
+									<div class="table-field-title">
+										<span><%= party.name %></span>
+									</div>
+								</div>
+								<div class="table-sz-vsmall">
+									<div class="table-field-title">
+										<span>ID</span>
+									</div>
+									<div class="table-field-title">
+										<span><%= party.id %></span>
+									</div>
+								</div>
+							</div>
+							<div class="table-section table-buttons">
+								<div class="table-sz-button">
+									<a class="btn btn-secondary" href="./<%- party.id %>/" role="button">View</a>
+								</div>
+								<div class="table-sz-button">
+									<a class="btn btn-secondary" href="./<%- party.id %>/edit/" role="button">Edit</a>
+								</div>
+								<div class="table-sz-button">
+									<a class="btn btn-danger" href="./<%- party.id %>/archive/" role="button">Archive</a>
+								</div>
+							</div>
+						</div>
+						<% } %>
+						</li>
+					</ul>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

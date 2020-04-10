@@ -1,0 +1,35 @@
+<!-- views/pages/admin/select_election.ejs -->
+
+<% let title = "Select Election" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="basic_table">
+		<table>
+			<tr>
+				<th>Election1</th>
+				<td><button type="button">Select</button></td>
+			</tr>
+			<tr>
+				<th>Election2</th>
+				<td><button type="button">Select</button></td>
+			</tr>
+			<tr>
+				<th>Election3</th>
+				<td><button type="button">Select</button></td>
+			</tr>
+			<tr>
+				<th>Election4</th>
+				<td><button type="button">Select</button></td>
+			</tr>
+		</table>
+
+		<textarea name="information" form="populate_election" placeholder="Information..."></textarea>
+	</div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

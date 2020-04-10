@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h2>Profile<h2>
+    <h3>This is {{ session['email'] }}'s profile page<h3>
+      
+  </div>
+          <div class="row">
+            <section class="col-xs-12 col-md-12">
+              <iframe height="320" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=University+of+Leeds,+Leeds,+WY,+UK&amp;aq=0&amp;sll=53.806666,-1.555108&amp;vpsrc=6&amp;ie=UTF8&amp;hq=Universit+of+Leeds,+Leeds,+West+Yorkshire,+UK&amp;ll=53.806666,-1.555108&amp;spn=0.033797,0.06403&amp;t=m&amp;output=embed">
+              </iframe>
+              <h1><button onclick="geoFindMe()">Show my location</button></h1>
+              <div id="out"></div>
+            </section>
+</div>
+{% endblock %}

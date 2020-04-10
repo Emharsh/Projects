@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Application Development Coursework 2</title>
+    <!-- Including all the css files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="../static/css/signup.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- Including all the javascript files -->
+    <script src="../static/js/geolocation.js"></script>
+    <script src="../static/js/initialize.js"></script>
+    <script src="../static/js/Book.js"></script>
+    <script src="../static/js/updateBook.js"></script>
+    <script src="../static/js/deleteBook.js"></script>
+    <script src="../static/js/listBooks.js"></script>
+    <script src="../static/js/createBook.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+          <li role="presentation"><a href="{{ url_for('home') }}">Home</a></li>
+          <li role="presentation"><a href="{{ url_for('location') }}">Geo</a></li>
+          <li role="presentation"><a href="{{ url_for('contact') }}">Contact</a></li>
+          {% if 'email' in session %}
+          <li role="presentation"><a href="{{ url_for('profile') }}">Profile</a></li>
+          <li role="presentation"><a href="{{ url_for('signout') }}">Sign Out</a></li>
+          {% else %}
+          <li role="presentation"><a href="{{ url_for('signup') }}">Sign Up</a></li>
+          <li role="presentation"><a href="{{ url_for('signin') }}">Sign In</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+      <h3 class="text-muted">Web Application</h3>
+    </div>
+  </div>
+
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div class="container">
+      <footer class="footer">
+        <p>Harshit Verma | University of Leeds</p>
+        <p>Web Application Development</p>
+      </footer>
+    </div>
+  </body>
+</html>

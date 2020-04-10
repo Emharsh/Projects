@@ -1,0 +1,18 @@
+<!-- views/pages/results.ejs -->
+
+<% let title = "Results" %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="row">
+		<div class="postcode-container">
+			<div id="postcodeForm"><input name="query" id="postcodeinput" type="text" placeholder="Eg. EC1Y 8YZ"> <a class="btn btn-primary" role="button" onclick="checkpostcode('postcodeinput')">Postcode</a>
+		</div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

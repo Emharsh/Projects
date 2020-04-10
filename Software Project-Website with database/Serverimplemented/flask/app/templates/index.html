@@ -1,0 +1,560 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Software Engineering Project</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<!-- style -->
+	<link rel="shortcut icon" href="{{ url_for('static',filename='img/favicon.png') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='flaticon/flaticon.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/default.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/reset.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/scroll-down.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/tabs.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/picture-hover.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/border-section.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/social-checkbox.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/contact-calender.css') }}">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/jquery.fancybox.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='rs-plugin/css/settings.css') }}" media="screen">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/animate.css') }}">
+	<!--styles -->
+</head>
+<body>
+	<!-- page header -->
+	<header class="only-color">
+		<!-- header top panel -->
+		<div class="page-header-top">
+			<div class="grid-row clear-fix">
+				<address>
+					<a href="tel:+44 7706773278" class="phone-number"><i class="fa fa-phone"></i>+44 7706773278</a>
+					<a href="mailto:sc15hv@leeds.ac.uk" class="email"><i class="fa fa-envelope-o"></i>sc15hv@leeds.ac.uk</a>
+				</address>
+				<div class="header-top-panel">
+					<a href="page-login" class="fa fa-user login-icon"></a>
+					<div id="top_social_links_wrapper">
+					    <div class="share-toggle-button"><i class="share-icon fa fa-share-alt"></i></div>
+					    <div class="cws_social_links"><a href="https://plus.google.com/" class="cws_social_link" title="Google +"><i class="share-icon fa fa-google-plus" style="transform: matrix(0, 0, 0, 0, 0, 0);"></i></a><a href="http://twitter.com/" class="cws_social_link" title="Twitter"><i class="share-icon fa fa-twitter"></i></a><a href="http://facebook.com" class="cws_social_link" title="Facebook"><i class="share-icon fa fa-facebook"></i></a><a href="http://dribbble.com" class="cws_social_link" title="Dribbble"><i class="share-icon fa fa-dribbble"></i></a></div>
+					</div>
+					<a href="#" class="search-open"><i class="fa fa-search"></i></a>
+					<form action="#" class="clear-fix">
+						<input type="text" placeholder="Search" class="clear-fix">
+					</form>
+
+				</div>
+			</div>
+		</div>
+		<!-- / header top panel -->
+		<!-- sticky menu -->
+		<div class="sticky-wrapper">
+			<div class="sticky-menu">
+				<div class="grid-row clear-fix">
+					<!-- logo -->
+					<a href="index" class="logo">
+						<img src="{{ url_for('static',filename='img/logo.png') }}"  data-at2x="{{ url_for('static',filename='img/logo@2x.png') }}" alt>
+						<h1>FDM</h1>
+					</a>
+					<!-- / logo -->
+					<nav class="main-nav">
+						<ul class="clear-fix">
+							<li>
+								<a href="index" class="active">Home</a>
+							</li>
+
+							<li>
+								<a href="popular_courses">Courses</a>
+							</li>
+							<li>
+								<a href="contact-us">Contact Us</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<!-- sticky menu -->
+	</header>
+	<!-- / page header -->
+	<!-- revolution slider -->
+	<div class="tp-banner-container">
+		<div class="tp-banner-slider">
+			<ul>
+				<li data-masterspeed="700">
+					<img src="{{ url_for('static',filename='rs-plugin/assets/loader.gif') }}" data-lazyload="{{ url_for('static',filename='img/image1.jpg') }}" alt>
+					<div class="tp-caption sl-content align-left" data-x="['left','center','center','center']" data-hoffset="20" data-y="center" data-voffset="0"  data-width="['720px','600px','500px','300px']" data-transform_in="opacity:0;s:1000;e:Power2.easeInOut;"
+	 data-transform_out="opacity:0;s:300;s:1000;" data-start="400">
+						<div class="sl-title">Get Everything Right</div>
+						<p>Choose your favourite subjects<br/></p>
+						<a href="page-login" class="cws-button border-radius">Join us <i class="fa fa-angle-double-right"></i></a>
+					</div>
+   				</li>
+   				<li data-masterspeed="700">
+					<img src="{{ url_for('static',filename='rs-plugin/assets/loader.gif') }}" data-lazyload="{{ url_for('static',filename='img/image2.png') }}" alt>
+					<div class="tp-caption sl-content align-right" data-x="['right','center','center','center']" data-hoffset="20" data-y="center" data-voffset="0"  data-width="['720px','600px','500px','300px']" data-transform_in="opacity:0;s:1000;e:Power2.easeInOut;"
+	 data-transform_out="opacity:0;s:300;s:1000;" data-start="400">
+						<div class="sl-title">Forward. Thinking.</div>
+						<p>Education<br/></p>
+						<a href="page-login" class="cws-button border-radius">Join us <i class="fa fa-angle-double-right"></i></a>
+					</div>
+   				</li>
+   				<li data-masterspeed="700" data-transition="fade">
+					<img src="{{ url_for('static',filename='rs-plugin/assets/loader.gif') }}" data-lazyload="{{ url_for('static',filename='img/image3.jpg') }}" alt>
+					<div class="tp-caption sl-content align-center" data-x="center" data-hoffset="0" data-y="center" data-voffset="0"  data-width="['720px','600px','500px','300px']" data-transform_in="opacity:0;s:1000;e:Power2.easeInOut;"
+	 data-transform_out="opacity:0;s:300;s:1000;" data-start="400">
+						<div class="sl-title">Knowledge for life</div>
+						<p><br/></p>
+						<a href="page-login" class="cws-button border-radius">Join us <i class="fa fa-angle-double-right"></i></a>
+					</div>
+   				</li>
+   				<li data-masterspeed="700" data-transition="fade">
+					<img src="{{ url_for('static',filename='rs-plugin/assets/loader.gif') }}" data-bgposition="center right"  data-lazyload="{{ url_for('static',filename='img/image4.jpg') }}" alt>
+					<div class="tp-caption sl-content align-left" data-x="['left','center','center','center']" data-hoffset="20" data-y="center" data-voffset="40" data-width="['720px','600px','500px','300px']" data-transform_in="opacity:0;s:1000;e:Power2.easeInOut;"
+	 data-transform_out="opacity:0;s:300;s:1000;" data-start="400">
+						<div class="sl-title">Your revolution starts</div>
+						<p><br/></p>
+						<a href="page-login" class="cws-button border-radius">Join us <i class="fa fa-angle-double-right"></i></a>
+					</div>
+   				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- / revolution slider -->
+	<hr class="divider-color">
+	<!-- content -->
+	<div id="home" class="page-content padding-none">
+		<!-- section -->
+		<section class="padding-section">
+			<div class="grid-row clear-fix">
+				<h2 class="center-text">New Courses</h2>
+				<div class="grid-col-row">
+					<div class="grid-col grid-col-4">
+						<!-- course item -->
+						<div class="course-item">
+							<div class="course-hover">
+								<img src="{{ url_for('static',filename='img/image5.jpg') }}" data-at2x="{{ url_for('static',filename='img/image5.jpg') }}" alt>
+								<div class="hover-bg bg-color-1"></div>
+								<a href="">Learn More</a>
+							</div>
+							<div class="course-name clear-fix">
+							<h3><a href="#">Science</a></h3>
+								</div>
+							<div class="course-date bg-color-1 clear-fix">
+								<div class="day"><i class="fa fa-calendar"></i>11 January</div><div class="time"><i class="fa fa-clock-o"></i>At 3:00 pm</div>
+								<div class="divider"></div>
+								<div class="description">AStrophysics And Astronomy</div>
+							</div>
+						</div>
+						<!-- / course item -->
+					</div>
+					<div class="grid-col grid-col-4">
+						<!-- course item -->
+						<div class="course-item">
+							<div class="course-hover">
+								<img src="{{ url_for('static',filename='img/image6.jpg') }}" data-at2x="{{ url_for('static',filename='img/image6.jpg') }}" alt="">
+								<div class="hover-bg bg-color-2"></div>
+								<a href="">Learn More</a>
+							</div>
+							<div class="course-name clear-fix">
+							<h3><a href="#">Mathematics</a></h3>
+								</div>
+							<div class="course-date bg-color-2 clear-fix">
+								<div class="day"><i class="fa fa-calendar"></i>12 January</div><div class="time"><i class="fa fa-clock-o"></i>At 4:00 pm</div>
+								<div class="divider"></div>
+								<div class="description">Graphs</div>
+							</div>
+						</div>
+						<!-- / course item -->
+					</div>
+					<div class="grid-col grid-col-4">
+						<!-- course item -->
+						<div class="course-item">
+							<div class="course-hover">
+								<img src="{{ url_for('static',filename='img/image7.png') }}" data-at2x="{{ url_for('static',filename='img/image7.png') }}" alt="">
+								<div class="hover-bg bg-color-3"></div>
+								<a href="">Learn More</a>
+							</div>
+							<div class="course-name clear-fix">
+							<h3><a href="#">CAD Work</a></h3>
+								</div>
+							<div class="course-date bg-color-3 clear-fix">
+								<div class="day"><i class="fa fa-calendar"></i>22 January</div><div class="time"><i class="fa fa-clock-o"></i>At 6:30 pm</div>
+								<div class="divider"></div>
+								<div class="description">3D CAD Drawings</div>
+							</div>
+						</div>
+						<!-- course item -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- / section -->
+		<hr class="divider-color" />
+		<!-- section -->
+		<section class="fullwidth-background padding-section">
+			<div class="grid-row clear-fix">
+				<div class="grid-col-row">
+					<div class="grid-col grid-col-6">
+						<a href="" class="service-icon"><i class="flaticon-pie"></i></a>
+						<a href="" class="service-icon"><i class="flaticon-medical"></i></a>
+						<a href="" class="service-icon"><i class="flaticon-restaurant"></i></a>
+						<a href="" class="service-icon"><i class="flaticon-website"></i></a>
+						<a href="" class="service-icon"><i class="flaticon-hotel"></i></a>
+						<a href="" class="service-icon"><i class="flaticon-web-programming"></i></a>
+						<a href="" class="service-icon"><i class="flaticon-camera"></i></a>
+						<a href="" class="service-icon"><i class="flaticon-speech"></i></a>
+					</div>
+					<div class="grid-col grid-col-6 clear-fix">
+						<h2>Our Services</h2>
+						<p>FDM learning solutions enable distance learning—across higher ed, workforce ed, and professional development programs.</p>
+						<a href="" class="cws-button bt-color-3 border-radius alt icon-right float-right">Learn More<i class="fa fa-angle-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- / section -->
+		<!-- paralax section -->
+		<div class="parallaxed">
+			<div class="parallax-image" data-parallax-left="0.5" data-parallax-top="0.3" data-parallax-scroll-speed="0.5">
+				<img src="{{ url_for('static',filename='img/parallax.png') }}" alt="">
+
+			</div>
+			<div class="them-mask bg-color-1"></div>
+			<div class="grid-row">
+				<div class="grid-col-row clear-fix">
+					<div class="grid-col grid-col-3 alt">
+						<div class="counter-block">
+							<i class="flaticon-book1"></i>
+							<div class="counter" data-count="1500">0</div>
+							<div class="counter-name">Courses</div>
+						</div>
+					</div>
+					<div class="grid-col grid-col-3 alt">
+						<div class="counter-block">
+							<i class="flaticon-multiple"></i>
+							<div class="counter" data-count="200">0</div>
+							<div class="counter-name">Students</div>
+						</div>
+					</div>
+					<div class="grid-col grid-col-3 alt">
+						<div class="counter-block">
+							<i class="flaticon-pencil"></i>
+							<div class="counter" data-count="5">0</div>
+							<div class="counter-name">Loctions</div>
+						</div>
+					</div>
+					<div class="grid-col grid-col-3 alt">
+						<div class="counter-block last">
+							<i class="flaticon-calendar"></i>
+							<div class="counter" data-count="3">0</div>
+							<div class="counter-name">Events</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- / paralax section -->
+		<!-- section -->
+		<section class="fullwidth-background padding-section">
+			<div class="grid-row">
+				<h2 class="center-text">How Do We Work</h2>
+				<!-- time line -->
+				<div class="time-line">
+					<div class="line-element">
+						<div class="action">
+							<div class="action-block">
+								<span><i class="flaticon-magnifier"></i></span>
+								<div class="text">
+									<h3>Search your course</h3>
+									<p>Mathematics, art, science etc.</p>
+								</div>
+							</div>
+						</div>
+						<div class="level">
+							<div class="level-block">Step 1</div>
+						</div>
+					</div>
+					<div class="line-element color-2">
+						<div class="level">
+							<div class="level-block">Step 2</div>
+						</div>
+						<div class="action">
+							<div class="action-block">
+								<span><i class="flaticon-computer"></i></span>
+								<div class="text">
+									<h3>Take A Sample Lesson</h3>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="line-element color-3">
+						<div class="action">
+							<div class="action-block">
+								<span><i class="flaticon-shopping"></i></span>
+								<div class="text">
+									<h3>Join the Course</h3>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div class="level">
+							<div class="level-block">Step 3</div>
+						</div>
+					</div>
+				</div>
+				<!-- / time line -->
+			</div>
+		</section>
+		<!-- / paralax section -->
+		<hr class="divider-color"/>
+		<!-- paralax section -->
+		<section class="fullwidth-background padding-section">
+			<div class="grid-row clear-fix">
+				<h2 class="center-text">About Us</h2>
+				<div class="grid-col-row">
+					<div class="grid-col grid-col-6">
+						<h3>Why We Are Better</h3>
+						<p>Proper Online education</p>
+						<!-- accordions -->
+						<div class="accordions">
+							<!-- content-title -->
+							<div class="content-title active">Suitable courses for everyone</div>
+							<!--/content-title -->
+							<!-- accordions content -->
+							<div class="content">Science, astrophysics, cooking etc.</div>
+							<!--/accordions content -->
+							<!-- content-title -->
+							<div class="content-title">Training center</div>
+							<!--/content-title -->
+							<!-- accordions content -->
+							<div class="content">Manchestre,Leeds,London,Bristol and Germany</div>
+							<!--/accordions content -->
+							<!-- content-title -->
+							<div class="content-title">Affordable</div>
+							<!--/content-title -->
+							<!-- accordions content -->
+							<div class="content">Affordable price of the courses.</div>
+							<!--/accordions content -->
+							<!-- content-title -->
+							<div class="content-title">Universities</div>
+							<!--/content-title -->
+							<!-- accordions content -->
+							<div class="content">University of Leeds, University of Manchester, University of Bristol</div>
+							<!--/accordions content -->
+						</div>
+						<!--/accordions -->
+						<a href="" class="cws-button bt-color-3 border-radius alt icon-right">View Detail<i class="fa fa-angle-right"></i></a>
+					</div>
+					<div class="grid-col grid-col-6">
+						<div class="owl-carousel full-width-slider">
+							<div class="gallery-item picture">
+								<img src="{{ url_for('static',filename='img/image7.jpg') }}" data-at2x="{{ url_for('static',filename='img/image7.jpg') }}" alt>
+							</div>
+							<div class="gallery-item picture">
+								<img src="{{ url_for('static',filename='img/image7.jpg') }}" data-at2x="{{ url_for('static',filename='img/image7.jpg') }}" alt>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- paralax section -->
+		<!-- parallax section -->
+		<div class="parallaxed">
+			<div class="parallax-image" data-parallax-left="0.5" data-parallax-top="0.3" data-parallax-scroll-speed="0.5">
+				<img src="{{ url_for('static',filename='img/parallax.png') }}" alt="">
+			</div>
+			<div class="them-mask bg-color-2"></div>
+			<div class="grid-row center-text">
+				<div class="font-style-1 margin-none">Get In Touch With Us</div>
+				<div class="divider-mini"></div>
+				<p class="parallax-text">Contact FDM team for more information or query</p>
+				<form class="subscribe">
+					<input type="text" name="email" value="" size="40" placeholder="Enter your email" aria-required="true"><input type="submit" value="Subscribe">
+				</form>
+			</div>
+		</div>
+		<!-- parallax section -->
+		<!-- section -->
+		<section class="grid-row clear-fix padding-section">
+			<h2 class="center-text">Our Team</h2>
+			<div class="grid-col-row">
+				<div class="grid-col grid-col-6">
+					<div class="item-instructor bg-color-1">
+						<a href="page-profile" class="instructor-avatar">
+							<img src="{{ url_for('static',filename='img/harsh.jpg') }}" data-at2x="{{ url_for('static',filename='img/harsh.jpg') }}" alt>
+						</a>
+						<div class="info-box">
+							<h3>Harshit Verma</h3>
+							<span class="instructor-profession">Computer Science</span>
+							<div class="divider"></div>
+							<p></p>
+							<div class="social-link"><!--
+								 --><a href="https://www.facebook.com/emharshit" class="fa fa-facebook"></a><!--
+								 --><a href="#" class="fa fa-google-plus"></a><!--
+								 --><a href="#" class="fa fa-twitter"></a>
+							</div>
+						</div>
+					</div>
+					<div class="item-instructor bg-color-3">
+						<a href="page-profile" class="instructor-avatar">
+							<img src="{{ url_for('static',filename='img/ale.jpg') }}" data-at2x="{{ url_for('static',filename='img/ale.jpg') }}" alt>
+						</a>
+						<div class="info-box">
+							<h3>Alejandro Martin Lorenzo</h3>
+							<span class="instructor-profession">Applied computer science</span>
+							<div class="divider"></div>
+							<p></p>
+							<div class="social-link"><!--
+								 --><a href="https://www.facebook.com/alejandro.lorenzomartin" class="fa fa-facebook"></a><!--
+								 --><a href="#" class="fa fa-google-plus"></a><!--
+								 --><a href="#" class="fa fa-twitter"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid-col grid-col-6">
+					<div class="item-instructor bg-color-2">
+						<a href="page-profile" class="instructor-avatar">
+							<img src="{{ url_for('static',filename='img/roque.jpg') }}" data-at2x="{{ url_for('static',filename='img/roque.jpg') }}" alt="Roque Chan">
+						</a>
+						<div class="info-box">
+							<h3>Roque Chan</h3>
+							<span class="instructor-profession">Applied computer science</span>
+							<div class="divider"></div>
+							<p></p>
+							<div class="social-link"><!--
+								 --><a href="https://www.facebook.com/chan.roque" class="fa fa-facebook"></a><!--
+								 --><a href="#" class="fa fa-google-plus"></a><!--
+								 --><a href="#" class="fa fa-twitter"></a>
+							</div>
+						</div>
+					</div>
+					<div class="item-instructor bg-color-6">
+						<a href="page-profile" class="instructor-avatar">
+							<img src="{{ url_for('static',filename='img/qamar.jpg') }}" width= "200" height="200" data-at2x="{{ url_for('static',filename='img/qamar.jpg') }}" alt>
+						</a>
+						<div class="info-box">
+							<h3>Qamar Zaman</h3>
+							<span class="instructor-profession">Applied Computer Science</span>
+							<div class="divider"></div>
+							<p></p>
+							<div class="social-link"><!--
+								 --><a href="https://www.facebook.com/qamar.zaman.75033" class="fa fa-facebook"></a><!--
+								 --><a href="#" class="fa fa-google-plus"></a><!--
+								 --><a href="#" class="fa fa-twitter"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- / section -->
+
+		<!-- google map -->
+		<div class="wow fadeInUp">
+			<iframe height="355" width = "1900"src="https://www.google.com/maps/d/embed?mid=1xMHgSozlOgzCO1cDhCSUALvBjR4"></iframe>
+		</div>
+		<!-- / google map -->
+	</div>
+	<!-- / content -->
+	<!-- footer -->
+	<footer>
+		<div class="grid-row">
+			<div class="grid-col-row clear-fix">
+				<section class="grid-col grid-col-4 footer-about">
+					<h2 class="corner-radius">About Us</h2>
+					<div>
+						<h3>FDM</h3>
+						<p>Harshit, Alejandro, Roque, John and Qamar</p>
+					</div>
+					<address>
+						<p></p>
+						<a href="tel:+44 7706773278" class="phone-number">+44 7706773278</a>
+						<br />
+						<a href="mailto:harshit.verma777@gmail.com" class="email">harshit.verma777@gmail.com</a>
+						<br />
+						<a href="www.sample.com" class="address">26 kelso Gardens, Leeds, <br/>LS2 9PS</a>
+					</address>
+					<div class="footer-social">
+						<a href="https://twitter.com/" class="fa fa-twitter"></a>
+						<a href="https://www.skype.com/en/" class="fa fa-skype"></a>
+						<a href="https://plus.google.com/+Gmail" class="fa fa-google-plus"></a>
+						<a href="https://www.rss.com/" class="fa fa-rss"></a>
+						<a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+					</div>
+				</section>
+				<section class="grid-col grid-col-4 footer-latest">
+
+				</section>
+				<section class="grid-col grid-col-4 footer-contact-form">
+					<h2 class="corner-radius">apply for instructor</h2>
+					<div class="email_server_responce"></div>
+					<form action="index" class="contact-form" method="post" novalidate="novalidate">
+						<p><span class="your-name"><input type="text" name="name" value="" size="40" placeholder="Name" aria-invalid="false" required></span>
+						</p>
+						<p><span class="your-email"><input type="text" name="phone" value="" size="40" placeholder="Phone" aria-invalid="false" required></span> </p>
+						<p><span class="your-message"><textarea name="message" placeholder="Comments" cols="40" rows="5" aria-invalid="false" required></textarea></span> </p>
+						<button type="submit" class="cws-button bt-color-3 border-radius alt icon-right">Submit <i class="fa fa-angle-right"></i></button>
+					</form>
+				</section>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="grid-row clear-fix">
+				<div class="copyright">FDM<span></span> 2017 . All Rights Reserved</div>
+				<nav class="footer-nav">
+					<ul class="clear-fix">
+						<li>
+							<a href="index">Home</a>
+						</li>
+						<li>
+							<a href="popular_courses">Courses</a>
+						</li>
+						<!-- <li>
+							<a href="calendar">Events</a>
+						</li> -->
+						<li>
+							<a href="contact-us">Contact</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</footer>
+	<!-- / footer -->
+	<script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox_packed.js"></script>
+	<script type='text/javascript' src="{{ url_for('static',filename='js/jquery.validate.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='js/jquery.form.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='js/TweenMax.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+	<!-- Used theme punch online open source to implement the most kind of the slider  -->
+	<!-- jQuery REVOLUTION Slider  -->
+	<script type="text/javascript" src="{{ url_for('static',filename='rs-plugin/js/jquery.themepunch.tools.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='rs-plugin/js/extensions/revolution.extension.video.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='rs-plugin/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='rs-plugin/js/extensions/revolution.extension.actions.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='rs-plugin/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='rs-plugin/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='rs-plugin/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='rs-plugin/js/extensions/revolution.extension.migration.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='rs-plugin/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='js/jquery.isotope.min.js') }}"></script>
+
+	<script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='js/jquery-ui.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='js/jflickrfeed.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='js/jquery.fancybox.pack.js') }}"></script>
+	<script src="{{ url_for('static',filename='js/jquery.fancybox-media.js') }}"></script>
+	<script src="{{ url_for('static',filename='js/retina.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='js/jquery.tweet.js') }}"></script>
+</body>
+</html>

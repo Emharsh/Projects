@@ -1,0 +1,72 @@
+<!-- views/pages/admin/view_election.ejs -->
+
+<% let title = "Voter" %>
+<% let id = "voter" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="view-<%-page.id%>" class="blox-container border">
+			<div class="blox-item"><div class="blox-label"><span>NiNo</span></div>
+			<div class="blox-contents"><%- voter.nino %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>ID</span></div>
+			<div class="blox-contents"><%- voter.id %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>DoB</span></div>
+			<div class="blox-contents"><%- voter.dob.toLocaleDateString('en-GB') %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>postcode</span></div>
+			<div class="blox-contents"><%- voter.postcode %></div></div>
+
+      <div class="blox-item"><div class="blox-label"><span>Registered</span></div>
+			<div class="blox-contents"><%- voter.registered %></div></div>
+		</div>
+    <div id="form-messages">
+			<div id="form-feedback" class="alert hidden" role="alert"></div>
+		</div>
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item"><a class="btn btn-primary" href="../" role="button">Return</a></div>
+			<div class="blox-item"><a class="btn btn-primary" href="./edit/" role="button">Edit</a></div>
+			<div class="blox-item"><a class="btn btn-danger" href="./archive/" role="button">Archive</a></div>
+      <div class="blox-item"><a class="btn btn-danger" href="./confirm/" role="button">Confirm</a></div>
+      <div class="blox-item"><a class="btn btn-danger" onclick="refreshRegions();" role="button">Refresh Regions</a></div>
+		</div>
+    <div id="table-<%-page.id%>" class="blox-container">
+			<div class="table">
+				<div class="table-header">
+					<span class="info">Regions</span>
+				</div>
+				<div id="voter-choose-regions" class="table-container regions border">
+					<div>
+						<div class="table-col-header table-section sep-bot"><div class="table-row">
+							<div class="table-sz-norm"><span>Name</span></div>
+							<div class="table-sz-vsmall"><span>ID</span></div>
+							<div class="table-sz-norm"><span>electionType</span></div>
+              <div class="table-sz-norm"><span>Electorate</span></div>
+              <div class="table-sz-norm"><span>Region</span></div>
+              <div class="table-sz-norm"><span>Nation</span></div>
+						</div></div>
+						<% for (const region of voter.voterRegions) { %>
+						<div class="table-contents table-section"><div class="table-row">
+							<div class="table-sz-norm"><span><%= region.name %></span></div>
+							<div class="table-sz-vsmall"><span><%= region.id_regions %></span></div>
+							<div class="table-sz-norm"><span><%= region.electionType.name %></span></div>
+              <div class="table-sz-norm"><span><%= region.electorate %></span></div>
+              <div class="table-sz-norm"><span><%= region.region %></span></div>
+              <div class="table-sz-norm"><span><%= region.nation %></span></div>
+						</div></div>
+						<% } %>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

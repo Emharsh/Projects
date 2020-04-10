@@ -1,0 +1,1001 @@
+id_regions,name,type,electorate,region,nation
+1,Aldershot,1,76205,"South East",England
+2,Aldridge-Brownhills,1,60363,"West Midlands",England
+3,"Altrincham and Sale West",1,73220,"North West",England
+4,"Amber Valley",1,68065,"East Midlands",England
+5,"Arundel and South Downs",1,80766,"South East",England
+6,Ashfield,1,78099,"East Midlands",England
+7,Ashford,1,87396,"South East",England
+8,Ashton-under-Lyne,1,67674,"North West",England
+9,Aylesbury,1,82546,"South East",England
+10,Banbury,1,83818,"South East",England
+11,Barking,1,77020,London,England
+12,"Barnsley Central",1,64204,"Yorkshire & the Humber",England
+13,"Barnsley East",1,69204,"Yorkshire & the Humber",England
+14,"Barrow and Furness",1,69474,"North West",England
+15,"Basildon and Billericay",1,69149,Eastern,England
+16,Basingstoke,1,81873,"South East",England
+17,Bassetlaw,1,78535,"East Midlands",England
+18,Bath,1,66769,"South West",England
+19,"Batley and Spen",1,80153,"Yorkshire & the Humber",England
+20,Battersea,1,77572,London,England
+21,Beaconsfield,1,77534,"South East",England
+22,Beckenham,1,67928,London,England
+23,Bedford,1,71829,Eastern,England
+24,"Bermondsey and Old Southwark",1,87227,London,England
+25,Berwick-upon-Tweed,1,58774,"North East",England
+26,"Bethnal Green and Bow",1,86071,London,England
+27,"Beverley and Holderness",1,80657,"Yorkshire & the Humber",England
+28,"Bexhill and Battle",1,78512,"South East",England
+29,"Bexleyheath and Crayford",1,65315,London,England
+30,Birkenhead,1,64484,"North West",England
+31,"Birmingham, Edgbaston",1,68091,"West Midlands",England
+32,"Birmingham, Erdington",1,65067,"West Midlands",England
+33,"Birmingham, Hall Green",1,78271,"West Midlands",England
+34,"Birmingham, Hodge Hill",1,75698,"West Midlands",England
+35,"Birmingham, Ladywood",1,70023,"West Midlands",England
+36,"Birmingham, Northfield",1,72322,"West Midlands",England
+37,"Birmingham, Perry Barr",1,74374,"West Midlands",England
+38,"Birmingham, Selly Oak",1,75092,"West Midlands",England
+39,"Birmingham, Yardley",1,72581,"West Midlands",England
+40,"Bishop Auckland",1,67661,"North East",England
+41,Blackburn,1,70657,"North West",England
+42,"Blackley and Broughton",1,71648,"North West",England
+43,"Blackpool North and Cleveleys",1,63967,"North West",England
+44,"Blackpool South",1,58540,"North West",England
+45,Blaydon,1,68459,"North East",England
+46,"Blyth Valley",1,63371,"North East",England
+47,"Bognor Regis and Littlehampton",1,75827,"South East",England
+48,Bolsover,1,73429,"East Midlands",England
+49,"Bolton North East",1,67233,"North West",England
+50,"Bolton South East",1,68886,"North West",England
+51,"Bolton West",1,72797,"North West",England
+52,Bootle,1,72872,"North West",England
+53,"Boston and Skegness",1,69391,"East Midlands",England
+54,Bosworth,1,80633,"East Midlands",England
+55,"Bournemouth East",1,74591,"South West",England
+56,"Bournemouth West",1,73195,"South West",England
+57,Bracknell,1,79199,"South East",England
+58,"Bradford East",1,70389,"Yorkshire & the Humber",England
+59,"Bradford South",1,67752,"Yorkshire & the Humber",England
+60,"Bradford West",1,67568,"Yorkshire & the Humber",England
+61,Braintree,1,75316,Eastern,England
+62,"Brent Central",1,80845,London,England
+63,"Brent North",1,82556,London,England
+64,"Brentford and Isleworth",1,85151,London,England
+65,"Brentwood and Ongar",1,74911,Eastern,England
+66,"Bridgwater and West Somerset",1,89294,"South West",England
+67,"Brigg and Goole",1,66069,"Yorkshire & the Humber",England
+68,"Brighton, Kemptown",1,67893,"South East",England
+69,"Brighton, Pavilion",1,75486,"South East",England
+70,"Bristol East",1,72414,"South West",England
+71,"Bristol North West",1,75431,"South West",England
+72,"Bristol South",1,83009,"South West",England
+73,"Bristol West",1,92986,"South West",England
+74,Broadland,1,77344,Eastern,England
+75,"Bromley and Chislehurst",1,65113,London,England
+76,Bromsgrove,1,73571,"West Midlands",England
+77,Broxbourne,1,73502,Eastern,England
+78,Broxtowe,1,74017,"East Midlands",England
+79,Buckingham,1,79616,"South East",England
+80,Burnley,1,64714,"North West",England
+81,Burton,1,73954,"West Midlands",England
+82,"Bury North",1,67587,"North West",England
+83,"Bury South",1,73723,"North West",England
+84,"Bury St Edmunds",1,87758,Eastern,England
+85,"Calder Valley",1,79054,"Yorkshire & the Humber",England
+86,"Camberwell and Peckham",1,85586,London,England
+87,"Camborne and Redruth",1,67462,"South West",England
+88,Cambridge,1,78003,Eastern,England
+89,"Cannock Chase",1,74540,"West Midlands",England
+90,Canterbury,1,78137,"South East",England
+91,Carlisle,1,62294,"North West",England
+92,"Carshalton and Wallington",1,70849,London,England
+93,"Castle Point",1,69470,Eastern,England
+94,"Central Devon",1,72737,"South West",England
+95,"Central Suffolk and North Ipswich",1,76666,Eastern,England
+96,Charnwood,1,78071,"East Midlands",England
+97,"Chatham and Aylesford",1,70419,"South East",England
+98,Cheadle,1,72780,"North West",England
+99,Chelmsford,1,81045,Eastern,England
+100,"Chelsea and Fulham",1,63728,London,England
+101,Cheltenham,1,78875,"South West",England
+102,"Chesham and Amersham",1,71465,"South East",England
+103,Chesterfield,1,72063,"East Midlands",England
+104,Chichester,1,84996,"South East",England
+105,"Chingford and Woodford Green",1,66078,London,England
+106,Chippenham,1,76432,"South West",England
+107,"Chipping Barnet",1,77020,London,England
+108,Chorley,1,76404,"North West",England
+109,Christchurch,1,70329,"South West",England
+110,"Cities of London and Westminster",1,61533,London,England
+111,"City of Chester",1,72859,"North West",England
+112,"City of Durham",1,71132,"North East",England
+113,Clacton,1,69263,Eastern,England
+114,Cleethorpes,1,73047,"Yorkshire & the Humber",England
+115,Colchester,1,79996,Eastern,England
+116,"Colne Valley",1,84381,"Yorkshire & the Humber",England
+117,Congleton,1,76694,"North West",England
+118,Copeland,1,61751,"North West",England
+119,Corby,1,82439,"East Midlands",England
+120,"Coventry North East",1,75792,"West Midlands",England
+121,"Coventry North West",1,75214,"West Midlands",England
+122,"Coventry South",1,70754,"West Midlands",England
+123,Crawley,1,73424,"South East",England
+124,"Crewe and Nantwich",1,78895,"North West",England
+125,"Croydon Central",1,80945,London,England
+126,"Croydon North",1,87461,London,England
+127,"Croydon South",1,83518,London,England
+128,"Dagenham and Rainham",1,70620,London,England
+129,Darlington,1,66341,"North East",England
+130,Dartford,1,78506,"South East",England
+131,Daventry,1,75335,"East Midlands",England
+132,"Denton and Reddish",1,65751,"North West",England
+133,"Derby North",1,69919,"East Midlands",England
+134,"Derby South",1,69918,"East Midlands",England
+135,"Derbyshire Dales",1,64418,"East Midlands",England
+136,Devizes,1,72184,"South West",England
+137,Dewsbury,1,81338,"Yorkshire & the Humber",England
+138,"Don Valley",1,73988,"Yorkshire & the Humber",England
+139,"Doncaster Central",1,71716,"Yorkshire & the Humber",England
+140,"Doncaster North",1,72372,"Yorkshire & the Humber",England
+141,Dover,1,74564,"South East",England
+142,"Dudley North",1,61323,"West Midlands",England
+143,"Dudley South",1,60363,"West Midlands",England
+144,"Dulwich and West Norwood",1,77947,London,England
+145,"Ealing Central and Acton",1,74200,London,England
+146,"Ealing North",1,74764,London,England
+147,"Ealing, Southall",1,65188,London,England
+148,Easington,1,62385,"North East",England
+149,"East Devon",1,82382,"South West",England
+150,"East Ham",1,83827,London,England
+151,"East Hampshire",1,71074,"South East",England
+152,"East Surrey",1,79654,"South East",England
+153,"East Worthing and Shoreham",1,74775,"South East",England
+154,"East Yorkshire",1,81023,"Yorkshire & the Humber",England
+155,Eastbourne,1,78754,"South East",England
+156,Eastleigh,1,81213,"South East",England
+157,Eddisbury,1,70272,"North West",England
+158,Edmonton,1,65705,London,England
+159,"Ellesmere Port and Neston",1,68666,"North West",England
+160,"Elmet and Rothwell",1,80291,"Yorkshire & the Humber",England
+161,Eltham,1,64474,London,England
+162,"Enfield North",1,68474,London,England
+163,"Enfield, Southgate",1,65137,London,England
+164,"Epping Forest",1,74737,Eastern,England
+165,"Epsom and Ewell",1,80029,"South East",England
+166,Erewash,1,72991,"East Midlands",England
+167,"Erith and Thamesmead",1,69724,London,England
+168,"Esher and Walton",1,80938,"South East",England
+169,Exeter,1,77329,"South West",England
+170,Fareham,1,79495,"South East",England
+171,"Faversham and Mid Kent",1,76008,"South East",England
+172,"Feltham and Heston",1,81707,London,England
+173,"Filton and Bradley Stoke",1,72569,"South West",England
+174,"Finchley and Golders Green",1,73138,London,England
+175,"Folkestone and Hythe",1,84090,"South East",England
+176,"Forest of Dean",1,70898,"South West",England
+177,Fylde,1,70324,"North West",England
+178,Gainsborough,1,75893,"East Midlands",England
+179,"Garston and Halewood",1,75248,"North West",England
+180,Gateshead,1,65186,"North East",England
+181,Gedling,1,71221,"East Midlands",England
+182,"Gillingham and Rainham",1,72093,"South East",England
+183,Gloucester,1,82963,"South West",England
+184,Gosport,1,73886,"South East",England
+185,"Grantham and Stamford",1,81762,"East Midlands",England
+186,Gravesham,1,72948,"South East",England
+187,"Great Grimsby",1,61743,"Yorkshire & the Humber",England
+188,"Great Yarmouth",1,71408,Eastern,England
+189,"Greenwich and Woolwich",1,77190,London,England
+190,Guildford,1,77199,"South East",England
+191,"Hackney North and Stoke Newington",1,83955,London,England
+192,"Hackney South and Shoreditch",1,82004,London,England
+193,"Halesowen and Rowley Regis",1,68856,"West Midlands",England
+194,Halifax,1,71224,"Yorkshire & the Humber",England
+195,"Haltemprice and Howden",1,71520,"Yorkshire & the Humber",England
+196,Halton,1,73457,"North West",England
+197,Hammersmith,1,72803,London,England
+198,"Hampstead and Kilburn",1,82957,London,England
+199,Harborough,1,78647,"East Midlands",England
+200,Harlow,1,67697,Eastern,England
+201,"Harrogate and Knaresborough",1,77265,"Yorkshire & the Humber",England
+202,"Harrow East",1,71757,London,England
+203,"Harrow West",1,69798,London,England
+204,Hartlepool,1,70718,"North East",England
+205,"Harwich and North Essex",1,71294,Eastern,England
+206,"Hastings and Rye",1,78298,"South East",England
+207,Havant,1,72464,"South East",England
+208,"Hayes and Harlington",1,73268,London,England
+209,"Hazel Grove",1,62684,"North West",England
+210,"Hemel Hempstead",1,74616,Eastern,England
+211,Hemsworth,1,71870,"Yorkshire & the Humber",England
+212,Hendon,1,76329,London,England
+213,Henley,1,74987,"South East",England
+214,"Hereford and South Herefordshire",1,71088,"West Midlands",England
+215,"Hertford and Stortford",1,82429,Eastern,England
+216,Hertsmere,1,73554,Eastern,England
+217,Hexham,1,61012,"North East",England
+218,"Heywood and Middleton",1,79901,"North West",England
+219,"High Peak",1,73254,"East Midlands",England
+220,"Hitchin and Harpenden",1,75916,Eastern,England
+221,"Holborn and St Pancras",1,88088,London,England
+222,"Hornchurch and Upminster",1,80821,London,England
+223,"Hornsey and Wood Green",1,79794,London,England
+224,Horsham,1,82773,"South East",England
+225,"Houghton and Sunderland South",1,68123,"North East",England
+226,Hove,1,74236,"South East",England
+227,Huddersfield,1,67033,"Yorkshire & the Humber",England
+228,Huntingdon,1,84320,Eastern,England
+229,Hyndburn,1,73110,"North West",England
+230,"Ilford North",1,72997,London,England
+231,"Ilford South",1,85358,London,England
+232,Ipswich,1,74799,Eastern,England
+233,"Isle of Wight",1,110697,"South East",England
+234,"Islington North",1,74381,London,England
+235,"Islington South and Finsbury",1,69534,London,England
+236,Jarrow,1,64828,"North East",England
+237,Keighley,1,71429,"Yorkshire & the Humber",England
+238,"Kenilworth and Southam",1,66323,"West Midlands",England
+239,Kensington,1,60594,London,England
+240,Kettering,1,71523,"East Midlands",England
+241,"Kingston and Surbiton",1,81584,London,England
+242,"Kingston upon Hull East",1,65710,"Yorkshire & the Humber",England
+243,"Kingston upon Hull North",1,64148,"Yorkshire & the Humber",England
+244,"Kingston upon Hull West and Hessle",1,59100,"Yorkshire & the Humber",England
+245,Kingswood,1,69426,"South West",England
+246,Knowsley,1,81751,"North West",England
+247,"Lancaster and Fleetwood",1,67161,"North West",England
+248,"Leeds Central",1,89537,"Yorkshire & the Humber",England
+249,"Leeds East",1,65950,"Yorkshire & the Humber",England
+250,"Leeds North East",1,70112,"Yorkshire & the Humber",England
+251,"Leeds North West",1,68152,"Yorkshire & the Humber",England
+252,"Leeds West",1,67955,"Yorkshire & the Humber",England
+253,"Leicester East",1,77788,"East Midlands",England
+254,"Leicester South",1,75534,"East Midlands",England
+255,"Leicester West",1,64834,"East Midlands",England
+256,Leigh,1,76211,"North West",England
+257,Lewes,1,70947,"South East",England
+258,"Lewisham East",1,68126,London,England
+259,"Lewisham West and Penge",1,72902,London,England
+260,"Lewisham, Deptford",1,78472,London,England
+261,"Leyton and Wanstead",1,65285,London,England
+262,Lichfield,1,74430,"West Midlands",England
+263,Lincoln,1,73111,"East Midlands",England
+264,"Liverpool, Riverside",1,76332,"North West",England
+265,"Liverpool, Walton",1,62738,"North West",England
+266,"Liverpool, Wavertree",1,62411,"North West",England
+267,"Liverpool, West Derby",1,65164,"North West",England
+268,Loughborough,1,79607,"East Midlands",England
+269,"Louth and Horncastle",1,79006,"East Midlands",England
+270,Ludlow,1,68034,"West Midlands",England
+271,"Luton North",1,66811,Eastern,England
+272,"Luton South",1,67188,Eastern,England
+273,Macclesfield,1,75228,"North West",England
+274,Maidenhead,1,76276,"South East",England
+275,"Maidstone and The Weald",1,75334,"South East",England
+276,Makerfield,1,74259,"North West",England
+277,Maldon,1,66960,Eastern,England
+278,"Manchester Central",1,90261,"North West",England
+279,"Manchester, Gorton",1,75362,"North West",England
+280,"Manchester, Withington",1,74553,"North West",England
+281,Mansfield,1,77811,"East Midlands",England
+282,"Meon Valley",1,74246,"South East",England
+283,Meriden,1,81437,"West Midlands",England
+284,"Mid Bedfordshire",1,83800,Eastern,England
+285,"Mid Derbyshire",1,67466,"East Midlands",England
+286,"Mid Dorset and North Poole",1,65054,"South West",England
+287,"Mid Norfolk",1,80026,Eastern,England
+288,"Mid Sussex",1,83747,"South East",England
+289,"Mid Worcestershire",1,76065,"West Midlands",England
+290,Middlesbrough,1,61114,"North East",England
+291,"Middlesbrough South and East Cleveland",1,72335,"North East",England
+292,"Milton Keynes North",1,89272,"South East",England
+293,"Milton Keynes South",1,92494,"South East",England
+294,"Mitcham and Morden",1,68705,London,England
+295,"Mole Valley",1,74545,"South East",England
+296,"Morecambe and Lunesdale",1,66838,"North West",England
+297,"Morley and Outwood",1,76495,"Yorkshire & the Humber",England
+298,"New Forest East",1,72602,"South East",England
+299,"New Forest West",1,68787,"South East",England
+300,Newark,1,73747,"East Midlands",England
+301,Newbury,1,82923,"South East",England
+302,"Newcastle upon Tyne Central",1,55571,"North East",England
+303,"Newcastle upon Tyne East",1,62333,"North East",England
+304,"Newcastle upon Tyne North",1,66312,"North East",England
+305,Newcastle-under-Lyme,1,65540,"West Midlands",England
+306,"Newton Abbot",1,71722,"South West",England
+307,"Normanton, Pontefract and Castleford",1,81641,"Yorkshire & the Humber",England
+308,"North Cornwall",1,68859,"South West",England
+309,"North Devon",1,75784,"South West",England
+310,"North Dorset",1,76385,"South West",England
+311,"North Durham",1,66970,"North East",England
+312,"North East Bedfordshire",1,86988,Eastern,England
+313,"North East Cambridgeshire",1,84404,Eastern,England
+314,"North East Derbyshire",1,72097,"East Midlands",England
+315,"North East Hampshire",1,75474,"South East",England
+316,"North East Hertfordshire",1,75967,Eastern,England
+317,"North East Somerset",1,71350,"South West",England
+318,"North Herefordshire",1,67751,"West Midlands",England
+319,"North Norfolk",1,69263,Eastern,England
+320,"North Shropshire",1,80535,"West Midlands",England
+321,"North Somerset",1,80538,"South West",England
+322,"North Swindon",1,80194,"South West",England
+323,"North Thanet",1,72657,"South East",England
+324,"North Tyneside",1,78914,"North East",England
+325,"North Warwickshire",1,72277,"West Midlands",England
+326,"North West Cambridgeshire",1,93223,Eastern,England
+327,"North West Durham",1,71982,"North East",England
+328,"North West Hampshire",1,81430,"South East",England
+329,"North West Leicestershire",1,75362,"East Midlands",England
+330,"North West Norfolk",1,72062,Eastern,England
+331,"North Wiltshire",1,71408,"South West",England
+332,"Northampton North",1,58183,"East Midlands",England
+333,"Northampton South",1,60933,"East Midlands",England
+334,"Norwich North",1,66924,Eastern,England
+335,"Norwich South",1,74182,Eastern,England
+336,"Nottingham East",1,61762,"East Midlands",England
+337,"Nottingham North",1,66894,"East Midlands",England
+338,"Nottingham South",1,71178,"East Midlands",England
+339,Nuneaton,1,69201,"West Midlands",England
+340,"Old Bexley and Sidcup",1,66005,London,England
+341,"Oldham East and Saddleworth",1,72223,"North West",England
+342,"Oldham West and Royton",1,72418,"North West",England
+343,Orpington,1,67906,London,England
+344,"Oxford East",1,78360,"South East",England
+345,"Oxford West and Abingdon",1,79289,"South East",England
+346,Pendle,1,64963,"North West",England
+347,"Penistone and Stocksbridge",1,71293,"Yorkshire & the Humber",England
+348,"Penrith and The Border",1,65139,"North West",England
+349,Peterborough,1,71522,Eastern,England
+350,"Plymouth, Moor View",1,69342,"South West",England
+351,"Plymouth, Sutton and Devonport",1,76584,"South West",England
+352,Poole,1,73811,"South West",England
+353,"Poplar and Limehouse",1,87274,London,England
+354,"Portsmouth North",1,71374,"South East",England
+355,"Portsmouth South",1,69785,"South East",England
+356,Preston,1,57791,"North West",England
+357,Pudsey,1,72622,"Yorkshire & the Humber",England
+358,Putney,1,65026,London,England
+359,"Rayleigh and Wickford",1,78556,Eastern,England
+360,"Reading East",1,75522,"South East",England
+361,"Reading West",1,74518,"South East",England
+362,Redcar,1,66836,"North East",England
+363,Redditch,1,64344,"West Midlands",England
+364,Reigate,1,74628,"South East",England
+365,"Ribble Valley",1,77968,"North West",England
+366,"Richmond (Yorks)",1,80920,"Yorkshire & the Humber",England
+367,"Richmond Park",1,80025,London,England
+368,Rochdale,1,78064,"North West",England
+369,"Rochester and Strood",1,82702,"South East",England
+370,"Rochford and Southend East",1,73501,Eastern,England
+371,Romford,1,75516,London,England
+372,"Romsey and Southampton North",1,67186,"South East",England
+373,"Rossendale and Darwen",1,72495,"North West",England
+374,"Rother Valley",1,75320,"Yorkshire & the Humber",England
+375,Rotherham,1,63237,"Yorkshire & the Humber",England
+376,Rugby,1,72175,"West Midlands",England
+377,"Ruislip, Northwood and Pinner",1,73425,London,England
+378,"Runnymede and Weybridge",1,74887,"South East",England
+379,Rushcliffe,1,74740,"East Midlands",England
+380,"Rutland and Melton",1,78463,"East Midlands",England
+381,"Saffron Walden",1,83690,Eastern,England
+382,"Salford and Eccles",1,78082,"North West",England
+383,Salisbury,1,72892,"South West",England
+384,"Scarborough and Whitby",1,73593,"Yorkshire & the Humber",England
+385,Scunthorpe,1,61578,"Yorkshire & the Humber",England
+386,Sedgefield,1,62844,"North East",England
+387,"Sefton Central",1,69019,"North West",England
+388,"Selby and Ainsty",1,75765,"Yorkshire & the Humber",England
+389,Sevenoaks,1,71061,"South East",England
+390,"Sheffield Central",1,77560,"Yorkshire & the Humber",England
+391,"Sheffield South East",1,68945,"Yorkshire & the Humber",England
+392,"Sheffield, Brightside and Hillsborough",1,70344,"Yorkshire & the Humber",England
+393,"Sheffield, Hallam",1,73455,"Yorkshire & the Humber",England
+394,"Sheffield, Heeley",1,68040,"Yorkshire & the Humber",England
+395,Sherwood,1,76196,"East Midlands",England
+396,Shipley,1,73133,"Yorkshire & the Humber",England
+397,"Shrewsbury and Atcham",1,79043,"West Midlands",England
+398,"Sittingbourne and Sheppey",1,81715,"South East",England
+399,"Skipton and Ripon",1,78108,"Yorkshire & the Humber",England
+400,"Sleaford and North Hykeham",1,90925,"East Midlands",England
+401,Slough,1,83272,"South East",England
+402,Solihull,1,77784,"West Midlands",England
+403,"Somerton and Frome",1,84435,"South West",England
+404,"South Basildon and East Thurrock",1,73541,Eastern,England
+405,"South Cambridgeshire",1,85257,Eastern,England
+406,"South Derbyshire",1,76341,"East Midlands",England
+407,"South Dorset",1,72323,"South West",England
+408,"South East Cambridgeshire",1,86121,Eastern,England
+409,"South East Cornwall",1,71896,"South West",England
+410,"South Holland and The Deepings",1,76460,"East Midlands",England
+411,"South Leicestershire",1,76851,"East Midlands",England
+412,"South Norfolk",1,80721,Eastern,England
+413,"South Northamptonshire",1,85781,"East Midlands",England
+414,"South Ribble",1,76489,"North West",England
+415,"South Shields",1,62730,"North East",England
+416,"South Staffordshire",1,72771,"West Midlands",England
+417,"South Suffolk",1,73836,Eastern,England
+418,"South Swindon",1,73926,"South West",England
+419,"South Thanet",1,70970,"South East",England
+420,"South West Bedfordshire",1,79285,Eastern,England
+421,"South West Devon",1,71035,"South West",England
+422,"South West Hertfordshire",1,79668,Eastern,England
+423,"South West Norfolk",1,76970,Eastern,England
+424,"South West Surrey",1,77548,"South East",England
+425,"South West Wiltshire",1,73018,"South West",England
+426,"Southampton, Itchen",1,72281,"South East",England
+427,"Southampton, Test",1,70270,"South East",England
+428,"Southend West",1,66876,Eastern,England
+429,Southport,1,67326,"North West",England
+430,Spelthorne,1,71592,"South East",England
+431,"St Albans",1,75825,Eastern,England
+432,"St Austell and Newquay",1,76607,"South West",England
+433,"St Helens North",1,75262,"North West",England
+434,"St Helens South and Whiston",1,77720,"North West",England
+435,"St Ives",1,65570,"South West",England
+436,Stafford,1,68705,"West Midlands",England
+437,"Staffordshire Moorlands",1,63104,"West Midlands",England
+438,"Stalybridge and Hyde",1,71357,"North West",England
+439,Stevenage,1,70597,Eastern,England
+440,Stockport,1,63931,"North West",England
+441,"Stockton North",1,66126,"North East",England
+442,"Stockton South",1,75111,"North East",England
+443,"Stoke-on-Trent Central",1,60634,"West Midlands",England
+444,"Stoke-on-Trent North",1,71438,"West Midlands",England
+445,"Stoke-on-Trent South",1,68091,"West Midlands",England
+446,Stone,1,67339,"West Midlands",England
+447,Stourbridge,1,69077,"West Midlands",England
+448,Stratford-on-Avon,1,71304,"West Midlands",England
+449,Streatham,1,79137,London,England
+450,"Stretford and Urmston",1,69026,"North West",England
+451,Stroud,1,80544,"South West",England
+452,"Suffolk Coastal",1,77816,Eastern,England
+453,"Sunderland Central",1,72950,"North East",England
+454,"Surrey Heath",1,79515,"South East",England
+455,"Sutton and Cheam",1,69228,London,England
+456,"Sutton Coldfield",1,74956,"West Midlands",England
+457,Tamworth,1,71913,"West Midlands",England
+458,Tatton,1,65004,"North West",England
+459,"Taunton Deane",1,83221,"South West",England
+460,Telford,1,66166,"West Midlands",England
+461,Tewkesbury,1,78910,"South West",England
+462,"The Cotswolds",1,78290,"South West",England
+463,"The Wrekin",1,65942,"West Midlands",England
+464,"Thirsk and Malton",1,77451,"Yorkshire & the Humber",England
+465,"Thornbury and Yate",1,66066,"South West",England
+466,Thurrock,1,77559,Eastern,England
+467,"Tiverton and Honiton",1,76270,"South West",England
+468,"Tonbridge and Malling",1,74877,"South East",England
+469,Tooting,1,76782,London,England
+470,Torbay,1,76350,"South West",England
+471,"Torridge and West Devon",1,78621,"South West",England
+472,Totnes,1,68630,"South West",England
+473,Tottenham,1,70803,London,England
+474,"Truro and Falmouth",1,73601,"South West",England
+475,"Tunbridge Wells",1,73429,"South East",England
+476,Twickenham,1,80250,London,England
+477,Tynemouth,1,77524,"North East",England
+478,"Uxbridge and South Ruislip",1,70631,London,England
+479,Vauxhall,1,82231,London,England
+480,Wakefield,1,70521,"Yorkshire & the Humber",England
+481,Wallasey,1,65495,"North West",England
+482,"Walsall North",1,67080,"West Midlands",England
+483,"Walsall South",1,67743,"West Midlands",England
+484,Walthamstow,1,67015,London,England
+485,Wansbeck,1,60705,"North East",England
+486,Wantage,1,82931,"South East",England
+487,Warley,1,63738,"West Midlands",England
+488,"Warrington North",1,72104,"North West",England
+489,"Warrington South",1,84767,"North West",England
+490,"Warwick and Leamington",1,71578,"West Midlands",England
+491,"Washington and Sunderland West",1,68190,"North East",England
+492,Watford,1,83535,Eastern,England
+493,Waveney,1,80166,Eastern,England
+494,Wealden,1,80236,"South East",England
+495,"Weaver Vale",1,68407,"North West",England
+496,Wellingborough,1,74317,"East Midlands",England
+497,Wells,1,79405,"South West",England
+498,"Welwyn Hatfield",1,73247,Eastern,England
+499,"Wentworth and Dearne",1,74283,"Yorkshire & the Humber",England
+500,"West Bromwich East",1,63637,"West Midlands",England
+501,"West Bromwich West",1,65524,"West Midlands",England
+502,"West Dorset",1,78000,"South West",England
+503,"West Ham",1,90640,London,England
+504,"West Lancashire",1,70906,"North West",England
+505,"West Suffolk",1,76198,Eastern,England
+506,"West Worcestershire",1,73394,"West Midlands",England
+507,"Westminster North",1,62346,London,England
+508,"Westmorland and Lonsdale",1,65857,"North West",England
+509,Weston-Super-Mare,1,80309,"South West",England
+510,Wigan,1,75990,"North West",England
+511,Wimbledon,1,65853,London,England
+512,Winchester,1,74119,"South East",England
+513,Windsor,1,71538,"South East",England
+514,"Wirral South",1,56956,"North West",England
+515,"Wirral West",1,55377,"North West",England
+516,Witham,1,67090,Eastern,England
+517,Witney,1,79767,"South East",England
+518,Woking,1,74269,"South East",England
+519,Wokingham,1,77881,"South East",England
+520,"Wolverhampton North East",1,61065,"West Midlands",England
+521,"Wolverhampton South East",1,62556,"West Midlands",England
+522,"Wolverhampton South West",1,60368,"West Midlands",England
+523,Worcester,1,72461,"West Midlands",England
+524,Workington,1,58615,"North West",England
+525,"Worsley and Eccles South",1,72177,"North West",England
+526,"Worthing West",1,75617,"South East",England
+527,Wycombe,1,76371,"South East",England
+528,"Wyre and Preston North",1,70637,"North West",England
+529,"Wyre Forest",1,77407,"West Midlands",England
+530,"Wythenshawe and Sale East",1,75994,"North West",England
+531,Yeovil,1,82447,"South West",England
+532,"York Central",1,75351,"Yorkshire & the Humber",England
+533,"York Outer",1,78561,"Yorkshire & the Humber",England
+534,"Aberdeen North",1,67745,Scotland,Scotland
+535,"Aberdeen South",1,68056,Scotland,Scotland
+536,"Airdrie and Shotts",1,66792,Scotland,Scotland
+537,Angus,1,65792,Scotland,Scotland
+538,"Argyll and Bute",1,68875,Scotland,Scotland
+539,"Ayr, Carrick and Cumnock",1,72995,Scotland,Scotland
+540,"Banff and Buchan",1,68609,Scotland,Scotland
+541,"Berwickshire, Roxburgh and Selkirk",1,74214,Scotland,Scotland
+542,"Caithness, Sutherland and Easter Ross",1,47558,Scotland,Scotland
+543,"Central Ayrshire",1,70021,Scotland,Scotland
+544,"Coatbridge, Chryston and Bellshill",1,73894,Scotland,Scotland
+545,"Cumbernauld, Kilsyth and Kirkintilloch East",1,67088,Scotland,Scotland
+546,"Dumfries and Galloway",1,75249,Scotland,Scotland
+547,"Dumfriesshire, Clydesdale and Tweeddale",1,68483,Scotland,Scotland
+548,"Dundee East",1,67822,Scotland,Scotland
+549,"Dundee West",1,65927,Scotland,Scotland
+550,"Dunfermline and West Fife",1,78037,Scotland,Scotland
+551,"East Dunbartonshire",1,66966,Scotland,Scotland
+552,"East Kilbride, Strathaven and Lesmahagow",1,83205,Scotland,Scotland
+553,"East Lothian",1,79481,Scotland,Scotland
+554,"East Renfrewshire",1,69982,Scotland,Scotland
+555,"Edinburgh East",1,67141,Scotland,Scotland
+556,"Edinburgh North and Leith",1,80910,Scotland,Scotland
+557,"Edinburgh South",1,65801,Scotland,Scotland
+558,"Edinburgh South West",1,72149,Scotland,Scotland
+559,"Edinburgh West",1,71717,Scotland,Scotland
+560,Falkirk,1,83380,Scotland,Scotland
+561,"Glasgow Central",1,70945,Scotland,Scotland
+562,"Glasgow East",1,70378,Scotland,Scotland
+563,"Glasgow North",1,60169,Scotland,Scotland
+564,"Glasgow North East",1,66678,Scotland,Scotland
+565,"Glasgow North West",1,68418,Scotland,Scotland
+566,"Glasgow South",1,74051,Scotland,Scotland
+567,"Glasgow South West",1,66209,Scotland,Scotland
+568,Glenrothes,1,69781,Scotland,Scotland
+569,Gordon,1,79393,Scotland,Scotland
+570,Inverclyde,1,59350,Scotland,Scotland
+571,"Inverness, Nairn, Badenoch and Strathspey",1,77628,Scotland,Scotland
+572,"Kilmarnock and Loudoun",1,75250,Scotland,Scotland
+573,"Kirkcaldy and Cowdenbeath",1,75941,Scotland,Scotland
+574,"Lanark and Hamilton East",1,79962,Scotland,Scotland
+575,"Linlithgow and East Falkirk",1,86955,Scotland,Scotland
+576,Livingston,1,82373,Scotland,Scotland
+577,Midlothian,1,67875,Scotland,Scotland
+578,Moray,1,71685,Scotland,Scotland
+579,"Motherwell and Wishaw",1,70283,Scotland,Scotland
+580,"Na h-Eileanan an Iar",1,21769,Scotland,Scotland
+581,"North Ayrshire and Arran",1,75791,Scotland,Scotland
+582,"North East Fife",1,62003,Scotland,Scotland
+583,"Ochil and South Perthshire",1,77370,Scotland,Scotland
+584,"Orkney and Shetland",1,34552,Scotland,Scotland
+585,"Paisley and Renfrewshire North",1,66206,Scotland,Scotland
+586,"Paisley and Renfrewshire South",1,61281,Scotland,Scotland
+587,"Perth and North Perthshire",1,72459,Scotland,Scotland
+588,"Ross, Skye and Lochaber",1,54169,Scotland,Scotland
+589,"Rutherglen and Hamilton West",1,82830,Scotland,Scotland
+590,Stirling,1,67236,Scotland,Scotland
+591,"West Aberdeenshire and Kincardine",1,73445,Scotland,Scotland
+592,"West Dunbartonshire",1,69208,Scotland,Scotland
+593,Aberavon,1,49821,Wales,Wales
+594,Aberconwy,1,45525,Wales,Wales
+595,"Alyn and Deeside",1,62016,Wales,Wales
+596,Arfon,1,40492,Wales,Wales
+597,"Blaenau Gwent",1,51335,Wales,Wales
+598,"Brecon and Radnorshire",1,54441,Wales,Wales
+599,Bridgend,1,59998,Wales,Wales
+600,Caerphilly,1,63603,Wales,Wales
+601,"Cardiff Central",1,57456,Wales,Wales
+602,"Cardiff North",1,67196,Wales,Wales
+603,"Cardiff South and Penarth",1,76006,Wales,Wales
+604,"Cardiff West",1,66762,Wales,Wales
+605,"Carmarthen East and Dinefwr",1,55750,Wales,Wales
+606,"Carmarthen West and South Pembrokeshire",1,57755,Wales,Wales
+607,Ceredigion,1,54242,Wales,Wales
+608,"Clwyd South",1,54996,Wales,Wales
+609,"Clwyd West",1,58644,Wales,Wales
+610,"Cynon Valley",1,51422,Wales,Wales
+611,Delyn,1,53639,Wales,Wales
+612,"Dwyfor Meirionnydd",1,44394,Wales,Wales
+613,Gower,1,61820,Wales,Wales
+614,Islwyn,1,55697,Wales,Wales
+615,Llanelli,1,59314,Wales,Wales
+616,"Merthyr Tydfil and Rhymney",1,61716,Wales,Wales
+617,Monmouth,1,62248,Wales,Wales
+618,Montgomeryshire,1,48690,Wales,Wales
+619,Neath,1,56097,Wales,Wales
+620,"Newport East",1,56015,Wales,Wales
+621,"Newport West",1,62137,Wales,Wales
+622,Ogmore,1,55572,Wales,Wales
+623,Pontypridd,1,58940,Wales,Wales
+624,"Preseli Pembrokeshire",1,57291,Wales,Wales
+625,Rhondda,1,51811,Wales,Wales
+626,"Swansea East",1,58011,Wales,Wales
+627,"Swansea West",1,58776,Wales,Wales
+628,Torfaen,1,61896,Wales,Wales
+629,"Vale of Clwyd",1,56505,Wales,Wales
+630,"Vale of Glamorgan",1,72794,Wales,Wales
+651," Abbey",2,NULL,Barking,England
+652," Alibon",2,NULL,Barking,England
+653," Becontree",2,NULL,Barking,England
+654," Eastbury",2,NULL,Barking,England
+655," Gascoigne",2,NULL,Barking,England
+656," Goresbrook",2,NULL,Barking,England
+657," Longbridge",2,NULL,Barking,England
+658," Mayesbrook",2,NULL,Barking,England
+659," Parsloes",2,NULL,Barking,England
+660," Thames",2,NULL,Barking,England
+661," Valence",2,NULL,Barking,England
+662," Chadwell Heath",2,NULL,"Dagenham and Rainham",England
+663," Eastbrook",2,NULL,"Dagenham and Rainham",England
+664," Elm Park",2,NULL,"Dagenham and Rainham",England
+665," Heath",2,NULL,"Dagenham and Rainham",England
+666," Rainham and Wennington",2,NULL,"Dagenham and Rainham",England
+667," River",2,NULL,"Dagenham and Rainham",England
+668," South Hornchurch",2,NULL,"Dagenham and Rainham",England
+669," Village",2,NULL,"Dagenham and Rainham",England
+670," Whalebone",2,NULL,"Dagenham and Rainham",England
+671," Cranham",2,NULL,"Hornchurch and Upminster",England
+672," Emerson Park",2,NULL,"Hornchurch and Upminster",England
+673," Gooshays",2,NULL,"Hornchurch and Upminster",England
+674," Hacton",2,NULL,"Hornchurch and Upminster",England
+675," Harold Wood",2,NULL,"Hornchurch and Upminster",England
+676," Heaton",2,NULL,"Hornchurch and Upminster",England
+677," St Andrew's",2,NULL,"Hornchurch and Upminster",England
+678," Upminster",2,NULL,"Hornchurch and Upminster",England
+679," Brooklands",2,NULL,Romford,England
+680," Havering Park",2,NULL,Romford,England
+681," Hylands",2,NULL,Romford,England
+682," Mawneys",2,NULL,Romford,England
+683," Pettits",2,NULL,Romford,England
+684," Romford Town",2,NULL,Romford,England
+685," Squirrel's Heath",2,NULL,Romford,England
+686," Brunswick Park",2,NULL,"Chipping Barnet",England
+687," Coppetts",2,NULL,"Chipping Barnet",England
+688," East Barnet",2,NULL,"Chipping Barnet",England
+689," High Barnet",2,NULL,"Chipping Barnet",England
+690," Oakleigh",2,NULL,"Chipping Barnet",England
+691," Totteridge",2,NULL,"Chipping Barnet",England
+692," Underhill",2,NULL,"Chipping Barnet",England
+693," Abbey Wood",2,NULL,"Erith and Thamesmead",England
+694," Belvedere",2,NULL,"Erith and Thamesmead",England
+695," Erith",2,NULL,"Erith and Thamesmead",England
+696," Lesnes Abbey",2,NULL,"Erith and Thamesmead",England
+697," Northumberland Heath",2,NULL,"Erith and Thamesmead",England
+698," Plumstead",2,NULL,"Erith and Thamesmead",England
+699," Thamesmead East",2,NULL,"Erith and Thamesmead",England
+700," Thamesmead Moorings",2,NULL,"Erith and Thamesmead",England
+701," Coldharbour and New Eltham",2,NULL,Eltham,England
+702," Eltham North",2,NULL,Eltham,England
+703," Eltham South",2,NULL,Eltham,England
+704," Eltham West",2,NULL,Eltham,England
+705," Kidbrooke with Hornfair",2,NULL,Eltham,England
+706," Middle Park and Sutcliffe",2,NULL,Eltham,England
+707," Shooters Hill",2,NULL,Eltham,England
+708," Barnehurst",2,NULL,"Bexleyheath and Crayford",England
+709," Brampton",2,NULL,"Bexleyheath and Crayford",England
+710," Christchurch",2,NULL,"Bexleyheath and Crayford",England
+711," Colyers",2,NULL,"Bexleyheath and Crayford",England
+712," Crayford",2,NULL,"Bexleyheath and Crayford",England
+713," Danson Park",2,NULL,"Bexleyheath and Crayford",England
+714," North End",2,NULL,"Bexleyheath and Crayford",England
+715," St Michael's",2,NULL,"Bexleyheath and Crayford",England
+716," Burnt Oak",2,NULL,Hendon,England
+717," Colindale",2,NULL,Hendon,England
+718," Edgware",2,NULL,Hendon,England
+719," Hale",2,NULL,Hendon,England
+720," Hendon",2,NULL,Hendon,England
+721," Mill Hill",2,NULL,Hendon,England
+722," West Hendon",2,NULL,Hendon,England
+723," Childs Hill",2,NULL,"Finchley and Golders Green",England
+724," East Finchley",2,NULL,"Finchley and Golders Green",England
+725," Finchley Church End",2,NULL,"Finchley and Golders Green",England
+726," Garden Suburb",2,NULL,"Finchley and Golders Green",England
+727," Golders Green",2,NULL,"Finchley and Golders Green",England
+728," West Finchley",2,NULL,"Finchley and Golders Green",England
+729," Woodhouse",2,NULL,"Finchley and Golders Green",England
+730," Bensham Manor",2,NULL,"Croydon North",England
+731," Broad Green",2,NULL,"Croydon North",England
+732," Norbury",2,NULL,"Croydon North",England
+733," Selhurst",2,NULL,"Croydon North",England
+734," South Norwood",2,NULL,"Croydon North",England
+735," Thornton Heath",2,NULL,"Croydon North",England
+736," Upper Norwood",2,NULL,"Croydon North",England
+737," West Thornton",2,NULL,"Croydon North",England
+738," Coulsdon East",2,NULL,"Croydon South",England
+739," Coulsdon West",2,NULL,"Croydon South",England
+740," Croham",2,NULL,"Croydon South",England
+741," Kenley",2,NULL,"Croydon South",England
+742," Purley",2,NULL,"Croydon South",England
+743," Sanderstead",2,NULL,"Croydon South",England
+744," Selsdon and Ballards",2,NULL,"Croydon South",England
+745," Waddon",2,NULL,"Croydon South",England
+746," Acton Central",2,NULL,"Ealing Central and Acton",England
+747," Ealing Broadway",2,NULL,"Ealing Central and Acton",England
+748," Ealing Common",2,NULL,"Ealing Central and Acton",England
+749," East Acton",2,NULL,"Ealing Central and Acton",England
+750," Hanger Hill",2,NULL,"Ealing Central and Acton",England
+751," South Acton",2,NULL,"Ealing Central and Acton",England
+752," Southfield",2,NULL,"Ealing Central and Acton",England
+753," Walpole",2,NULL,"Ealing Central and Acton",England
+754," Cleveland",2,NULL,"Ealing North",England
+755," Greenford Broadway",2,NULL,"Ealing North",England
+756," Greenford Green",2,NULL,"Ealing North",England
+757," Hobbayne",2,NULL,"Ealing North",England
+758," North Greenford",2,NULL,"Ealing North",England
+759," Northolt Mandeville",2,NULL,"Ealing North",England
+760," Northolt West End",2,NULL,"Ealing North",England
+761," Perivale",2,NULL,"Ealing North",England
+762," Southall",2,NULL,Ealing,England
+763," Dormers Wells",2,NULL,Ealing,England
+764," Elthorne",2,NULL,Ealing,England
+765," Lady Margaret",2,NULL,Ealing,England
+766," Northfield",2,NULL,Ealing,England
+767," Norwood Green",2,NULL,Ealing,England
+768," Southall Broadway",2,NULL,Ealing,England
+769," Southall Green",2,NULL,Ealing,England
+770," Bush Hill Park",2,NULL,Edmonton,England
+771," Edmonton Green",2,NULL,Edmonton,England
+772," Haselbury",2,NULL,Edmonton,England
+773," Jubilee",2,NULL,Edmonton,England
+774," Lower Edmonton",2,NULL,Edmonton,England
+775," Ponders End",2,NULL,Edmonton,England
+776," Upper Edmonton",2,NULL,Edmonton,England
+777," Chase",2,NULL,"Enfield North",England
+778," Enfield Highway",2,NULL,"Enfield North",England
+779," Enfield Lock",2,NULL,"Enfield North",England
+780," Highlands",2,NULL,"Enfield North",England
+781," Southbury",2,NULL,"Enfield North",England
+782," Town",2,NULL,"Enfield North",England
+783," Turkey Street",2,NULL,"Enfield North",England
+784," Southgate",2,NULL,Enfield,England
+785," Bowes",2,NULL,Enfield,England
+786," Cockfosters",2,NULL,Enfield,England
+787," Grange",2,NULL,Enfield,England
+788," Palmers Green",2,NULL,Enfield,England
+789," Southgate",2,NULL,Enfield,England
+790," Southgate Green",2,NULL,Enfield,England
+791," Winchmore Hill",2,NULL,Enfield,England
+792," Blackfen and Lamorbey",2,NULL,"Old Bexley and Sidcup",England
+793," Blendon and Penhill",2,NULL,"Old Bexley and Sidcup",England
+794," Cray Meadows",2,NULL,"Old Bexley and Sidcup",England
+795," East Wickham",2,NULL,"Old Bexley and Sidcup",England
+796," Falconwood and Welling",2,NULL,"Old Bexley and Sidcup",England
+797," Longlands",2,NULL,"Old Bexley and Sidcup",England
+798," St Mary's",2,NULL,"Old Bexley and Sidcup",England
+799," Sidcup",2,NULL,"Old Bexley and Sidcup",England
+800," Blackheath Westcombe",2,NULL,"Greenwich and Woolwich",England
+801," Charlton",2,NULL,"Greenwich and Woolwich",England
+802," Glyndon",2,NULL,"Greenwich and Woolwich",England
+803," Greenwich West",2,NULL,"Greenwich and Woolwich",England
+804," Peninsula",2,NULL,"Greenwich and Woolwich",England
+805," Woolwich Common",2,NULL,"Greenwich and Woolwich",England
+806," Woolwich Riverside",2,NULL,"Greenwich and Woolwich",England
+807," Dollis Hill",2,NULL,"Brent South and West",England
+808," Dudden Hill",2,NULL,"Brent South and West",England
+809," Harlesden",2,NULL,"Brent South and West",England
+810," Kensal Green",2,NULL,"Brent South and West",England
+811," Mapesbury",2,NULL,"Brent South and West",England
+812," Stonebridge",2,NULL,"Brent South and West",England
+813," Tokyngton",2,NULL,"Brent South and West",England
+814," Welsh Harp",2,NULL,"Brent South and West",England
+815," Willesden Green",2,NULL,"Brent South and West",England
+816," Alperton",2,NULL,"Brent North",England
+817," Barnhill",2,NULL,"Brent North",England
+818," Fryent",2,NULL,"Brent North",England
+819," Kenton",2,NULL,"Brent North",England
+820," Northwick Park",2,NULL,"Brent North",England
+821," Preston",2,NULL,"Brent North",England
+822," Queensbury",2,NULL,"Brent North",England
+823," Sudbury",2,NULL,"Brent North",England
+824," Wembley Central",2,NULL,"Brent North",England
+825," Belsize",2,NULL,"Hampstead and Kilburn",England
+826," Brondesbury Park",2,NULL,"Hampstead and Kilburn",England
+827," Fortune Green",2,NULL,"Hampstead and Kilburn",England
+828," Frognal and Fitzjohns",2,NULL,"Hampstead and Kilburn",England
+829," Hampstead Town",2,NULL,"Hampstead and Kilburn",England
+830," Kilburn (Brent)",2,NULL,"Hampstead and Kilburn",England
+831," Kilburn (Camden)",2,NULL,"Hampstead and Kilburn",England
+832," Queens Park",2,NULL,"Hampstead and Kilburn",England
+833," Swiss Cottage",2,NULL,"Hampstead and Kilburn",England
+834," West Hampstead",2,NULL,"Hampstead and Kilburn",England
+835," Bloomsbury",2,NULL,"Holborn and St Pancras",England
+836," Camden Town with Primrose Hill",2,NULL,"Holborn and St Pancras",England
+837," Cantelowes",2,NULL,"Holborn and St Pancras",England
+838," Gospel Oak",2,NULL,"Holborn and St Pancras",England
+839," Haverstock",2,NULL,"Holborn and St Pancras",England
+840," Highgate",2,NULL,"Holborn and St Pancras",England
+841," Holborn and Covent Garden",2,NULL,"Holborn and St Pancras",England
+842," Kentish Town",2,NULL,"Holborn and St Pancras",England
+843," King's Cross",2,NULL,"Holborn and St Pancras",England
+844," Regent's Park",2,NULL,"Holborn and St Pancras",England
+845," St Pancras and Somers Town",2,NULL,"Holborn and St Pancras",England
+846," Bromley Common and Keston",2,NULL,Beckenham,England
+847," Copers Cope",2,NULL,Beckenham,England
+848," Hayes and Coney Hall",2,NULL,Beckenham,England
+849," Kelsey and Eden Park",2,NULL,Beckenham,England
+850," Shortlands",2,NULL,Beckenham,England
+851," West Wickham",2,NULL,Beckenham,England
+852," Bickley",2,NULL,"Bromley and Chislehurst",England
+853," Bromley Town",2,NULL,"Bromley and Chislehurst",England
+854," Chislehurst",2,NULL,"Bromley and Chislehurst",England
+855," Cray Valley West",2,NULL,"Bromley and Chislehurst",England
+856," Mottingham and Chislehurst North",2,NULL,"Bromley and Chislehurst",England
+857," Plaistow",2,NULL,"Bromley and Chislehurst",England
+858," Sundridge",2,NULL,"Bromley and Chislehurst",England
+859," Deptford",2,NULL,Lewisham,England
+860," Brockley",2,NULL,Lewisham,England
+861," Crofton Park",2,NULL,Lewisham,England
+862," Evelyn",2,NULL,Lewisham,England
+863," Ladywell",2,NULL,Lewisham,England
+864," Lewisham Central",2,NULL,Lewisham,England
+865," New Cross",2,NULL,Lewisham,England
+866," Telegraph Hill",2,NULL,Lewisham,England
+867," Blackheath",2,NULL,"Lewisham East",England
+868," Catford South",2,NULL,"Lewisham East",England
+869," Downham",2,NULL,"Lewisham East",England
+870," Grove Park",2,NULL,"Lewisham East",England
+871," Lee Green",2,NULL,"Lewisham East",England
+872," Rushey Green",2,NULL,"Lewisham East",England
+873," Whitefoot",2,NULL,"Lewisham East",England
+874," Bellingham",2,NULL,"Lewisham West and Penge",England
+875," Clock House",2,NULL,"Lewisham West and Penge",England
+876," Crystal Palace",2,NULL,"Lewisham West and Penge",England
+877," Penge and Cator",2,NULL,"Lewisham West and Penge",England
+878," Forest Hill",2,NULL,"Lewisham West and Penge",England
+879," Perry Vale",2,NULL,"Lewisham West and Penge",England
+880," Sydenham",2,NULL,"Lewisham West and Penge",England
+881," Biggin Hill",2,NULL,Orpington,England
+882," Chelsfield and Pratts Bottom",2,NULL,Orpington,England
+883," Cray Valley East",2,NULL,Orpington,England
+884," Darwin",2,NULL,Orpington,England
+885," Farnborough and Crofton",2,NULL,Orpington,England
+886," Orpington",2,NULL,Orpington,England
+887," Petts Wood",2,NULL,Orpington,England
+888," Knoll",2,NULL,Orpington,England
+889," Addiscombe",2,NULL,"Croydon Central",England
+890," Ashburton",2,NULL,"Croydon Central",England
+891," Fairfield",2,NULL,"Croydon Central",England
+892," Fieldway",2,NULL,"Croydon Central",England
+893," Heathfield",2,NULL,"Croydon Central",England
+894," New Addington",2,NULL,"Croydon Central",England
+895," Shirley",2,NULL,"Croydon Central",England
+896," Woodside",2,NULL,"Croydon Central",England
+897," Brownswood",2,NULL,"Hackney North and Stoke Newington",England
+898," Cazenove",2,NULL,"Hackney North and Stoke Newington",England
+899," Clissold",2,NULL,"Hackney North and Stoke Newington",England
+900," Dalston",2,NULL,"Hackney North and Stoke Newington",England
+901," Hackney Downs",2,NULL,"Hackney North and Stoke Newington",England
+902," Leabridge",2,NULL,"Hackney North and Stoke Newington",England
+903," Lordship",2,NULL,"Hackney North and Stoke Newington",England
+904," New River",2,NULL,"Hackney North and Stoke Newington",England
+905," Springfield",2,NULL,"Hackney North and Stoke Newington",England
+906," Stoke Newington Central",2,NULL,"Hackney North and Stoke Newington",England
+907," Chatham",2,NULL,"Hackney South and Shoreditch",England
+908," De Beauvoir",2,NULL,"Hackney South and Shoreditch",England
+909," Hackney Central",2,NULL,"Hackney South and Shoreditch",England
+910," Haggerston",2,NULL,"Hackney South and Shoreditch",England
+911," Hoxton",2,NULL,"Hackney South and Shoreditch",England
+912," King's Park",2,NULL,"Hackney South and Shoreditch",England
+913," Queensbridge",2,NULL,"Hackney South and Shoreditch",England
+914," Victoria",2,NULL,"Hackney South and Shoreditch",England
+915," Wick",2,NULL,"Hackney South and Shoreditch",England
+916," Chelsea Riverside",2,NULL,"Chelsea and Fulham",England
+917," Fulham Broadway",2,NULL,"Chelsea and Fulham",England
+918," Brompton & Hans Town",2,NULL,"Chelsea and Fulham",England
+919," Munster",2,NULL,"Chelsea and Fulham",England
+920," Palace Riverside",2,NULL,"Chelsea and Fulham",England
+921," Parsons Green and Walham",2,NULL,"Chelsea and Fulham",England
+922," Redcliffe",2,NULL,"Chelsea and Fulham",England
+923," Royal Hospital",2,NULL,"Chelsea and Fulham",England
+924," Sands End",2,NULL,"Chelsea and Fulham",England
+925," Stanley",2,NULL,"Chelsea and Fulham",England
+926," Town",2,NULL,"Chelsea and Fulham",England
+927," Addison",2,NULL,Hammersmith,England
+928," Askew",2,NULL,Hammersmith,England
+929," Avonmore and Brook Green",2,NULL,Hammersmith,England
+930," College Park and Old Oak",2,NULL,Hammersmith,England
+931," Fulham Reach",2,NULL,Hammersmith,England
+932," Hammersmith Broadway",2,NULL,Hammersmith,England
+933," North End",2,NULL,Hammersmith,England
+934," Ravenscourt Park",2,NULL,Hammersmith,England
+935," Shepherd's Bush Green",2,NULL,Hammersmith,England
+936," Wormholt and White City",2,NULL,Hammersmith,England
+937," Abingdon",2,NULL,Kensington,England
+938," Campden",2,NULL,Kensington,England
+939," Colville",2,NULL,Kensington,England
+940," Courtfield",2,NULL,Kensington,England
+941," Dalgarno",2,NULL,Kensington,England
+942," Earl's Court",2,NULL,Kensington,England
+943," Golborne",2,NULL,Kensington,England
+944," Holland",2,NULL,Kensington,England
+945," Norland",2,NULL,Kensington,England
+946," Notting Dale",2,NULL,Kensington,England
+947," Pembridge",2,NULL,Kensington,England
+948," Queen's Gate",2,NULL,Kensington,England
+949," St Charles",2,NULL,Kensington,England
+950," St Helen's",2,NULL,Kensington,England
+951," Alexandra",2,NULL,"Hornsey and Wood Green",England
+952," Bounds Green",2,NULL,"Hornsey and Wood Green",England
+953," Crouch End",2,NULL,"Hornsey and Wood Green",England
+954," Fortis Green",2,NULL,"Hornsey and Wood Green",England
+955," Highgate",2,NULL,"Hornsey and Wood Green",England
+956," Hornsey",2,NULL,"Hornsey and Wood Green",England
+957," Muswell Hill",2,NULL,"Hornsey and Wood Green",England
+958," Noel Park",2,NULL,"Hornsey and Wood Green",England
+959," Stroud Green",2,NULL,"Hornsey and Wood Green",England
+960," Woodside",2,NULL,"Hornsey and Wood Green",England
+961," Bruce Grove",2,NULL,Tottenham,England
+962," Harringay",2,NULL,Tottenham,England
+963," Northumberland Park",2,NULL,Tottenham,England
+964," St Ann's",2,NULL,Tottenham,England
+965," Seven Sisters",2,NULL,Tottenham,England
+966," Tottenham Green",2,NULL,Tottenham,England
+967," Tottenham Hale",2,NULL,Tottenham,England
+968," West Green",2,NULL,Tottenham,England
+969," White Hart Lane",2,NULL,Tottenham,England
+970," Belmont",2,NULL,"Harrow East",England
+971," Canons",2,NULL,"Harrow East",England
+972," Edgware",2,NULL,"Harrow East",England
+973," Harrow Weald",2,NULL,"Harrow East",England
+974," Kenton East",2,NULL,"Harrow East",England
+975," Kenton West",2,NULL,"Harrow East",England
+976," Queensbury",2,NULL,"Harrow East",England
+977," Stanmore Park",2,NULL,"Harrow East",England
+978," Wealdstone",2,NULL,"Harrow East",England
+979," Greenhill",2,NULL,"Harrow West",England
+980," Harrow on the Hill",2,NULL,"Harrow West",England
+981," Headstone North",2,NULL,"Harrow West",England
+982," Headstone South",2,NULL,"Harrow West",England
+983," Marlborough",2,NULL,"Harrow West",England
+984," Rayners Lane",2,NULL,"Harrow West",England
+985," Roxbourne",2,NULL,"Harrow West",England
+986," Roxeth",2,NULL,"Harrow West",England
+987," West Harrow",2,NULL,"Harrow West",England
+988," Barnhill",2,NULL,"Hayes and Harlington",England
+989," Botwell",2,NULL,"Hayes and Harlington",England
+990," Charville",2,NULL,"Hayes and Harlington",England
+991," Heathrow Villages",2,NULL,"Hayes and Harlington",England
+992," Pinkwell",2,NULL,"Hayes and Harlington",England
+993," Townfield",2,NULL,"Hayes and Harlington",England
+994," West Drayton",2,NULL,"Hayes and Harlington",England
+995," Yeading",2,NULL,"Hayes and Harlington",England
+996," Northwood and Pinner",2,NULL,Ruislip,England
+997," Eastcote and East Ruislip",2,NULL,Ruislip,England
+998," Harefield",2,NULL,Ruislip,England
+999," Hatch End",2,NULL,Ruislip,England
+1000," Ickenham",2,NULL,Ruislip,England
+1001," Northwood",2,NULL,Ruislip,England
+1002," Northwood Hills",2,NULL,Ruislip,England
+1003," Pinner",2,NULL,Ruislip,England
+1004," Pinner South",2,NULL,Ruislip,England
+1005," West Ruislip",2,NULL,Ruislip,England
+1006," Brunel",2,NULL,"Uxbridge and South Ruislip",England
+1007," Cavendish",2,NULL,"Uxbridge and South Ruislip",England
+1008," Hillingdon East",2,NULL,"Uxbridge and South Ruislip",England
+1009," Manor",2,NULL,"Uxbridge and South Ruislip",England
+1010," South Ruislip",2,NULL,"Uxbridge and South Ruislip",England
+1011," Uxbridge North",2,NULL,"Uxbridge and South Ruislip",England
+1012," Uxbridge South",2,NULL,"Uxbridge and South Ruislip",England
+1013," Yiewsley",2,NULL,"Uxbridge and South Ruislip",England
+1014," Brentford",2,NULL,"Brentford and Isleworth",England
+1015," Chiswick Homefields",2,NULL,"Brentford and Isleworth",England
+1016," Chiswick Riverside",2,NULL,"Brentford and Isleworth",England
+1017," Hounslow Central",2,NULL,"Brentford and Isleworth",England
+1018," Hounslow Heath",2,NULL,"Brentford and Isleworth",England
+1019," Hounslow South",2,NULL,"Brentford and Isleworth",England
+1020," Isleworth",2,NULL,"Brentford and Isleworth",England

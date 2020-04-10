@@ -1,0 +1,97 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script language="JavaScript" type="text/javascript" src="hybrid-crypto.min.js"></script>
+
+<script language="JavaScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrsasign/8.0.12/jsrsasign-all-min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script>
+
+    const MAX_BOUNCE=4;
+
+    var crypt = new crypt();
+    var rsa = new RSA();
+    var publicKey;
+    var privateKey;
+    var mixservers;
+
+    var serverAddr, SERVERKEY;
+
+    // Load nodes from manifest
+    $.get("/manifest", (result)=>{
+        serverAddr  = result[0][0]
+        SERVERKEY = result[0][1]
+        
+        console.log(result);
+        mixservers = result.slice(1, result.length).sort(() => 0.5 - Math.random());
+    });
+    
+    // Generate Keys
+    //rsa.generateKeypair((keypair) => {publicKey = keypair.publicKey; privateKey=keypair.privateKey });
+    let key = KEYUTIL.generateKeypair("RSA",1024);
+    publicKey = KEYUTIL.getPEM(key.pubKeyObj);
+    privateKey = KEYUTIL.getPEM(key.prvKeyObj,"PKCS1PRV");
+    setTimeout(()=>{sendRequest("/")},0);
+
+    function getCookies(){
+        let pairs = document.cookie.split(";"), cookies = {};
+        for (x of pairs){
+            let pair = x.split("=");
+            cookies[(pair[0]+'').trim()] = unescape(pair[1]);
+        }
+        return cookies;
+    }
+
+    function sendRequest(loc, protocol="GET", body={}, cb=defaultHandle){
+        // Encrypt for server
+        let encrypted = crypt.encrypt( SERVERKEY, JSON.stringify({
+            R0:Math.random(255),
+            message:loc,
+            cookies:getCookies(),
+            protocol:protocol,
+            body:body,
+            kX: publicKey
+        }));
+        let nextAddr = serverAddr;
+
+        for (let i=0;i<mixservers.length;i++){
+            // Encrypt for mix
+            encrypted = crypt.encrypt( mixservers[i][1], JSON.stringify({address:nextAddr,R1:Math.random(255),message:encrypted}));
+
+            nextAddr  = mixservers[i][0]+"/encrypted";
+        }
+
+        // Send
+        $.post(nextAddr, {message: encrypted}, (result)=>{
+            resp = crypt.decrypt(privateKey,JSON.stringify(result));
+            // Decrypt response and overwrite page
+            cb(resp,resp.status,loc)
+            console.log(result);
+        });
+    }
+
+function defaultHandle(resp, _, loc){
+            $(document.body).html(resp.message);
+
+            setTimeout(()=>{
+                for (el of document.getElementsByTagName('a')){
+                    let addr = el.href.replace(/^.*\/\/[^\/]+/, '');
+                    el.href="javascript:sendRequest('"+addr+"');void(0)";
+
+                    $("input[type='submit']").prop("type", "button");
+                }
+            },300);
+            // Set changed cookies
+            if(resp.cookies) for(x of resp.cookies){
+                document.cookie = x;
+            }
+            window.history.pushState({"pageTitle":window.title},"", loc);
+        }
+    
+</script>
+<div id="demo" style="text-align:center; font-size:2em;">
+    Loading... <div class="spinner-border" role="status">
+        <span class="sr-only"></span>
+      </div>
+</div>

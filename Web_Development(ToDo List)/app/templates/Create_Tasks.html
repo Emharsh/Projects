@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>
+  TODO List for Tasks
+</h1>
+<!-- Form for input task -->
+<form action="" method="post" name="Task Form">
+  {{ form.hidden_tag() }}
+  <p>
+    Title:
+    <br>
+    {{ form.name  }}
+    <br>
+    {% for error in form.name .errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+    <br>
+  </p>
+  <p>
+    Description:
+    <br>
+    {{ form.details(rows="10") }}
+    <br>
+    {% for error in form.details.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+    <br>
+  </p>
+  <p>
+    <button id="button3" title="Create Tasks"><strong>Craete Task</strong></button>
+  </p>
+</form>
+{% endblock %}

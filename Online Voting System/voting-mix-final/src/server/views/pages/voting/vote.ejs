@@ -1,0 +1,43 @@
+<!-- views/pages/vote.ejs -->
+
+<% let title = "Vote" %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="table">
+		<div class="table-header">
+			<span class="info important">Elections you are eligible to vote in</span>
+		</div>
+		<div id="voter-choose-election" class="table-container choose-election voter border">
+			<ul>
+				<li class="table-col-header sep-bot"><ul class="table-row">
+					<li><span>Name</span></li>
+					<li><span>Start date</span></li>
+					<li><span>End date</span></li>
+					<li><span>Region</span></li>
+					<li><span></span></li>
+				</ul></li>
+				<% for (const election of elections) { %>
+				<li class="table-contents"><ul class="table-row">
+					<li class="table-row-header"><span><%= election.name %></span></li>
+					<li><span><%= election.start_date.toLocaleDateString('en-GB') %> 00:00</span></li>
+					<li><span><%= election.end_date.toLocaleDateString('en-GB') %> 00:00</span></li>
+					<li><span><% if (election.postcodes) { %>
+						Local <!-- <%= election.postcodes.replace(/(^,)|(,$)/g, '')%> --> 
+					<% } else { %>
+						National
+					<% } %></span></li>
+					<li><a class="btn btn-secondary" href="/vote/<%- election.id %>" role="button">
+						Vote
+					</a></li>
+				</ul></li>
+				<% } %>
+			</ul>	
+		</div>
+	</div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

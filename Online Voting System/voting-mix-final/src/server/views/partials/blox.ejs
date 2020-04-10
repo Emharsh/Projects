@@ -1,0 +1,119 @@
+<div class="blox"><div id="<%=page.id%>">
+<% if (page.data) { %>
+    <div class="blox-row">
+	    <% if (page.data.header) { %>
+		    <div class="blox-header">
+			    <span><%- page.data.header %></span>
+		    </div>
+	    <% } if (page.data.info) { %>
+		    <div class="blox-info">
+			    <span><%- page.data.info %></span>
+		    </div>
+	    <% } %>
+	    <div id="view-<%=page.id%>" class="blox-container border">
+	    <% for (const item in page.data.items) { %>
+		    <div class="blox-item">
+			    <div class="blox-label"><span><%- item.name %></span></div>
+			    <div class="blox-contents <%- item.classes %>"><%- item.main %></div>
+		    </div>
+	    <% } %>
+	    </div>
+    </div>
+<% } if (page.form) { %>
+    <div class="blox-row">
+	    <% if (page.form.header) { %>
+		    <div class="blox-header">
+			    <span><%- page.buttons.header %></span>
+		    </div>
+	    <% } if (page.form.info) { %>
+		    <div class="blox-info">
+			    <span><%- page.buttons.info %></span>
+		    </div>
+	    <% } %>
+			<div id="form-messages">
+				<div id="form-feedback" class="alert hidden" role="alert"></div>
+			</div>
+	    <div id="blox-form-<%- page.id%>" class="blox-container">
+	    <% for (const form in page.form.items) { %>
+		    <div class="blox-item <%- form.classes %> "> <%- form.main %> </div>
+        <div class="blox-item"> 
+          <div class="blox-contents blox-field blox-button <%-  form.button.classes %>">
+            <a class="btn <%- form.button.class %>" href="<%-  form.button.link %>" role="button"><%-  form.button.main %> </a>
+          </div>
+		    </div>
+	    <% } %>
+	    </div>
+
+    </div>
+<% } if (page.entries) { %>
+    <div class="blox-row">
+	    <% if (page.entries.header) { %>
+		    <div class="blox-header">
+			    <span><%- page.entries.header %></span>
+		    </div>
+	    <% } if (page.entries.info) { %>
+		    <div class="blox-info">
+			    <span><%- page.entries.info %></span>
+		    </div>
+	    <% } %>
+	    <div id="entries-<%=page.id%>" class="blox-container border">
+        <div class="blox-entry blox-headers sep-bot">
+          <div class="blox-fields">
+			    <% for (const index in page.entries.heads) { 
+            const item = page.entries.heads[index]; %>
+              <div class="blox-item">
+				        <div class="blox-contents blox-field blox-field-col <%- item.classes %>"><%- item.main %></div>
+              </div>
+			    <% } %>
+          </div>
+        </div>
+	      <% for (const index in page.entries.items) { 
+          const entry = page.entries.items[index]; %>
+		    <div class="blox-entry">
+
+			    <div class="blox-fields" onclick="location.href='./<%- entry.id %>/';">
+			    <% for (const index2 in entry.items) { 
+              const item = entry.items[index2]; %>
+              <div class="blox-item">
+				        <div class="blox-label"><span><%- item.name %></span></div>
+				        <div class="blox-contents blox-field <%- item.classes %>"><%- item.main %></div>
+              </div>
+			    <% } %>
+			    </div>
+			    <div class="blox-buttons">
+			    <% for (const index2 in entry.buttons) { 
+             const button = entry.items[index2]; %>
+		        <div class="blox-item"> 
+              <div class="blox-contents blox-field blox-button <%- button.classes %>">
+                <a class="btn <%- button.class %>" href="<%- button.link %>" role="button"><%- button.main %> </a>
+              </div>
+		        </div>
+			    <% } %>
+			    </div>
+		    </div>
+	      <% } %>
+	    </div>
+    </div>
+<% } if (page.buttons) { %>
+    <div class="blox-row">
+	    <% if (page.buttons.header) { %>
+		    <div class="blox-header">
+			    <span><%- page.buttons.header %></span>
+		    </div>
+	    <% } if (page.buttons.info) { %>
+		    <div class="blox-info">
+			    <span><%- page.buttons.info %></span>
+		    </div>
+	    <% } %>
+	    <div id="buttons-<%- page.id%>" class="blox-container">
+	    <% for (const button in page.buttons.items) { %>
+		    <div class="blox-item"> 
+          <div class="blox-contents blox-field blox-button <%- button.classes %>">
+            <a class="btn <%- button.class %>" href="<%- button.link %>" role="button"><%- button.main %> </a>
+          </div>
+		    </div>
+	    <% } %>
+	    </div>
+    </div>
+<% } %>
+</div></div>

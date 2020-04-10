@@ -1,0 +1,185 @@
+<!-- views/pages/admin/view_election.ejs -->
+
+
+<% let title = "New Election" %>
+<% let id = "new-election" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+<%
+let setAreas = {};
+for (const area of regions) {
+  if (setAreas[area.nation]===undefined){
+    setAreas[area.nation]={};
+  }
+  if (setAreas[area.nation][area.electionType.name]===undefined){
+    setAreas[area.nation][area.electionType.name]={};
+  }
+  if (setAreas[area.nation][area.electionType.name][area.region]===undefined){
+    setAreas[area.nation][area.electionType.name][area.region]={};
+  }
+  setAreas[area.nation][area.electionType.name][area.region][area.id_regions]=area.name;
+} 
+%>
+
+<div id="content">
+	<div class="blox">
+		<div id="edit-<%-page.id%>" class="blox-container border">
+			<div class="blox-form blox-basic">
+				<form method="post" id="form-<%-page.id%>" action="./" completed="">
+					<div id="form-messages" name="form-messages">
+						<div id="form-feedback" class="alert hidden" role="alert"></div>
+					</div>
+					<div class="form-row">
+						<div class="form-group">
+							<div class="form-item">
+								<label for="name">Election Name</label>
+								<input type="text" class="form-control" name="name" id="election-name" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Start</label>
+							<div class="form-subgroup">
+								<div class="form-item">
+									<label for="start-date">Date</label>
+									<input type="date" class="form-control" name="start-date" id="election-start-date" required>
+								</div>
+								<div class="form-item">
+									<label for="start-time">Time</label>
+									<input type="time" class="form-control" name="start-time" id="election-start-time" required>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>End</label>
+							<div class="form-subgroup">
+								<div class="form-item">
+									<label for="end-date">Date</label>
+									<input type="date" class="form-control" name="end-date" id="election-end-date" required>
+								</div>
+								<div class="form-item">
+									<label for="end-time">Time</label>
+									<input type="time" class="form-control" name="end-time" id="election-end-time" required>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<label for="type">Type</label>
+								<select class="form-control" name="type" id="election-type" required>
+									<% for (const type of types) { %>
+										<option value="<%= type.id_election_types %>"><%= type.name %></option>
+									<% } %>
+								</select>
+							</div>
+						</div>
+            <div class="form-group">
+              <label for="electoral_regions_id">Electoral Area</label>
+              <div class="form-subgroup">
+                <div class="form-item">
+								  <label for="sel_nation">Nation</label>
+            		  <select class="form-control" name="sel_nation" id="sel_nation" onchange="changedSelection(this)" required>
+                      <% for (const opt_nation in setAreas) { %>
+										  <option value="<%= opt_nation %>"><%= opt_nation %></option>
+									  <% } %>
+								  </select>
+                </div>
+                <div class="form-item">
+								  <label for="sel_region_type">Type</label>
+            		  <select class="form-control" name="sel_region_type" id="sel_region_type" onchange="changedSelection(this)" required>
+								  </select>
+                </div>
+                <div class="form-item">
+								  <label for="sel_region">Region</label>
+            		  <select class="form-control" name="sel_region" id="sel_region" onchange="changedSelection(this)" required>
+								  </select>
+                </div>
+                <div class="form-item">
+								  <label for="sel_electoral_regions_id">Area</label>
+            		  <select class="form-control" name="electoral_regions_id" id="sel_electoral_regions_id" onchange="changedSelection(this)" required>
+								  </select>
+                </div>
+              </div>
+						</div>
+            <div class="form-group">
+							<div class="form-item">
+								<label for="master_key">Master Key</label>
+            		<input type="text" class="form-control" name="master_key" id="election-master-key" disabled></input>
+            	</div>
+              <div class="form-item">
+            		<a class="btn btn-primary"id="button-generate-keys" role="button" onclick="createElection();" >Generate Keys</a>
+            	</div>
+              <div class="form-item">
+            		<a class="btn btn-primary hidden" id="button-download-key" role="button">Download Your Key</a>
+            	</div>
+						</div>
+					</div>
+					<div class="form-submit">
+						<button id="submit-<%-page.id%>" type="submit" class="btn btn-primary btn-confirm" disabled>Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item"><a class="btn btn-primary" href="../" role="button">Return to All</a></div>
+		</div>
+	</div>
+</div>
+<script>
+  <%-'const setAreas = ' %><%- JSON.stringify(setAreas);%><%-';' %>
+
+
+  const sel_nation = document.getElementById('sel_nation');
+  const sel_region_type = document.getElementById('sel_region_type');
+  const sel_region = document.getElementById('sel_region');
+  const sel_electoral_regions_id = document.getElementById('sel_electoral_regions_id');
+
+  function changedSelection(e) {
+    let preNation = sel_nation.value;
+    let preType = sel_region_type.value;
+    let preRegion = sel_region.value;
+    let preArea = sel_electoral_regions_id.value;
+    const selectedIndex = e.selectedIndex;
+    let c = 0;
+    const types = setAreas[preNation];
+    if (e !== sel_electoral_regions_id && e !== sel_region && e !== sel_region_type) {
+      c = 0;
+      sel_region_type.options.length = 0;
+      
+      for (const type in types) {
+        console.log(type);
+        sel_region_type.options[c++] = new Option(type, type);
+      }
+      preType = sel_region_type.value;
+    }
+    const regions = types[preType];
+    if (e !== sel_electoral_regions_id && e !== sel_region) {
+      c = 0;
+      sel_region.options.length = 0;
+      
+      for (const region in regions) {
+        sel_region.options[c++] = new Option(region, region);
+      }
+      preRegion = sel_region.value;
+    }
+    const areas = regions[preRegion];
+    if (e !== sel_electoral_regions_id) {
+      c = 0;
+      preArea = areas[0];
+      sel_electoral_regions_id.options.length = 0;
+      for (const area in areas) {
+        console.log(area, areas[area]);
+        sel_electoral_regions_id.options[c++] = new Option(areas[area], area);
+      }
+      preArea = sel_electoral_regions_id.value;
+    }
+    e.selectedIndex = selectedIndex;
+  }
+  window.onload = function () {
+    changedSelection(sel_nation);
+  };
+</script>
+<script src="/static/js/crypto-helper.js"></script>
+<script src="/static/js/create-election.js" defer></script>
+<%- include(globals.inc + globals.footer) %>

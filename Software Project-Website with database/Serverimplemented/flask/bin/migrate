@@ -1,0 +1,10 @@
+#!/home/cserv1_a/soc_ug/sc16alm/Desktop/SEGP/leopard/Website/ServerFiles/pureserver/flask/bin/python
+# PBR Generated from u'console_scripts'
+
+import sys
+
+from migrate.versioning.shell import main
+
+
+if __name__ == "__main__":
+    sys.exit(main())

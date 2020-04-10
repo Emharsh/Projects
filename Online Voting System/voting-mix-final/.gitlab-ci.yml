@@ -1,0 +1,69 @@
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  image: node:10.15.1
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - npm i npm@latest -g
+    - npm i
+    - npm test
+  coverage: 
+    '/Statements.*?(\d+(?:\.\d+)?)%/'
+
+Code quality:
+  stage: test
+  image: docker:stable
+  variables:
+    DOCKER_DRIVER: overlay2
+  allow_failure: true
+  services:
+    - docker:stable-dind
+  script:
+    - export SP_VERSION=$(echo "$CI_SERVER_VERSION" | sed 's/^\([0-9]*\)\.\([0-9]*\).*/\1-\2-stable/')
+    - docker run
+        --env SOURCE_CODE="$PWD"
+        --volume "$PWD":/code
+        --volume /var/run/docker.sock:/var/run/docker.sock
+        "registry.gitlab.com/gitlab-org/security-products/codequality:$SP_VERSION" /code
+  artifacts:
+      paths: [gl-code-quality-report.json]
+
+Push to production:
+  stage: deploy
+  image: node:10.15.1
+  script:
+    - apt-get update -y > /dev/null
+    - 'which ssh-agent || ( apt-get install openssh-client -y > /dev/null )'
+    - 'which git || ( apt-get install git -y > /dev/null )'
+    - 'which jq || ( apt-get install jq -y > /dev/null )'
+    - git config --global user.email 'group8-2018@gitlab.cs.cf.ac.uk'
+    - git config --global user.name 'Gitlab CI'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - git remote add production git@gitlab.cs.cf.ac.uk:c1737193/voting-sytem-production.git
+    - rm -f .gitignore gl-code-quality-report.json
+    - npm set progress=false
+    - npm i npm@latest -g
+    - npm i --production --verbose
+    # disable npm install
+    - 'TJQ=$(cat ./package.json | jq ".scripts += {\"install\": \"echo Installed\"}") && echo ${TJQ} > ./package.json'
+    - ls
+    - git add . 2> /dev/null
+    - git commit -m "Pipeline $CI_PIPELINE_ID Job $CI_JOB_ID" > /dev/null
+    - 'git log -1 && git whatchanged -1 | tail'
+    - git branch -f master HEAD
+    - git branch
+    - git push production master --force
+
+  when: on_success
+  allow_failure: false
+  only:
+    - master

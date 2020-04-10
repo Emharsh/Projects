@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>View Uncomplete Tasks</h1>
+<!-- Table -->
+<table border="2">
+  <!-- Table - Header -->
+  <tr>
+    <th width="15%">Task</th>
+    <th>Description</th>
+    <th width="20%">Complete the Tasks</th>
+  </tr>
+  <!-- Table - content -->
+  {% for p in querytasks %}
+  <tr>
+    <td>
+      <div class="Taskname">
+        {{ p.name }}
+      </div>
+    </td>
+    <td>
+      <div class="Description">
+        {{ p.details }}
+      </div>
+    </td>
+    <td>
+      <div class="state">
+        <form action="View_Uncomplete_Tasks" method="post">
+        {{ form.UpdateTask(value = p.id) }}
+        <button id="button2" title="Complete the task"></button>
+      </form>
+      </div>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

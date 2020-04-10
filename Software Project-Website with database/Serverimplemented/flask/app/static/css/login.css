@@ -1,0 +1,211 @@
+/*  */
+/* login page */
+/*  */
+.fullwidth-background.bg-2 {
+	padding: 60px 0 80px 0;
+	position: relative;
+	z-index: 1;
+	background-image: none;
+	background-color: #f27c66;
+}
+.fullwidth-background.bg-2>* {
+	position: relative;
+	z-index: 2;
+}
+.fullwidth-background.bg-2:before {
+	position: absolute;
+	z-index: 1;
+	content: "";
+	display: block;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	opacity: 0.2;
+	background-image: url(../img/parallax_pattern.png);
+	background-repeat: repeat;
+}
+.login-block {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 360px;
+	background: #ffffff;
+	padding: 20px 30px;
+	box-sizing: border-box;
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+}
+.login-block .logo {
+	display: block;
+	margin: 0 auto 30px auto;
+	text-align: center;
+}
+.login-block .logo img{
+	margin: 0 auto;
+}
+.login-block .logo h2 {
+	display: inline-block;
+	color: #5f5f5f;
+	clear: none;
+	margin: 0;
+}
+.half-button {
+	display: inline-block;
+	float: left;
+	box-sizing: border-box;
+	width: calc(50% - 8px);
+	min-width: 100px;
+}
+.half-button + .half-button {
+	margin-left: 16px;
+	clear: right;
+}
+.cws-button.facebook {
+	border-color: #428bca;
+	background: #428bca;
+	color: #ffffff;
+}
+.cws-button.facebook:hover {
+	color: #595959;
+	background: transparent;
+}
+.cws-button.twitter {
+	border-color: #5bc0de;
+	background: #5bc0de;
+	color: #ffffff;
+}
+.cws-button.twitter:hover {
+	color: #595959;
+	background: transparent;
+}
+.clear-both {
+	display: block;
+	clear: both;
+}
+hr {
+	border-top: 1px solid #bfbfbf;
+}
+.login-or {
+    position: relative;
+    font-size: 18px;
+    color: #aaa;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.span-or {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    margin-left: -25px;
+    background-color: #fff;
+    width: 50px;
+    text-align: center;
+}
+.login-block .form-group {
+	position: relative;
+}
+.login-block .form-group + .form-group {
+	margin-top: 25px;
+}
+.login-block .form-group input {
+	line-height: 44px;
+	height: 44px;
+}
+.login-block .form-group .input-icon {
+	position: absolute;
+    right: 1px;
+    top: 10px;
+    width: 38px;
+    height: 24px;
+    text-align: right;
+    border-left: 1px solid #ececec;
+    color: #ccc;
+    font-size: 18px;
+    line-height: 24px;
+    text-shadow: none;
+}
+.login-block .form-group .input-icon i {
+	color: #ccc;
+    font-size: 18px;
+    line-height: 24px;
+    width: 38px;
+}
+.login-block .small {
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+.login-block .small a {
+	color: #b0b0b0;
+	text-decoration: none;
+}
+.login-block .form-group + .button-fullwidth {
+	margin-top: 40px;
+}
+.login-block .button-fullwidth {
+	width: 100%;
+}
+.login-block .button-fullwidth +  .button-fullwidth {
+	margin-top: 10px;
+}
+
+.login-form .form-groups {
+  margin-bottom: 0;
+  /*border-bottom: 2px solid #efefef;*/
+  padding-right: 20px;
+  position: relative;
+}
+
+.login-group-checkbox {
+  padding:  0;
+}
+}
+.login-form .form-groups {
+  margin-bottom: 0;
+  border-bottom: 2px solid #efefef;
+  padding-right: 20px;
+  position: relative;
+}
+.login-form .form-groups:last-child {
+  border-bottom: 0;
+}
+
+.login-group {
+  background: #ffffff;
+  color: #999999;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+/*Forget pass word page*/
+.form-gap {
+    padding-top: 70px;
+}
+
+/*.cws-button {
+	padding: 10px 20px;
+	min-width: 144px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 2px solid #f27c66;
+	background-color: #f27c66;
+	line-height: 16px;
+	font-size: 15px;
+	font-weight: 500;
+	color: #ffffff;
+	text-align: center;
+	display: inline-block;
+	white-space: nowrap;
+	cursor: pointer;
+	text-decoration: none;
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+}
+.cws-button.bt-color-3 {
+	border-color: #18bb7c;
+}*/

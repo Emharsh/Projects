@@ -1,0 +1,52 @@
+<!-- views/pages/admin/end_election.ejs -->
+
+<% let title = "Archive Party" %>
+<% let id = "archive-party" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="view-<%-page.id%>" class="blox-container border">
+			<div class="blox-item"><div class="blox-label"><span>Picture</span></div>
+			<div class="blox-contents img-sthumb-container cover party-logo"><img class="party-logo" src="<%= party.picture %>" /></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>Name</span></div>
+			<div class="blox-contents"><%= party.name %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>ID</span></div>
+			<div class="blox-contents"><%= party.id %></div></div>
+		</div>
+		<div id="edit-<%-page.id%>" class="blox-container border">
+			<div class="blox-form blox-basic">
+				<form method="post" id="form-<%-page.id%>" action="./" completed="../../">
+					<div id="form-messages" name="form-messages">
+						<div id="form-feedback" class="alert hidden" role="alert"></div>
+					</div>
+					<div class="form-row">
+						<div class="form-group">
+							<div class="form-item">
+								<label for="confirm-end">Confirm Archive</label>
+								<input type="checkbox" class="form-control" name="confirm-end" id="confirm-end" required>
+							</div>
+						</div>
+					</div>
+					<div class="form-submit">
+						<button id="submit-<%-page.id%>" type="submit" class="btn btn-danger btn-confirm">Archive Now</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../../" role="button">Return to All</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../" role="button">Return to Election</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../edit/" role="button">Edit</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-danger" href="../archive/" role="button">Archive</a></div>
+		</div>
+	</div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

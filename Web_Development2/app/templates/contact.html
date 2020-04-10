@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <h2>Contact</h2>
+
+    {% if success %}
+    <p>Thank you for your message. We'll get back to you shortly.</p>
+
+    {% else %}
+    {% for message in form.name.errors %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.email.errors %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.subject.errors %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.message.errors %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    <form class="form-signin" action="{{ url_for('contact') }}" method=post>
+      {{ form.hidden_tag() }}
+
+      {{ form.name.label }}
+      {{ form.name(id="name", class="form-control") }}
+
+      {{ form.email.label }}
+      {{ form.email(id="email", class="form-control") }}
+
+      {{ form.subject.label }}
+      {{ form.subject(id="subject", class="form-control") }}
+
+      {{ form.message.label }}
+      {{ form.message(id="message", class="form-control") }}
+
+      {{ form.submit(id ="btnSignUp", class="btn btn-lg btn-primary btn-block") }}
+    </form>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

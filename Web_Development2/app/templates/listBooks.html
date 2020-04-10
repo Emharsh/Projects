@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+  <h2>LIBRARY</h2>
+  <h3>"When in doubt, ask a Librarian"</h3>
+  <div class="jumbotron">
+    <script>
+    //Include the event handler
+    window.addEventListener("load", pl.view.listBooks.setupUserInterface);
+    </script>
+    <p>List all books</p>
+    <table class="table table-striped" id="books">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody><tr></tr></tbody>
+    </table>
+    <button type="submit" class="bin btn-primary btn-lg btn-block"onclick="window.location = 'http://127.0.0.1:5000/profile'">Back</button>
+  </div>
+</div>
+{% endblock %}

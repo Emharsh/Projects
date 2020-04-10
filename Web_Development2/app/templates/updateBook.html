@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+  <h2>LIBRARY</h2>
+  <h3>"When in doubt, ask a Librarian"</h3>
+  <div class="jumbotron">
+    <script>
+     window.addEventListener("load", pl.view.updateBook.setupUserInterface);
+    </script>
+    <p><strong>Update a book record</strong></p>
+    <form id="Book">
+      <p>
+        <label class="form-check-label"><p><strong>Select book:</strong></p>
+          <select name="selectBook"><option value=""> --- </option></select>
+        </label>
+      </p>
+      <p><label>Code: <input name="Code" readonly="readonly" /></label></p>
+      <p><label>Name: <input name="Name" /></label></p>
+      <p><label>Year: <input name="year" /></label></p>
+      <p><button type="button" name="commit">Save Changes</button></p>
+    </form>
+    <button type="submit" class="bin btn-primary btn-lg btn-block"onclick="window.location = 'http://127.0.0.1:5000/profile'">Back</button>
+  </div>
+</div>
+{% endblock %}

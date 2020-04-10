@@ -1,0 +1,963 @@
+/*===========
+
+1. Google Fonts
+2. Common Css
+3. Header Fixed Css
+4. Navbar Css
+5. Parrlax Banner
+6. Canvas Css
+7. Full Width Bg
+8. Socail Icons
+9. Testimonials
+10. Pricing Table
+11. Icon Color
+12. Buttons
+13. Contact Form
+14. Screen
+15. Footer
+
+===========*/
+/****** Google Fonts ********/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+body {
+
+    color: #777;
+    font-size: 14px;
+	line-height: 1.625em;
+	font-family: 'Roboto', sans-serif;
+}
+a {
+    color: #363636;
+    text-decoration: none;
+}
+a:hover {
+    color: rgba(241, 85, 45, 1);
+    text-decoration: none;
+}
+span.bolder {
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 0 0 0;
+    text-indent: 0;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+/******** Common Css ********/
+
+.intro {
+    padding: 150px 0 0;
+    position: relative;
+}
+/***************** COMMON CSS **********************/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0px 0px 18px 0px;
+    color: #111;
+	 font-family: 'Montserrat', sans-serif;
+
+}
+.bg-none {
+    background: none;
+}
+.pt5 {
+    padding-top: 90px;
+	padding-bottom:100px;
+}
+
+.pt4 {
+    padding-top: 70px;
+	padding-bottom:80px;
+}
+section {
+    padding: 50px 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0px 0px 18px 0px;
+}
+.btn-5 {
+    background: #fff;
+    border: 0;
+    color: #363636;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+a.btn-5:hover {
+    color: #363636;
+}
+.border-radius-none {
+    border-radius: 0px !important;
+}
+.btn-5:hover {
+    color: #fff;
+    opacity: 1
+}
+.bg-clr {
+    background: linear-gradient(to right, #9068be, #e62739);
+    border-radius: 50px;
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+}
+.pt3 {
+    padding-top: 150px;
+}
+.pt2 {
+    padding-top: 100px;
+}
+.py50
+{
+    padding: 50px 0px;
+}
+.display-5
+{
+    font-size: 3rem;
+}
+.btn-light {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 8px 25px;
+}
+.btn-bg{
+    background:rgba(1, 172, 228, 1);
+    border: 0;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: auto;
+    height: auto;
+    margin-left: 0;
+    margin-top: 0;
+    line-height: normal;
+}
+.btn-bg:hover{
+    background:rgba(1, 172, 228, .7);
+    border: 0;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: auto;
+    height: auto;
+    margin-left: 0;
+    margin-top: 0;
+    line-height: normal;
+	cursor: pointer;
+}
+/************ icons bg Css **************/
+
+.icons-bg1 {
+    background: #33ccff !important;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    font-size: 50px;
+    line-height: 115px;
+    color: #fff;
+    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+.icon-bg {
+    background: rgba(1, 172, 228, 1);
+    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 24px;
+}
+.icon-clr {
+    background: -webkit-linear-gradient(#9068be, #e62739);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.icon-bg1 {
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 52px;
+    border-radius: 50%;
+    color: #363636;
+    font-size: 18px;
+}
+/************ Shadow Css **************/
+
+.box-shadow1 {
+    -webkit-box-shadow: 0px 7px 30px 0px rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 0px 7px 30px 0px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.18);
+}
+.box-shadow2 {
+    -webkit-box-shadow: 0px 7px 30px 0px rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 0px 7px 30px 0px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 7px 30px 0px rgba(0, 0, 0, 0.18);
+}
+.box-shadow3 {
+    -webkit-box-shadow: 0px 24px 59px 0px rgba(51, 58, 69, 0.15);
+    -moz-box-shadow: 0px 24px 59px 0px rgba(51, 58, 69, 0.15);
+    box-shadow: 0px 24px 59px 0px rgba(51, 58, 69, 0.15);
+}
+/************** Header Fixed Css *************/
+
+#header-fix.active {
+    background: rgba(70, 74, 78, .9) !important;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+/********************** Navbar Css ***********************/
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding-left: 20px;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding-left: 20px;
+}
+.navbar-light .navbar-nav .nav-link:focus {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding-left: 20px;
+}
+.navbar-light .navbar-toggler {
+    color: rgba(0, 0, 0, 0.5);
+    border-color: #fff;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+.navbar-light .navbar-toggler-icon {
+    background-image: none !important;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    display: block;
+    margin-top: 5px;
+    padding: 1px;
+
+}
+/******************** Parrlax Banner *******************/
+
+.md-color-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.gradient-pink-purple {
+    background: rgba(70, 74, 78, 1);
+}
+
+/***************** Full Width Bg*****************/
+.background-image-maker {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    right: auto;
+}
+.relative {
+    position: relative;
+}
+.holder-image img {
+    display: none;
+}
+.image-bg {
+    position: relative;
+}
+.left-block {
+    left: 0 !important;
+    float: left !important;
+}
+.bg-dark {
+    background-color: #1b1b1b;
+}
+.right-block {
+    right: 0;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: auto;
+    float: right;
+}
+.bg1:before {
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(70, 74, 78, 0.9);
+}
+/**************** Testimonials****************/
+
+.testimonial {
+    padding: 0 15px;
+    text-align: center;
+}
+.testimonial .pic {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+.testimonial .pic img {
+    width: 100%;
+    height: auto;
+}
+.testimonial .description {
+    padding: 0 15px;
+    font-size: 13px;
+    color: #fff;
+    line-height: 26px;
+}
+.testimonial .testimonial-title {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+}
+.testimonial .testimonial-title:after {
+    content: "\f10d";
+    font-family: 'FontAwesome';
+    display: inline-block;
+    width: 100%;
+    font-size: 40px;
+    color: #fff;
+    margin-top: 30px;
+}
+.owl-theme .owl-controls .owl-page span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 20px;
+    background: #fff;
+    margin: 5px 7px;
+    opacity: 0.5;
+}
+/************** Pricing Table ********************/
+.price {
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    margin-top: 130px;
+    border-top: 0;
+}
+.price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2)
+}
+.price-header {
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 30%, 50% 50%, 0 30%, 0 0);
+    clip-path: polygon(50% 0%, 100% 0, 100% 30%, 50% 50%, 0 30%, 0 0);
+    color: white;
+    font-size: 25px;
+    background: rgba(1, 172, 228, 1);
+    position: absolute;
+    top: 0;
+    left: 15px;
+    right: 15px;
+    padding: 25px 0;
+    padding-bottom: 150px;
+}
+.price li {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+}
+.price .grey {
+    background-color: #eee;
+    font-size: 20px;
+}
+.button {
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+/****************** Contact Form ************/
+
+.contact-form input.form-control,
+.contact-form textarea.form-control {
+    border-radius: 0;
+    font-size: 13px;
+    padding: 10px;
+}
+/********************** Footer ***************/
+footer a {
+    color: #fff;
+}
+/*============== Full Width Bg ==============*/
+
+.left-block {
+    left: 0 !important;
+    float: left !important;
+    z-index: 1;
+}
+.right-block {
+    right: 0;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: auto;
+    float: right;
+    z-index: 1;
+}
+.background-image-maker {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    right: auto
+}
+.relative {
+    position: relative;
+}
+.holder-image img {
+    display: none;
+}
+.image-bg {
+    position: relative;
+}
+.tab-content-effect {
+    -webkit-animation: fadeEffect 1.5s;
+    animation: fadeEffect 1.5s;
+}
+.bg-grey {
+    background-color: #ebebeb;
+}
+/***************** BG Home Page 1 *****************/
+
+.inner-banner-area {
+    background: url("../images/bg1.jpg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    padding: 150px 0 !important;
+    z-index: 9;
+    position: relative;
+    overflow: hidden;
+}
+.iq-bg-fixed {
+    background-color: rgba(0, 0, 0, 0);
+    background-origin: initial;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    position: relative;
+    z-index: 0;
+    background-attachment: fixed !important;
+}
+.iq-over-blue-90:before {
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    background: rgba(74, 196, 243, 0.9);
+}
+.inner-banner-area:after {
+    content: "";
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    background: url("../images/04.png") no-repeat 0 0;
+    background-size: cover;
+    display: inline-block;
+    position: absolute;
+}
+.overview-block-pt {
+    padding: 100px 0 0;
+}
+[class*='iq-over-']:before {
+    z-index: 0;
+}
+.img-first {
+    background: url("../images/laptop.png") no-repeat 0 0;
+    background-position: center center;
+    background-size: contain;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding: 0;
+    right: 0;
+    left: 0;
+    top: 10px;
+}
+/***************** BG Home Page 2 *****************/
+.inner-banner-area1 {
+    background: url("../images/bg1.jpg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    -webkit-clip-path: polygon(32% 0%, 0 0%, 100% 0, 100% 100%, 0% 80%, 0% 85%, 0 60%, 0 0);
+    clip-path: polygon(32% 0%, 0 0%, 100% 0, 100% 100%, 0% 80%, 0% 85%, 0 60%, 0 0);
+}
+.inner-banner-area1:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 831px;
+    right: 0;
+    left: 0;
+    top: -15%;
+    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 64%, 64% 81%, 34% 82%, 0 64%, 0 0);
+    clip-path: polygon(0 0%, 86% 0%, 100% 0, 100% 100%, 0% 100%, 0% 83%, 0 65%, 0 0);
+}
+.bgcolr1 {
+    background-color: rgba(1, 172, 228, .9);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0px;
+    top: 0;
+}
+
+.b-bg2 {
+    background: url("../images/laptop2.png.html") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    padding: 170px 0;
+    position: relative;
+    z-index: 9;
+    padding-left: 150px;
+    margin-top: 120px;
+    margin-bottom: 150px;
+}
+
+.b-bg3
+{
+    background: url("../images/laptop2.png.html") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    padding: 0;
+    position: relative;
+    z-index: 9;
+    padding-left: 0;
+    margin-top: 120px;
+    margin-bottom: 150px;
+}
+iframe.bg-video1
+{    width: 100%;
+     max-width: 77%;
+     margin: 54px;
+     height: 547px;
+     margin-top: 47px;
+     margin-right: 59px;
+}
+
+.ldx-home-content {
+    overflow: hidden;
+    padding-top: 160px;
+    color: #fff;
+    padding-left: 50px;
+}
+/***************** BG Home Page 3 *****************/
+
+.inner-banner-area2 {
+    background: url("../images/bg1.jpg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    z-index: 9;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    -webkit-clip-path: polygon(32% 0%, 0 0%, 100% 0, 100% 100%, 0% 80%, 0% 85%, 0 60%, 0 0);
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 100% 75%, 100% 0%, 0% 22%, 100% 0, 0 0);
+}
+.bgcolr {
+    background-color: rgba(70, 74, 78, .9);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0px;
+    top: 0;
+}
+.inner-banner-area2:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 831px;
+    right: 0;
+    left: 0;
+    top: -15%;
+    -webkit-clip-path: polygon(32% 0%, 0 0%, 100% 0, 100% 100%, 0% 80%, 0% 85%, 0 60%, 0 0);
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 100% 75%, 100% 0%, 0% 22%, 100% 0, 0 0);
+}
+.iq-video {
+    background: #fff;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    font-size: 29px;
+    color: #4ac4f3;
+    float: none;
+    border-radius: 100%;
+    line-height: 2.4;
+    z-index: 9;
+    position: relative;
+    margin-left: 80px;
+    margin-top: 80px;
+    text-align: center;
+}
+a.btn.iq-video {
+    background: #fff;
+    border: 0;
+    color: #363636;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: auto;
+    height: auto;
+    margin-left: 0;
+    margin-top: 0;
+    line-height: normal;
+}
+/***************** BG Home Page 4 *****************/
+
+.inner-banner-area4 {
+    background: url("../images/bg1.jpg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    z-index: 9;
+    padding-top: 0px;
+    padding-bottom: 350px;
+}
+.bgcolr2 {
+    background-color: rgba(1, 172, 228, .9);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 300px 0px;
+}
+.img1 {
+    z-index: 999;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    top: 1px;
+}
+.mt-100
+{
+    margin-top: 100px;
+}
+
+/**************** Spiners *****************/
+.spinner {
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    top: 60px;
+    bottom: auto;
+}
+.double-bounce1,
+.double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(1, 172, 228, 1);
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+@-webkit-keyframes sk-bounce {
+    0%, 100% {
+        -webkit-transform: scale(0.0)
+    }
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+/***********  Screen Short Css ******/
+
+#owl-demo .item {
+    margin: 3px;
+}
+#owl-demo .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.brdr-tb {
+    border-bottom: 10px solid #0099cc;
+    border-top: 10px solid rgba(0, 153, 255, .7);
+}
+.bg-light1 {
+    background-color: rgba(0, 153, 255, .7);
+}
+
+/********* Accordian Css********/
+#accordion [aria-expanded="true"] {
+    background-color: #FFF;
+    color: #363636;
+    border-color: #FFF!important;
+    font-size: 14px;
+    font-weight: bold;
+}
+#accordion a {
+    content: "\f105";
+    color: #fff;
+    font-size: 14px;
+}
+#accordion a.collapsed:after {
+    content: "\f105";
+}
+#accordion a:after {
+    font-family: 'FontAwesome';
+    content: "\f107";
+    float: right;
+}
+#accordion .card-body {
+    border-top: none !important;
+    border: solid 1px;
+    color: #fff;
+}
+
+/********** Screen Css ********/
+
+#owl-demo.owl-theme .owl-controls .owl-page span
+{
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 20px;
+    background: #363636 !important;
+    margin: 5px 7px;
+    opacity: 0.5;
+}
+
+/*********************/
+
+
+.homepage-hero-module:before
+{
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(74, 196, 243, 0.7);
+    z-index:2;
+}
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+}
+.no-video .video-container video,
+.touch .video-container video {
+    /*  display: none;*/
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container .title-container {
+    z-index: 1000;
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+.video-container .description .inner {
+    font-size: 1em;
+    width: 45%;
+    margin: 0 auto;
+}
+.video-container .link {
+    position: absolute;
+    bottom: 3em;
+    width: 100%;
+    text-align: center;
+    z-index: 1001;
+    font-size: 2em;
+    color: #fff;
+}
+.video-container .link a {
+    color: #fff;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}
+
+
+/********** Iframe Css *********/
+iframe.map{
+    width: 100%;
+    height:450px;
+    border:0px;
+}
+
+
+/******* Demo Css ********/
+.demo-img .overlay
+{
+	position: absolute;
+    background: rgba(74, 196, 243, 0.9);
+      right: 15px;
+    left: 15px;
+    bottom: 0;
+    color: #fff;
+	text-align:center;
+	opacity: 0;
+	font-weight:bold;
+	font-size:14px;
+
+}
+
+
+.overlay{
+	position: absolute;
+    background: rgba(74, 196, 243, 0.9);
+      right: 15px;
+    left: 15px;
+    bottom: 0;
+    color: #fff;
+	text-align:center;
+	opacity: 0;
+	font-weight:bold;
+	font-size:14px;
+
+}
+
+.overlay.active{
+	position: absolute;
+    background: rgba(74, 196, 243, 0.9);
+   	right: 15px;
+    left: 15px;
+    bottom: 0;
+    color: #fff;
+	text-align:center;
+	opacity: 1;
+	font-weight:bold;
+	font-size:14px;
+}
+
+.overlay:hover{
+	opacity:1;
+	color: #fff;
+}
+.overlay a
+{
+	color:#fff;}

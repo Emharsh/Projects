@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+<head>
+  {% if title %}
+  <title>{{ title }}</title>
+  {% else %}
+  <title>No title</title>
+  {% endif %}
+</head>
+<body>
+  <h1>{{ user.name }}</h1>
+  <!-- button -->
+  <div><button onclick="window.location = 'http://127.0.0.1:5000/Create_Tasks'">Create Task</button></div>
+</body>
+</html>
+{% endblock %}

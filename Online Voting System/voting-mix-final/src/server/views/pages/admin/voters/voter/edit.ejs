@@ -1,0 +1,89 @@
+<!-- views/pages/admin/view_election.ejs -->
+
+
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+<div id="content">
+	<div class="blox">
+    <div class="blox-row">
+	    <div id="blox-form-<%- page.id%>" class="blox-container border">
+        <div class="blox-entry blox-form">
+          <form method="post"  id="form-<%-page.id%>" action="./" action="./" completed="">
+					<div id="form-messages">
+						<div id="form-feedback" class="alert hidden" role="alert"></div>
+					</div>
+          <div class="blox-fields">
+            <div class="blox-item">
+              <div class="blox-label">
+                <label for="nino">NiNo</label>
+              </div>
+						  <div class="blox-contents blox-field form-item field-string field-string-mid">
+                <input type="text" class="form-control" name="nino" id="voter-nino" value="<%= voter.nino %>" 
+                  pattern="^[A-Z]{2}[0-9]{6}[A-Z]$" onchange="" required />
+						  </div>
+            </div>
+            <div class="blox-item">
+              <div class="blox-label">
+                <label for="id">ID</label>
+              </div>
+              <div class="blox-contents blox-field form-item field-number field-number-short">
+                <input type="text" class="form-control" name="id" id="voter-id" value="<%= voter.id %>" disabled />
+						  </div>
+            </div>
+            <div class="blox-item">
+              <div class="blox-label">
+                <label for="dob">Date of Birth</label>
+              </div>
+              <div class="blox-contents blox-field form-item field-string field-date-date">
+                <input type="date" class="form-control" name="dob" id="voter-dob" value="<%= voter.dob %>" required />
+              </div>
+            </div>
+            <div class="blox-item">
+              <div class="blox-label">
+                <label for="postcode">Postcode</label>
+              </div>
+              <div class="blox-contents blox-field form-item field-string field-string-norm">
+                <input type="text" class="form-control" name="postcode" id="voter-postcode" value="<%= voter.postcode %>" 
+                  pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? ?[0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}" required />
+              </div>
+            </div>
+
+	        </div>
+          <div class="blox-buttons">
+            <div class="blox-item">
+              <div class="blox-contents blox-field blox-button blox-button-norm">
+                <button id="submit-<%-page.id%>" type="submit" class="btn btn-secondary btn-confirm">Confirm Changes</button>
+              </div>
+            </div>
+          </div>
+          </formm>
+        </div>
+	    </div>
+    </div>
+    <div class="blox-row">
+		  <div id="buttons-<%-page.id%>" class="blox-container">
+		    <div class="blox-item"> 
+          <div class="blox-contents blox-field blox-button">
+            <a class="btn btn-primary" href="../../" role="button">Return to All</a>
+          </div>
+		    </div>
+        <div class="blox-item"> 
+          <div class="blox-contents blox-field blox-button">
+            <a class="btn btn-primary" href="../" role="button">Return to Voter</a>
+          </div>
+		    </div>
+        <div class="blox-item"> 
+          <div class="blox-contents blox-field blox-button">
+            <a class="btn btn-danger" href="../archive/" role="button">Archive</a>
+          </div>
+		    </div>
+		  </div>
+    </div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

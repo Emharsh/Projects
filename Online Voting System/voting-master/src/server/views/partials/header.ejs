@@ -1,0 +1,92 @@
+<!-- views/partials/header.ejs -->
+
+<body>
+	<header id="global-header" role="banner">
+
+		<nav class="" role="navigation">
+			<div class="container-fluid header-wrapper">
+				<div class="header-global">
+					<!--Navigation Bar-->
+					<div class="navbar-header navbar navbar-expand-lg navbar-dark header-global nav-collapse">
+						<a class="navbar-brand" href="/" title="Go to the eVoting homepage">
+							<span class="fas fa-person-booth"></span>
+							E-Voting System
+						</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+							aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<%  if (globals.admin_subdomain) { %>
+						<ul class="nav navbar-nav nav-admin">
+							<li class="nav-item"><a class="nav-link" href="/admin/">Home</a></li>
+
+							<%  if (globals.is_loggedin_admin) { %>
+							<%  for (const [ drop_key, admin_menu_drop ] of Object.entries(settings.adminMenu)) { %>
+                <%  if (admin_menu_drop.self === undefined) { %>
+							    <li class="nav-item dropdown <%=drop_key%>">
+								    <a data-toggle="dropdown" class="nav-link dropdown-toggle <%=drop_key%>"><%=drop_key%><b class="caret"></b></a>
+								    <div class="dropdown-menu">
+									    <%  for (const [ key, val ] of Object.entries(admin_menu_drop)) { %>
+                        <a class="dropdown-item nav-link"href="<%=val[0]%>"> <%=val[1]%></a>
+									    <% } %>
+                    </div>
+							    </li>
+                <% } else { %>
+                  <li class="nav-item<%  if (page.title == drop_key) { %> active <% } %>">
+                    <a  class="nav-link" href="<%=admin_menu_drop.self[0]%>"> <%=admin_menu_drop.self[1]%></a>
+                  </li>
+                <% } %>
+							<% } %>
+							<% let adminRoleString = admin.role.replace('_', ' ') %>
+							<li class="nav-item dropdown">
+								<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/admin/account">Logged in as
+									<%= admin.username %> -
+									<%= adminRoleString.charAt(0).toUpperCase() + adminRoleString.slice(1) %> admin
+									<% if (admin.region) { %>
+									&nbsp;for region <%= admin.region %>
+									<% } %><b class="caret"></b></a>
+								<div class="dropdown-menu">
+                  <a class="dropdown-item nav-link" href="/admin/account/">Account</a>
+                  <a class="dropdown-item nav-link" href="/admin/account/logout/">Log Out</a>
+								</div>
+							</li>
+							<% } else { %>
+							<li class="nav-item dropdown">
+								<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/admin/account/">Account<b class="caret"></b></a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item nav-link" href="/admin/account/login/">Login</a>
+								</div>
+							</li>
+							<% } %>
+						</ul>
+						<% } else { %>
+						<ul class="nav navbar-nav navbar-nav-main collapse show" id="navbarNavAltMarkup">
+							<%  for (const [ key, val ] of Object.entries(settings.navMenu)) { %>
+							<li class="nav-item<%  if (page.title == key) { %> active <% } %>">
+                <a  class="nav-link" href="<%=val[0]%>"> <%=val[1]%></a>
+              </li>
+							<% } %>
+							<%  if (globals.is_loggedin_general) { %>
+							<li  class="nav-item"><a class="nav-link" href="/vote">Vote</a></li>
+							<% } %>
+						</ul>
+						<ul class="nav navbar-nav nav-account">
+							<li class="nav-item dropdown">
+								<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/account/">Account<b class="caret"></b></a>
+                <div class="dropdown-menu">
+									<%  if (globals.is_loggedin_general) { %>
+									  <a class="dropdown-item nav-link" href="/account/">Account</a>
+                    <a class="dropdown-item nav-link" href="/account/logout/">Log Out</a>
+									<% } else { %>
+									  <a class="dropdown-item nav-link" href="/account/login/">Login</a>
+                    <a class="dropdown-item nav-link" href="/account/register/">Register</a>
+									<% } %>
+                </div>
+							</li>
+						</ul>
+						<% } %>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>

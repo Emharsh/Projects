@@ -1,0 +1,15 @@
+id_election_types,name,voting_system,info_url,region_name_singular,region_name_multiple
+1,"General Election",1,https://www.yourvotematters.co.uk/how-am-i-re,Constituency,Constituencies
+2,"Local government",1,https://www.yourvotematters.co.uk/how-am-i-re,Ward,Wards
+3,"European Parliament Great Britan",3,https://www.yourvotematters.co.uk/how-am-i-re,Region,Regions
+4,"European Parliament Northen Ireland",2,,Region,Regions
+5,"Scottish Parliament Constituency Election",1,https://www.yourvotematters.co.uk/how-am-i-re,Constituency,Constituencies
+6,"Scottish Parliament Regional Election",3,,Region,Regions
+7,"Northern Ireland Assembly",2,https://www.yourvotematters.co.uk/how-am-i-re,Constituency,Constituencies
+8,"National Assembly for Wales Constituency Elec",1,https://www.yourvotematters.co.uk/how-am-i-re,Constituency,Constituencies
+9,"National Assembly for Wales Regional Election",3,https://www.yourvotematters.co.uk/how-am-i-re,Region,Regions
+10,"Local mayors",1,,City,Cities
+11,"Mayor of London",1,https://www.yourvotematters.co.uk/how-am-i-re,City,Cities
+12,"London Assembly",1,https://www.yourvotematters.co.uk/how-am-i-re,Borough,Boroughs
+13,"Police and Crime Commissioner",1,https://www.yourvotematters.co.uk/how-am-i-re,Constabulary,Constabularies
+14,Referendums,1,,Area,Areas

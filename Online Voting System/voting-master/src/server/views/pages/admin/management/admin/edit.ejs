@@ -1,0 +1,71 @@
+<!-- views/pages/admin/view_admin.ejs -->
+
+
+<% let title = "Edit Admin" %>
+<% let id = "edit-admin" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="edit-<%-page.id%>" class="blox-container border">
+			<div class="blox-form blox-basic">
+				<form id="form-<%-page.id%>" action="./" completed="../../">
+					<div id="form-messages" name="form-messages">
+						<div id="form-feedback" class="alert hidden" role="alert"></div>
+					</div>
+					<div class="form-row">
+						<div class="form-group">
+							<div class="form-item">
+								<label for="name">Username</label>
+								<input type="text" class="form-control" name="name" id="admin-name" value="<%= admin.username %>" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<label for="name">ID</label>
+								<input type="text" class="form-control" name="name" id="admin-name" value="<%= admin.id %>" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<label for="name">region</label>
+								<input type="text" class="form-control" name="name" id="admin-name" value="<%= admin.region %>" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<label for="name">role</label>
+								<input type="text" class="form-control" name="name" id="admin-name" value="<%= admin.role %>" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<label for="name">password</label>
+								<input type="text" class="form-control" name="name" id="admin-name" value="<%= admin.password %>" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<label for="name">salt</label>
+								<input type="text" class="form-control" name="name" id="admin-name" value="<%= admin.salt %>" required>
+							</div>
+						</div>
+					</div>
+					<div class="form-submit">
+						<button id="submit-<%-page.id%>" type="submit" class="btn btn-secondary btn-confirm">Confirm</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../../" role="button">Return to All</a></div>
+		</div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

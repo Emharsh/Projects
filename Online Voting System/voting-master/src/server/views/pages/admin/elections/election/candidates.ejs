@@ -1,0 +1,87 @@
+<!-- views/pages/admin/view_election.ejs -->
+
+<% let title = "View Elections" %>
+<% let id = "election" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="view-<%-page.id%>" class="blox-container border">
+			<div class="blox-item"><div class="blox-label"><span>Name</span></div>
+			<div class="blox-contents"><%= election.name %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>Start date</span></div>
+			<div class="blox-contents"><%= election.start_date.toLocaleDateString('en-GB') %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>End date</span></div>
+			<div class="blox-contents"><%= election.end_date.toLocaleDateString('en-GB') %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>Regions</span></div>
+			<div class="blox-contents"><% if (election.postcodes) { %>
+				<%= election.postcodes.replace(/(^,)|(,$)/g, '')%>
+			<% } else { %>
+				National
+			<% } %></div></div>
+		</div>
+    <form method="post"  id="form-<%-page.id%>" action="./" completed="">
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../../" role="button">Return to All</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../" role="button">Return</a></div>
+      <div class="blox-item blox-row"><a class="btn btn-primary" href="../edit/" role="button">Edit</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-danger" href="../end/" role="button">End</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-danger" href="../archive/" role="button">Archive</a></div>
+		</div>
+		<div id="table-<%-page.id%>" class="blox-container">
+			<div class="table">
+				<div class="table-header">
+					<span class="info">Candidates</span>
+				</div>
+        <div class="form-submit">
+				  <button id="submit-<%-page.id%>" type="submit" class="btn btn-secondary btn-confirm">Confirm Changes</button>
+			  </div>
+        <div id="form-messages" name="form-messages">
+					<div id="form-feedback" class="alert hidden" role="alert"></div>
+				</div>
+				<div id="voter-choose-election" class="table-container choose-election voter border">
+					<div>
+						<div class="table-col-header table-section sep-bot"><div class="table-row">
+              <div class="table-sz-small"><span>Running</span></div>
+              <div class="table-sz-vsmall"><span>ID</span></div>
+              <div class="table-sz-norm"><span>Name</span></div>
+							<div class="table-sz-smthumb"><span>Image</span></div>
+							<div class="table-sz-norm"><span>Party</span></div>
+						</div></div>
+            
+						<% 
+            let checked_ids = [];
+            for (const electCandidate of election.electionCandidates) { 
+              checked_ids.push(electCandidate.candidate_id);
+            }
+            for (let candidate of candidates) { %>
+						<div class="table-contents table-section"><div class="table-row">
+              <div class="table-sz-small"><input name="candidate-<%= candidate.id %>_party-<%= candidate.party.id %>" type="checkbox" 
+                <% if(checked_ids.includes(candidate.id)){ %>
+                  checked="checked"
+                <% }%>
+                ></div>
+              <div class="table-sz-vsmall"><span><%= candidate.id %></span></div>
+							<div class="table-sz-norm"><span><%= candidate.name %></span></div>
+							<div class="table-sz-smthumb thumb canidate-portrate"><img src="<%- candidate.picture %>" /></div>
+							<div class="table-sz-norm"><span><%= candidate.party.name %></span></div>
+						</div></div>
+						<% } %>
+              
+					</div>	
+				</div>
+			</div>
+      </form>
+		</div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

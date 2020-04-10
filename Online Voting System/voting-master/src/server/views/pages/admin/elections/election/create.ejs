@@ -1,0 +1,173 @@
+<!-- views/pages/admin/create-election.ejs -->
+
+<% let title = "Create Election" %>
+
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+  <form id="createElectionForm" method="POST" action="javascript:void(0);">
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="name">Election name</label>
+        <input type="text" class="form-control" id="electionName" placeholder="Election name" name="name" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-md-3">
+          <label for="registerDOBYear">Year</label>
+          <input style="width: 100px;" type="number" class="form-control" name="startYear" id="startYear" placeholder="YYYY"
+            min="<%= new Date().getFullYear() %>" required>
+        </div>
+        <div class="col-md-2">
+          <label for="registerDOBDay">Day</label>
+          <input style="width: 100px;" type="number" class="form-control" name="startDay" id="startDay" placeholder="DD" min="01" max="31"
+            required>
+        </div>
+        <div class="col-md-2">
+          <label for="registerDOBMonth">Month</label>
+          <input style="width: 100px;" type="number" class="form-control" name="startMonth" id="startMonth" placeholder="MM" min="01" max="12"
+            required>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top: 2%" id="regions">
+      <div class="row">
+        <div class="col-md-4">
+          <label for="defaultRegion">Regions (Leave blank for a national election):</label>
+          <input type="text" class="form-control" name="region" id="defaultRegion"
+            pattern="^([A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]?)?$" placeholder="E.g. CF24">
+        </div>
+      </div>
+      <div class="row" id="region-input-template" style="display: none; padding-top: 1%;">
+        <div class="col-md-4">
+          <input type="text" class="form-control region" pattern="^([A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]?)?$"
+            placeholder="E.g. CF24">
+        </div>
+        <div class="col-md-1">
+          <input class="btn btn-danger" type="button" value="-"
+            onclick="document.getElementById('regions').removeChild(this.parentNode.parentNode)">
+        </div>
+      </div>
+      <input id="add-region" style="margin-top: 1%; margin-left: 3%;" class="btn btn-secondary" type="button" value="+"
+        onclick="var tmp = document.getElementById('region-input-template').cloneNode(true); 
+      tmp.style.display = 'block'; tmp.getElementsByClassName('region')[0].name = 'region';
+      tmp.id = ''; document.getElementById('regions').insertBefore(tmp, this);">
+    </div>
+  </form>
+  <div class="row" style="padding-top: 5%; padding-bottom: 5%;">
+    <div class="basic_table">
+      <table>
+        <tr>
+          <th>Add to election</th>
+          <td>Image</td>
+          <td>Candidate Name</td>
+          <td>Party</td>
+        </tr>
+        <% for (const candidate of candidates) { %>
+        <% if (!candidate.picture_url) { 
+          candidate.picture_url = 
+          '/static/images/blank-profile-picture-960_720.png' 
+        }%>
+        <tr>
+          <td>
+            <div class="form-check">
+              <input class="form-check-input add-to-election-checkbox" type="checkbox" value="<%= candidate.id %>">
+            </div>
+          </td>
+          <td><img src="<%- candidate.picture_url %>" alt="<%= candidate.name %>" width="50" height="100"></td>
+          <td class="candidate-name"><%= candidate.name %></td>
+          <% if (candidate.party) { %>
+          <td class="candidate-party"><%= candidate.party.name %></td>
+          <% } else { %>
+          <td class="candidate-party">None/Independent</td>
+          <% } %>
+        </tr>
+        <% } %>
+      </table>
+    </div>
+  </div>
+  <button id="createElectionBtn" type="button" class="btn btn-secondary">
+    Create election
+  </button>
+  <button style="display: none;" id="openConfirmModalBtn" type="button" class="btn btn-secondary" data-toggle="modal"
+    data-target="#confirmationModal">
+  </button>
+
+  <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="confirmationModalLabel">Create election</h4>
+        </div>
+        <div class="modal-body">
+          You are about to create election "<span id="electionNameText"></span>" beginning on
+          <span id="electionStartDateText"></span> and ending 7 days after this date. It will be a
+          <span id="electionRegionText"></span>.
+          The candidates will be:
+          <ul id="candidatesList">
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button id="confirmCreateElection" type="button" class="btn btn-success">Confirm</button>
+        </div>
+      </div>
+    </div>
+    <a id="privateMasterKeyContainer" style="display: none;" href=""></a>
+  </div>
+</div>
+<script>
+  document.getElementById('createElectionBtn').onclick = function () {
+    var form = document.getElementById('createElectionForm');
+    if (!form.reportValidity() || !form.checkValidity()) {
+      return false;
+    }
+
+    var checkBoxes = document.querySelectorAll('input.add-to-election-checkbox:checked');
+    if (!checkBoxes || checkBoxes.length < 2) {
+      alert('There must be at least 2 candidates in a election');
+      return false;
+    }
+
+    var startingDateString = document.getElementById('startYear').value + '/' +
+      document.getElementById('startDay').value + '/' + document.getElementById('startMonth').value;
+    document.getElementById('electionNameText').innerText = document.getElementById('electionName').value;
+    document.getElementById('electionStartDateText').innerText = startingDateString;
+
+    var regionStrings = [];
+    document.getElementsByName('region').forEach(function (e) {
+      if (e.value) {
+        regionStrings.push(e.value);
+      }
+    });
+    var electionRegion = document.getElementById('electionRegionText');
+    if (regionStrings.length > 0) {
+      electionRegion.innerText = 'regional election - ' + regionStrings.join(', ');
+    } else {
+      electionRegion.innerText = 'national election';
+    }
+
+    var candidatesList = document.getElementById('candidatesList');
+    candidatesList.innerHTML = '';
+    checkBoxes.forEach(function (e) {
+      var candidateEntry = e.parentNode.parentNode.parentNode;
+      var candidateName = candidateEntry.getElementsByClassName('candidate-name')[0].innerText;
+      var candidateParty = candidateEntry.getElementsByClassName('candidate-party')[0].innerText;
+      var candidateLi = document.createElement('li');
+      candidateLi.innerText = candidateName + ' - ' + candidateParty;
+      candidatesList.appendChild(candidateLi);
+    })
+
+    document.getElementById('openConfirmModalBtn').click();
+  }
+</script>
+
+<script src="/static/js/crypto-helper.js"></script>
+<script src="/static/js/create-election.js" defer></script>
+<%- include(globals.inc + globals.footer) %>

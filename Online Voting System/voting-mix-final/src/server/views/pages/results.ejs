@@ -1,0 +1,31 @@
+<!-- views/pages/results.ejs -->
+
+<% let title = "Results" %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="row">
+		<div class="results-container">
+			<div class="result-container">
+				<p>Canidate ID - Name - Votes</p>
+			</div>
+		<%  if (canidates.length > 0) { %>
+			<%  for (const [ key, canidate ] of Object.entries(canidates)) { %>
+				<div class="result-container">
+					<p><%=canidate.id%> - <%=canidate.name%> - <%=canidate.votes%></p>
+				</div>
+			<% } %>
+		<% } else { %>
+			<div class="result-container">
+				<p>Error, no data (Empty table or Query Problem)</p>
+			</div>
+		<% } %>
+		</div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

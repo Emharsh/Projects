@@ -1,0 +1,47 @@
+<!-- views/pages/admin/list_candidates.ejs -->
+
+<% let title = "Candidates" %>
+<% let id = "candidates" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="table-<%-page.id%>" class="blox-container blox-row">
+			<div class="table">
+				<div class="table-header">
+					<span class="info">Candidates</span>
+				</div>
+				<div id="voter-choose-election" class="table-container choose-election voter border">
+					<ul>
+						<li class="table-col-header table-section sep-bot"><ul class="table-row">
+							<li class="table-sz-smthumb"><span>Image</span></li>
+							<li class="table-sz-norm"><span>Name</span></li>
+							<li class="table-sz-vsmall"><span>ID</span></li>
+							<li class="table-sz-norm"><span>Party</span></li>
+							<li class="table-sz-button"><span></span></li>
+							<li class="table-sz-button"><span></span></li>
+							<li class="table-sz-button"><span></span></li>
+						</ul></li>
+						<% for (const candidate of candidates) { %>
+						<li class="table-contents table-section"><ul class="table-row">
+							<li class="table-sz-smthumb thumb img-sthumb-container cover canidate-portrate"><img class="canidate-portrate" src="<%= candidate.picture %>" /></li>
+							<li class="table-sz-norm table-row-header"><span><%= candidate.name %></span></li>
+							<li class="table-sz-vsmall"><span><%= candidate.id %></span></li>
+							<li class="table-sz-norm"><span><%= candidate.party.name %></span></li>
+							<li class="table-sz-button"><a class="btn btn-secondary" href="./<%- candidate.id %>/" role="button">View</a></li>
+							<li class="table-sz-button"><a class="btn btn-secondary" href="./<%- candidate.id %>/edit/" role="button">Edit</a></li>
+							<li class="table-sz-button"><a class="btn btn-danger" href="./<%- candidate.id %>/archive/" role="button">Archive</a></li>
+						</ul></li>
+						<% } %>
+					</ul>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

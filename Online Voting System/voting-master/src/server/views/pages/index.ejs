@@ -1,0 +1,31 @@
+<!-- views/pages/index.ejs -->
+
+<% let title = "Online voting system" %>
+<% let subtitle = "Group 8 Project" %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div class="blox-container blox-row">
+			<div class="row page-head-image-container">
+				<img src="/static/images/polling-station.jpg" class="page-head-image" />
+			</div>
+		</div>
+		<div class="blox-container blox-col">
+			<div class="blox-header text-center">
+				<h3>Parties</h3>
+			</div>
+			<div class="blox-content text-center">
+				<span>See the list of all registered political parties</span>
+			</div>
+			<div class="blox-content text-center">
+				<a href="/parties" class="btn btn-primary">To parties list</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

@@ -1,0 +1,69 @@
+<!-- views/pages/admin/end_election.ejs -->
+
+<% let title = "Archive Voter" %>
+<% let id = "archive-voter" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="view-<%-page.id%>" class="blox-container border">
+			<div class="blox-item"><div class="blox-label"><span>NiNo</span></div>
+			<div class="blox-contents"><%= voter.nino %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>ID</span></div>
+			<div class="blox-contents"><%= voter.id %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>DoB</span></div>
+			<div class="blox-contents"><%= voter.dob.toLocaleDateString('en-GB') %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>postcode</span></div>
+			<div class="blox-contents"><%= voter.postcode %></div></div>
+		</div>
+		<div id="edit-<%-page.id%>" class="blox-container border">
+			<div class="blox-form blox-basic">
+				<form method="POST" id="form-<%-page.id%>" action="" completed="">
+					<div id="form-messages">
+						<div id="form-feedback" class="alert hidden" role="alert"></div>
+					</div>
+					<div class="form-row">
+						<div class="form-group">
+							<div class="form-item">
+								<label for="confirm-end">Confirm Identity Verified</label>
+								<input type="checkbox" class="form-control" name="confirm-end" id="confirm-end" required>
+							</div>
+						</div>
+					</div>
+					<div class="form-submit">
+						<button id="submit-<%-page.id%>" type="submit" class="btn btn-danger btn-confirm" onclick="genOidAndPAT()">Confirm</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../../" role="button">Return to All</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../" role="button">Return to Voter</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../edit/" role="button">Edit</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-danger" href="../archive/" role="button">Archive</a></div>
+            <div class="blox-item blox-row">
+		    <button id="printPatBtn" disabled class="btn btn-secondary" type="button" onclick="printPat()">
+			    Waiting...
+		    </button>
+		    </div>
+		    <div class="blox-item blox-row">
+			<button id="downloadOidBtn" disabled class="btn btn-secondary" type="button" onclick="downloadOid()">
+				Waiting...
+			</button>
+			<a id="downloadOidTrigger" href="#" style="display: none;" download="online_identity_<%= voter.nino %>.oid"></a>
+		    </div>
+		</div>
+	</div>
+</div>
+<iframe id="patLetterTemplate" name="patLetterTemplate" src="/admin/templates/pat/"
+    style="width: 0; height: 0; border: 0; border: none; position: absolute;"></iframe>
+<script src="/static/js/crypto-helper.js"></script>
+<script src="/static/js/voter-registration.js" defer></script>
+<%- include(globals.inc + globals.footer) %>

@@ -1,0 +1,43 @@
+<!-- views/pages/admin/election.ejs -->
+
+<% let title = "Election" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<p>Name: <%= election.name %></p>
+	<% if (election.postcodes) { %>
+	<p>Regional election: <%= election.postcodes.replace(/(^,)|(,$)/g, '')%></p>
+	<% } else { %>
+	<p>National election</p>
+	<% } %>
+	<p>Start date: <%= election.start_date.toLocaleDateString('en-GB') %> at 00:00</p>
+	<p>End date: <%= election.end_date.toLocaleDateString('en-GB') %> at 00:00</p>
+	<div class="basic_table">
+		<table>Candidates
+			<tr>
+				<th>Image</th>
+				<th>Candidate Name</th>
+				<th>Party</th>
+			</tr>
+			<% for (const electionCandidate of election.electionCandidates) { %>
+				<% let candidate = electionCandidate.candidate %>
+				<% if (!candidate.picture_url) { candidate.picture_url = '/static/images/blank-profile-picture-960_720.png' }%>
+				<tr>
+					<th><img src="<%- candidate.picture_url %>" alt="<%= candidate.name %>" width="50" height="100"></th>
+					<td><%= candidate.name %></td>
+					<% if (electionCandidate.currentParty) { %>
+					<td><%= electionCandidate.currentParty.name %></td>
+					<% } else { %>
+					<td>None/Independent</td>
+					<% } %>
+				</tr>
+			<% } %>
+		</table>
+	</div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

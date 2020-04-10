@@ -1,0 +1,44 @@
+<!-- views/pages/admin/view_election.ejs -->
+
+<% let title = "Voter" %>
+<% let id = "voter" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="view-<%-page.id%>" class="blox-container border">
+			<div class="blox-item"><div class="blox-label"><span>NiNo</span></div>
+			<div class="blox-contents"><%- voter.nino %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>ID</span></div>
+			<div class="blox-contents"><%- voter.id %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>DoB</span></div>
+			<div class="blox-contents"><%- voter.dob.toLocaleDateString('en-GB') %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>postcode</span></div>
+			<div class="blox-contents"><%- voter.postcode %></div></div>
+
+      <% if (voter.enc_onlineidentity_id){
+        voter.registered = settings.icons.funct.True;
+      } else {
+        voter.registered = settings.icons.funct.False;
+      } %>
+      <div class="blox-item"><div class="blox-label"><span>Registered</span></div>
+			<div class="blox-contents"><%- voter.registered %></div></div>
+		</div>
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item"><a class="btn btn-primary" href="../" role="button">Return</a></div>
+			<div class="blox-item"><a class="btn btn-primary" href="./edit/" role="button">Edit</a></div>
+			<div class="blox-item"><a class="btn btn-danger" href="./archive/" role="button">Archive</a></div>
+      <div class="blox-item"><a class="btn btn-danger" href="./confirm/" role="button">Confirm</a></div>
+		</div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

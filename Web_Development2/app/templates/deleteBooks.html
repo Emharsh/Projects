@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+  <h2>LIBRARY</h2>
+  <h3>"When in doubt, ask a Librarian"</h3>
+  <div class="jumbotron">
+    <script>
+    //Include the event handler
+    window.addEventListener("load", pl.view.deleteBook.setupUserInterface);
+    </script>
+    <p>Delete a book record</p>
+    <form id="Book">
+      <p>
+        <label>Select book:
+          <select name="selectBook"><option value=""> --- </option></select>
+        </label>
+      </p>
+      <p><button type="button" name="commit">Delete</button></p>
+    </form>
+    <button type="submit" class="bin btn-primary btn-lg btn-block"onclick="window.location = 'http://127.0.0.1:5000/profile'">Back</button>
+  </div>
+</div>
+{% endblock %}

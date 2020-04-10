@@ -1,0 +1,16 @@
+  document.getElementById('submitBallotBtn').addEventListener('click', function() {
+    var selected = document.querySelector('input[name=choice]:checked');
+    var ballotSummary = 'Protest my vote.';
+    var candidateId = null;
+    if (selected && selected.value) {
+      var candidateEntry = selected.parentNode.parentNode.parentNode;
+      var candidateName = candidateEntry.getElementsByClassName('candidate-name')[0].innerText;
+      var candidateParty = candidateEntry.getElementsByClassName('candidate-party')[0].innerText;
+      ballotSummary = candidateName + ', Party: ' + candidateParty;
+      candidateId = parseInt(selected.value);
+    }
+
+    document.getElementById('ballotSummary').innerText = ballotSummary;
+    var ballot = {chosenElectionCandidateId: candidateId};
+    submitBallot(ballot);
+  })

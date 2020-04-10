@@ -1,0 +1,71 @@
+<!-- views/pages/admin/view_election.ejs -->
+
+<% let title = "View Elections" %>
+<% let id = "election" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="view-<%-page.id%>" class="blox-container border">
+			<div class="blox-item"><div class="blox-label"><span>Name</span></div>
+			<div class="blox-contents"><%= election.name %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>Start date</span></div>
+			<div class="blox-contents"><%= election.start_date.toLocaleDateString('en-GB') %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>End date</span></div>
+			<div class="blox-contents"><%= election.end_date.toLocaleDateString('en-GB') %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>Regions</span></div>
+			<div class="blox-contents"><% if (election.postcodes) { %>
+				<%= election.postcodes.replace(/(^,)|(,$)/g, '')%>
+			<% } else { %>
+				National
+			<% } %></div></div>
+		</div>
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../" role="button">Return to All</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="./edit/" role="button">Edit</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-danger" href="./end/" role="button">End</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-danger" href="./end/" role="button">Archive</a></div>
+		</div>
+		<div id="table-<%-page.id%>" class="blox-container">
+			<div class="table">
+				<div class="table-header">
+					<span class="info">Candidates</span>
+				</div>
+				<div id="voter-choose-election" class="table-container choose-election voter border">
+					<ul>
+						<li class="table-col-header table-section sep-bot"><ul class="table-row">
+							<li class="table-sz-smthumb"><span>Image</span></li>
+							<li class="table-sz-norm"><span>Name</span></li>
+							<li class="table-sz-vsmall"><span>ID</span></li>
+							<li class="table-sz-norm"><span>Party</span></li>
+							<li class="table-sz-button"><span></span></li>
+							<li class="table-sz-button"><span></span></li>
+							<li class="table-sz-button"><span></span></li>
+						</ul></li>
+						<% for (const electcan of election.electionCandidates) { %>
+						<li class="table-contents table-section"><ul class="table-row">
+							<li class="table-sz-smthumb thumb canidate-portrate"><img src="<%- electcan.candidate.picture %>" /></li>
+							<li class="table-sz-norm table-row-header"><span><%= electcan.candidate.name %></span></li>
+							<li class="table-sz-vsmall"><span><%= electcan.candidate.id %></span></li>
+							<li class="table-sz-norm"><span><%= electcan.candidate.party.name %></span></li>
+							<li class="table-sz-button"><a class="btn btn-secondary" href="../../candidates/<%- electcan.candidate.id %>/" role="button">View</a></li>
+							<li class="table-sz-button"><a class="btn btn-secondary" href="../../candidates/<%- electcan.candidate.id %>/edit/" role="button">Edit</a></li>
+							<li class="table-sz-button"><a class="btn btn-danger" href="../../candidates/<%- electcan.candidate.id %>/archive/" role="button">Archive</a></li>
+						</ul></li>
+						<% } %>
+					</ul>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

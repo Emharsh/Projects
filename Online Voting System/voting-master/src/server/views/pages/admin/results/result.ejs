@@ -1,0 +1,186 @@
+<!-- views/pages/admin/view_results.ejs -->
+
+<% let title = "Result" %>
+<% let id = "result" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+<script src="/static/libs/chart/Chart.min.js"></script>
+<script>
+	// store as array, so that each time they appear in the same order
+	// on the chart
+	var ageGroupsColors = [
+		{'18-19': '#627de8'},
+		{'20-24': '#c35104'},
+		{'25-29': '#f360a1'},
+		{'30-39': '#6ae272'},
+		{'40-49': '#3e9aca'},
+		{'50-59': '#422c3f'},
+		{'60-69': '#a39854'},
+		{'70+': '#cd6c50'},
+		{'Unknown': '#b0a4b1'}
+	]
+
+	function getPieChartConfig(votesByAgeGroup, showLegend, showTitle){
+		var chartOptions = {
+			legend: {
+				display: showLegend
+			}
+		}
+		if (showTitle) {
+			chartOptions.title = {
+				display: true,
+				text: 'Distribution of votes by age (not counting spoiled ballots)'
+			}
+		}
+		var labels = [];
+		var backgroundColor = [];
+		var data = [];
+		ageGroupsColors.forEach(function(e) {
+			var ag = Object.keys(e)[0];
+			if (votesByAgeGroup.hasOwnProperty(ag)) {
+				labels.push(ag);
+				backgroundColor.push(e[ag]);
+				data.push(votesByAgeGroup[ag] === 0 ? null : votesByAgeGroup[ag])
+			}
+		});
+
+		return {
+			type: 'pie',
+			data: {
+      labels: labels,
+      datasets: [{
+        label: 'Distribution of votes by age',
+        backgroundColor: backgroundColor,
+        data: data
+      }]
+    	},
+			options: chartOptions
+		}
+	}
+</script>
+<div id="content">
+	<div class="blox">
+		<div id="view-<%-page.id%>" class="blox-container border">
+			<div class="blox-item"><div class="blox-label"><span>Name</span></div>
+			<div class="blox-contents"><%= election.name %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>Start date</span></div>
+			<div class="blox-contents"><%= election.start_date.toLocaleDateString('en-GB') %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>End date</span></div>
+			<div class="blox-contents"><%= election.end_date.toLocaleDateString('en-GB') %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>Regions</span></div>
+			<div class="blox-contents"><% if (election.postcodes) { %>
+				<%= election.postcodes.replace(/(^,)|(,$)/g, '')%>
+			<% } else { %>
+				National
+			<% } %></div></div>
+		</div>
+
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item blox-row"><a class="btn btn-secondary" href="../" role="button">Return to All</a></div>
+		</div>
+		
+		<% if (!election.private_master_key) { %>
+			<div id="table-<%-page.id%>" class="blox-container">
+				<div class="table">
+					<div class="table-header">
+						<span class="info">Results not available yet</span>
+					</div>
+			</div>
+		<% } else {%>
+		<%
+		let ballotCount = 0;
+		let totalVotes = 0;
+		let totalVotesByAgeGroup = {};
+		let spoiledBallotsCount = 0;
+		for (const ec of election.electionCandidates) {
+			if (ec.results) {
+				if (typeof ec.results === 'string' || ec.results instanceof String) {
+					ec.results = JSON.parse(ec.results);
+				}
+			} else {
+				ec.results = {};
+				ec.results.receivedVotes = 0;
+			}
+
+			totalVotes += ec.results.receivedVotes;
+			if (ec.results.receivedVotesByAgeGroup) {
+				for (const [ageGroup, votes] of Object.entries(ec.results.receivedVotesByAgeGroup)) {
+					if (!totalVotesByAgeGroup.hasOwnProperty(ageGroup)) {
+						totalVotesByAgeGroup[ageGroup] = 0;
+					}
+
+					totalVotesByAgeGroup[ageGroup] += votes;
+				}
+			}
+		}
+		if (election.ballots) {
+			ballotCount = election.ballots.length;
+			spoiledBallotsCount = ballotCount - totalVotes;
+		}
+
+		election.electionCandidates.sort((a, b) => {
+			return b.results.receivedVotes - a.results.receivedVotes;
+		})
+		%>
+		<div>Number of cast votes: <%= ballotCount %></div>
+		<div>Valid votes: <%= totalVotes %></div>
+		<div>Spoiled ballots: <%= spoiledBallotsCount %></div>
+		<div style="width: 40%">
+			<canvas id="election-summary-chart"></canvas>
+			<script>
+			new Chart(
+				document.getElementById("election-summary-chart"),
+				getPieChartConfig(JSON.parse('<%- JSON.stringify(totalVotesByAgeGroup)%>'), true, true));
+			</script>
+		</div>
+		<div id="table-<%-page.id%>" class="blox-container">
+			<div class="table">
+				<div class="table-header">
+					<span class="info">Candidates</span>
+				</div>
+				<div id="voter-choose-election" class="table-container choose-election voter border">
+					<ul>
+						<li class="table-col-header table-section sep-bot"><ul class="table-row">
+							<li class="table-sz-smthumb"><span>Image</span></li>
+							<li class="table-sz-norm"><span>Name</span></li>
+							<li class="table-sz-norm"><span>Party</span></li>
+							<li class="table-sz-norm"><span>Distribution of votes by age</span></li>
+							<li class="table-sz-vsmall"><span>Votes</span></li>
+						</ul></li>
+						<% for (const electCan of election.electionCandidates) { %>
+						<li class="table-contents table-section"><ul class="table-row">
+							<li class="table-sz-smthumb thumb canidate-portrate"><img src="<%- electCan.candidate.picture %>" /></li>
+							<li class="table-sz-norm table-row-header"><span><%= electCan.candidate.name %></span></li>
+							<li class="table-sz-norm"><span><%= electCan.candidate.party.name %></span></li>
+							<li class="table-sz-large">
+									<% if (electCan.results.receivedVotesByAgeGroup) { %>
+									<canvas id="summary-chart-<%- electCan.id %>"></canvas>
+									<script>
+									new Chart(
+										document.getElementById('summary-chart-<%- electCan.id %>'),
+										getPieChartConfig(JSON.parse('<%- JSON.stringify(electCan.results.receivedVotesByAgeGroup)%>'),
+										false,
+										false));
+									</script>
+									<% } else { %>
+										N/A
+									<% } %>
+							</li>
+							<li class="table-sz-vsmall"><span><%= electCan.results.receivedVotes %></span></li>
+						</ul></li>
+						<% } %>
+					</ul>	
+				</div>
+			</div>
+		</div>
+		<% } %>
+	</div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

@@ -1,0 +1,58 @@
+/*---------- d. astrophysics_quotes -----------*/
+#astrophysics_quotes {
+  background-image: url(../images/bigBang.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 550px;
+}
+#quotes {
+  background: url('../images/quotes01.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  height: 50%;
+  width: 100%;
+  display: block;
+}
+.list-astrophysics_quotes {
+  display: block;
+  width: 100%;
+}
+.list-astrophysics_quotes .content-astrophysics_quotes {
+  text-align: center;
+  color: #ffffff;
+}
+.list-astrophysics_quotes .content-astrophysics_quotes .testi {
+  font-size: 16px;
+  line-height: 46px;
+  letter-spacing: 2px;
+}
+.list-astrophysics_quotes .content-astrophysics_quotes .people {
+  font-size: 14px;
+  margin-top: 30px;
+  letter-spacing: 2px;
+  color: #B7B7B7;
+  font-weight: 700;
+}
+.mask-astrophysics_quotes{
+  background-color: rgba(47, 47, 47, 0.5);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.wrap-astrophysics_quotes{
+  z-index: 1;
+  position: relative;
+}

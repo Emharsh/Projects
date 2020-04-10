@@ -1,0 +1,37 @@
+<!-- views/partials/footer.ejs -->
+
+
+
+</div>
+</main>
+
+
+<footer>
+  <div id="footer">
+    <div>
+		<div class="navbar-title">
+			<span>Quick Navigation</span>
+		</div>
+		<nav role="navigation">
+			<ul class="nav navbar-nav navbar-footer">
+				<%  for (const [ key, val ] of Object.entries(settings.footerMenu)) { %>
+				<li class="nav-item">
+					<a  class="nav-link" href="<%=val[0]%>"> <%=val[1]%></a>
+				</li>
+				<% } %>
+			</ul>
+		<nav>
+    </div>
+    <div class="copyright">
+      <span class="text-center text-muted">© Copyright Cardiff University <a href="http://cardiff.ac.uk/" target="_blank">cardiff.ac.uk</a></span>
+	  <%- include("import" , {section:"footer"}); %>
+    </div>
+  </div>
+</footer>
+
+</body>
+
+<!-- JS Script imports -->
+<%- include("import" , {section:"footer"}); %>
+
+</html> 

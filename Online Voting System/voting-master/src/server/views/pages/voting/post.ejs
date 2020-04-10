@@ -1,0 +1,49 @@
+<!-- views/pages/voting/election-container.ejs -->
+
+<% let title = "Vote | Fill in ballot" %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<script src="/static/js/crypto-helper.js" defer></script>
+<script src="/static/js/submit-ballot.js" defer></script>
+<div id="content">
+  <% if (election.type === 0) { %>
+    <%- include("./fpp-election" , {election}); %>
+  <% } else { %>
+  <!-- Add future types of elections here -->
+  <% } %>
+  <button style="display: none;" id="openConfirmModalBtn" type="button" class="btn btn-secondary" data-toggle="modal"
+    data-target="#confirmationModal">
+  </button>
+  <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="confirmationModalLabel">Cast vote</h4>
+        </div>
+        <div class="modal-body">
+          You are about to cast your vote. Your choice is:
+          <div id="ballotSummary">
+          </div>
+          <form id="confirmPatForm" method="POST" action="javascript:void(0);">
+            <div class="form-group">
+              <label for="signinPassword">Personal Access Token (PAT)</label>
+              <input type="password" class="form-control" id="pat" placeholder="Password" name="pat" required
+                minlength="15" maxlength="15" pattern="^[a-zA-Z!@#*?_]{15}$">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button id="confirmCastVoteBtn" for-election="<%- election.id %>" type="button" class="btn btn-success">Cast vote</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

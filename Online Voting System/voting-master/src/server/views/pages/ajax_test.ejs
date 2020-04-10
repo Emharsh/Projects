@@ -1,0 +1,38 @@
+<!-- views/pages/signin.ejs -->
+
+<% let title = "Signin" %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content" name="content">
+	<div class="row">
+		<div class="text-center">
+			<form id="ajax-form" name="ajax-form" method="post" action="" enctype="multipart/form-data">
+				<div class="form-group">
+					<label for="signinNINumber">National Insurance Number</label>
+					<input type="text" id="signinNINumber" name="signinNINumber" class="form-control"aria-describedby="emailHelp"
+					placeholder="National Insurance Number">
+				</div>
+				<div class="form-group">
+					<label for="signinPassword">Password</label>
+					<input type="password" id="signinPassword" name="signinPassword" class="form-control" placeholder="Password">
+				</div>
+				<div class="form-group">
+					<label for="signinOnlineID">Upload your Online ID</label>
+					<input type="file" id="signinOnlineID_file" name="signinOnlineID_file" class="form-control-file">
+					
+				</div>
+				<div class="form-group">
+					<label for="signinOnlineID_text">Your Online ID</label>
+					<input type="text" id="signinOnlineID_text" name="signinOnlineID_text" class="form-control form-control-file-text">
+				</div>
+				<button type="button" id="submit-form" class="btn btn-secondary">Sign in</button>
+			</form>
+			<div id="form-messages" name="form-messages"></div>
+		</div>
+	</div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

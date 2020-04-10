@@ -1,0 +1,38 @@
+<!-- views/pages/admin/view_admin.ejs -->
+
+<% let title = "View Admin" %>
+<% let id = "admin" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="view-<%-page.id%>" class="blox-container border">
+			<div class="blox-item"><div class="blox-label"><span>Username</span></div>
+			<div class="blox-contents"><%- admin.username %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>ID</span></div>
+			<div class="blox-contents"><%- admin.id %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>region</span></div>
+			<div class="blox-contents"><%- admin.region %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>role</span></div>
+			<div class="blox-contents"><%- admin.role %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>password</span></div>
+			<div class="blox-contents"><% if (admin.password) { %><i class="fas fa-check-circle"></i><% } else { %><i class="fas fa-circle"></i><% } %></div></div>
+		</div>
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../" role="button">Return to All</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="./edit/" role="button">Edit</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-danger" href="./archive/" role="button">Archive</a></div>
+		</div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

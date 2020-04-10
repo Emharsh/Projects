@@ -1,0 +1,76 @@
+<!-- views/pages/admin/view_election.ejs -->
+
+
+<% let title = "Edit Candidate" %>
+<% let id = "edit-candidate" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="edit-<%-page.id%>" class="blox-container border">
+			<div class="blox-form blox-basic">
+				<form method="post" id="form-<%-page.id%>" action="./" completed="">
+					<div id="form-messages" name="form-messages">
+						<div id="form-feedback" class="alert hidden" role="alert"></div>
+					</div>
+					<div class="form-row">
+						<div class="form-group">
+							<div class="form-item">
+								<label for="id">ID</label>
+								<input type="text" class="form-control" name="id" id="candidate-id" value="<%= candidate.id %>" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item img-thumb-container cover canidate-portrate">
+								<img id="ImageUploadTarget" class="canidate-portrate" name="preview" src="<%= candidate.picture %>" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<label for="picture">Picture</label>
+								<input type="file" class="form-control-file" name="picture"  accept='image/*' onchange='open_image(event, "ImageUploadTarget")' id="canidate-portrate">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<label for="type">Name</label>
+								<input type="text" class="form-control" name="name" id="candidate-name" value="<%= candidate.name %>" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<label for="type">Party</label>
+								<select class="form-control" name="party_id" id="election-type" required>
+									<% for (const party of parties) { %>
+										<option value="<%= party.id %>"
+										<% if (candidate.party_id === party.id) { %>
+											selected="selected"
+										<% } %>
+										><%= party.name %></option>
+									<% } %>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-submit">
+						<button id="submit-<%-page.id%>" type="submit" class="btn btn-secondary btn-confirm">Confirm Changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../../" role="button">Return to All</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../" role="button">Return to Election</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-danger" href="../end/" role="button">End</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-danger" href="../archive/" role="button">Archive</a></div>
+		</div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

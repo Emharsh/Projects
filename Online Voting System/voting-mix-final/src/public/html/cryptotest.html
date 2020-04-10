@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../js/text.min.js"></script>
+  <!--TextEncoder TextDecoder polyFill IE and Edge-->
+  <script src="../js/crypto-helper.js"></script>
+  <style>
+    span {
+      font-weight: bold;
+    }
+  </style>
+  <title>Example crypto</title>
+</head>
+
+<body>
+  <div>
+    Personal Access Token: <span id="token"></span>
+    <iframe id="patLetter" name="patLetter" src="./test-patletter.html"
+      style="width: 0; height: 0; border: 0; border: none; position: absolute;"></iframe>
+    <p>
+      <button id="print_pat" style="padding: 5px">Print</button>
+    </p>
+  </div>
+  <div>
+    Public key: <p><span id="pbk"></span></p>
+  </div>
+  <div>
+    Private key: <p><span id="prk"></span></p>
+  </div>
+  <div>
+    Private key(Online identity):
+    <a id="oid_dl">Click here to download OID</a>
+  </div>
+  <div>
+    <p>
+      Select Online identity file:
+      <input type="file" name="oid" id="oid" accept=".oid">
+    </p>
+    <p>
+      Enter personal access token:
+      <input type="text" name="pat" id="pat">
+    </p>
+    <button id="decrypt_oid" style="padding: 5px">Submit OID and PAT</button>
+  </div>
+  <div>
+    Decrypted OID: <span id="d_oid"></span>
+  </div>
+
+  <script>
+    window.onload = function () {
+      if (!(window.File && window.FileReader)) {
+        alert('Your browser is not supported.');
+      }
+
+      const pass = cryptoHelper.generatePass();
+      const salt = cryptoHelper.generatePbkdf2Salt()
+      let token = document.getElementById('token')
+      token.innerText = pass
+
+      cryptoHelper.generateECDSAKeys().then(function (keypair) {
+
+        return Promise.all([
+          cryptoHelper.extractJWKey(keypair.privateKey),
+          cryptoHelper.extractJWKey(keypair.publicKey),
+          cryptoHelper.deriveAESKey(pass, salt)
+        ])
+      }).then(function (result) {
+        let [privateKey, publicKey, AESKey] = result
+        document.getElementById('pbk').innerText = JSON.stringify(publicKey)
+        document.getElementById('prk').innerText = JSON.stringify(privateKey)
+
+        return cryptoHelper.encryptAES(AESKey, JSON.stringify(privateKey))
+      }).then(function (data) {
+        let [encrypted, iv] = data
+
+        let oidJson = {
+          salt: cryptoHelper.uint8ArrayToArray(salt),
+          oid: cryptoHelper.bufToBase64(encrypted),
+          iv: cryptoHelper.uint8ArrayToArray(iv)
+        }
+        var element = document.getElementById('oid_dl');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(oidJson)));
+        element.setAttribute('download', 'online_identity.oid');
+
+        // auto download
+        // element.style.display = 'none';
+        // document.body.appendChild(element);
+
+        // element.click();
+      })
+
+
+      function decryptOid() {
+        let oidFile = document.getElementById('oid').files[0]
+        let pat = document.getElementById('pat').value
+        let reader = new FileReader()
+
+        reader.onload = function (e) {
+          let jsonString = e.target.result;
+          let oidJson = JSON.parse(jsonString)
+          cryptoHelper.deriveAESKey(pat, cryptoHelper.arrayToUint8Array(oidJson.salt))
+          .then(function (key) {
+            return Promise.all([
+            cryptoHelper.decryptAES(key,
+              cryptoHelper.base64ToBuf(oidJson.oid),
+              cryptoHelper.arrayToUint8Array(oidJson.iv)),
+            cryptoHelper.sha384(jsonString)
+            ])
+          }).then(function (result) {
+            const [oid, hash] = result
+            document.getElementById('d_oid').innerText = oid + '\nOID string hash: ' + hash
+          }).catch(console.log)
+        }
+
+        reader.readAsText(oidFile, 'utf-8')
+      }
+
+      function printPatLetter() {
+        if (token.innerText === "") {
+          return;
+        }
+
+        let patLetter = document.getElementById('patLetter').contentWindow
+        patLetter.document.getElementById('pat').innerText = token.innerText
+
+        patLetter.focus()
+        patLetter.print()
+
+      }
+
+      document.getElementById('decrypt_oid').addEventListener('click', decryptOid)
+      document.getElementById('print_pat').addEventListener('click', printPatLetter)
+    }
+  </script>
+</body>
+
+</html>

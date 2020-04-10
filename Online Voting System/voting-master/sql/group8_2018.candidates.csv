@@ -1,0 +1,19 @@
+id,name,party_id,picture,picture_url
+1,"John Doe",2,...,NULL
+2,"Jane Doe",2,...,NULL
+3,"Hallie Hooper",3,...,NULL
+4,"Karter Craig",0,...,https://st.depositphotos.com/1898481/3946/i/950/depositphotos_39462675-stock-photo-politician.jpg
+5,"Jayden Dupont",4,...,https://media.istockphoto.com/photos/smiling-hispanic-mature-female-politician-picture-id956259158
+6,"joe spleen",5,...,NULL
+7,"Fred Might",6,...,NULL
+8,"oliver chrome",7,...,NULL
+9,"Green Ferrit",8,...,NULL
+10,"Polly Poppet",9,...,NULL
+11,"Howard Blue",1,...,NULL
+12,"Peach Blue",0,...,NULL
+13,"Blue Cheese",2,...,NULL
+14,"Captain Hankercheif",4,...,NULL
+15,"Lucas Jopper",0,...,
+16,"Yesyer Yer",3,...,
+17,"New Guy",8,NULL,NULL
+18,"New guy",10,NULL,NULL

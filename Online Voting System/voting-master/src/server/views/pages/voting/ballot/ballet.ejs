@@ -1,0 +1,113 @@
+
+<div id="content">
+	<div class="blox">
+		<div id="view-<%-page.id%>" class="blox-container">
+			<div class="blox-item"><div class="blox-label"><span>Name</span></div>
+			<div class="blox-contents"><%= election.name %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>Start date</span></div>
+			<div class="blox-contents"><%= election.start_date.toLocaleDateString('en-GB') %></div></div>
+
+			<div class="blox-item"><div class="blox-label"><span>End date</span></div>
+			<div class="blox-contents"><%= election.end_date.toLocaleDateString('en-GB') %></div></div>
+
+      <div class="blox-item"><div class="blox-label"><span><%- election.electionTypes.region_name_singular %></span></div>
+			<div class="blox-contents"><%-election.electoralRegion.name%></div></div>
+
+      <div class="blox-item"><div class="blox-label"><span>Type</span></div>
+			<div class="blox-contents"><%- election.electionTypes.name %></div></div>
+
+      <div class="blox-item"><div class="blox-label"><span>For</span></div>
+			<div class="blox-contents"><%- election.electionTypes.election_target_role %> (<%- election.electionTypes.election_target_role_acronym %>)</div></div>
+		</div>
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../" role="button">Return</a></div>
+		</div>
+      <% const ballotOptions = JSON.parse(election.electionTypes.votingSystem.ballot_options) %>
+      
+		<div id="table-<%-page.id%>" class="blox-container">
+			<div class="table">
+				<div class="table-header">
+					<span class="info header"><%- election.electionTypes.election_header1 %> <%-election.electionTypes.election_target_role%> <%-election.electionTypes.election_header2%> <%-election.electoralRegion.name%> <%- election.electionTypes.region_name_singular %></span>
+				</div>
+        <div class="table-info">
+					<span class="info instructions"><%-election.electionTypes.election_instructions%></span>
+				</div>
+        <div id="form-messages" name="form-messages">
+					<div id="form-feedback" class="alert hidden" role="alert"></div>
+				</div>
+				<div id="voter-choose-election" class="table-container choose-election voter border">
+					<div>
+						<div class="table-col-header table-section sep-bot"><div class="table-row">
+              <div class="table-sz-norm"><span>Name</span></div>
+							<div class="table-sz-smthumb"><span></span></div>
+							<div class="table-sz-norm"><span>Party</span></div>
+              <div class="table-sz-smthumb"><span></span></div>
+              <div class="table-sz-small"><span>Vote</span></div>
+						</div></div>
+            
+						<% for (let electCandidate of election.electionCandidates) { %>
+            
+            <% 
+            console.log(electCandidate);
+            if (!(electCandidate.currentParty)){
+            
+               electCandidate.currentParty = electCandidate.candidate.party;
+            }
+            %>
+						<div class="table-contents table-section">
+              <div class="table-row ballet-row">
+						    <div class="table-sz-smthumb thumb canidate-portrate"><img src="<%- electCandidate.candidate.picture %>" /></div>
+                <div class="table-sz-norm ballet-text candidate-name"><span><%= electCandidate.candidate.name %></span></div>
+						    <div class="table-sz-smthumb thumb party-logo"><img src="<%- electCandidate.currentParty.picture %>" /></div>
+                <div class="table-sz-norm ballet-text candidate-party"><span><%= electCandidate.currentParty.name %></span></div>
+                <div class="table-sz-small">
+                  <input class="ballot-vote ballot-vote-style_<%- election.electionTypes.votingSystem.id_voting_system %>" name="ballot-election-candidate" id="ballot-radio-<%- electCandidate.id %>" value="<%- electCandidate.id %>" type="radio">
+                  <label for="ballot-radio-<%- electCandidate.id %>"></label>
+                </div>
+						  </div>
+						</div>
+            <% } %>
+            <div class="table-contents table-section">
+              <div class="table-row ballet-row">
+						    <div class="table-sz-norm ballet-text candidate-name"><span>Spoil Ballet</span></div>
+						    <div class="table-sz-smthumb thumb canidate-portrate">Spoil Ballet</div>
+						    <div class="table-sz-norm ballet-text candidate-party" ><span>Spoil Ballet</span></div>
+                <div class="table-sz-smthumb thumb party-logo">Spoil Ballet</div>
+                <div class="table-sz-small">
+                  <input class="ballot-vote ballot-vote-style_<%- election.electionTypes.votingSystem.id_voting_system %>" name="ballot-election-candidate" id="ballot-radio-spoil" value="" type="radio" checked>
+                  <label for="ballot-radio-spoil"></label>
+                </div>
+						  </div>
+						</div>
+					</div>	
+				</div>
+        <div class="form-submit">
+				  <button id="submitBallotBtn" type="submit" class="btn btn-secondary btn-confirm ballet-buttom-submit">Cast vote</button>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<% /*
+No point in retrieving this script from the database, as different script would probably mean
+that the html is going to be different too. Rather have separate ballot ejs files for each voting system.
+*/ %>
+<script>
+	document.getElementById('submitBallotBtn').addEventListener('click', function() {
+		var selected = document.querySelector('input[name=ballot-election-candidate]:checked');
+		var ballotSummary = 'Spoil my ballot';
+		var candidateId = null;
+		if (selected && selected.value) {
+			var candidateEntry = selected.parentNode.parentNode.parentNode;
+			var candidateName = candidateEntry.getElementsByClassName('candidate-name')[0].innerText;
+			var candidateParty = candidateEntry.getElementsByClassName('candidate-party')[0].innerText;
+			ballotSummary = candidateName + ', Party: ' + candidateParty;
+			candidateId = parseInt(selected.value);
+		}
+
+		document.getElementById('ballotSummary').innerText = ballotSummary;
+		var ballot = {chosenElectionCandidateId: candidateId};
+		submitBallot(ballot);
+	})
+</script>

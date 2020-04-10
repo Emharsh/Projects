@@ -1,0 +1,48 @@
+<<!-- views/pages/parties.ejs -->
+
+<% let title = "Admins" %>
+<% let id = "admins" %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="table-<%-page.id%>" class="blox-container blox-row">
+			<div class="table">
+				<div class="table-header">
+					<span class="info">Admins</span>
+				</div>
+				<div id="voter-choose-election" class="table-container choose-party voter border">
+					<ul>
+						<li class="table-col-header table-section sep-bot"><ul class="table-row">
+							<li class="table-sz-norm"><span>Username</span></li>
+							<li class="table-sz-vsmall"><span>ID</span></li>
+							<li class="table-sz-small"><span>region</span></li>
+							<li class="table-sz-norm"><span>role</span></li>
+							<li class="table-sz-button"><span></span></li>
+							<li class="table-sz-button"><span></span></li>
+							<li class="table-sz-button"><span></span></li>
+						</ul></li>
+						<% for (const admin of admins) { %>
+						<li class="table-contents table-section"><ul class="table-row">
+							<li class="table-sz-norm table-row-header"><span><%= admin.username %></span></li>
+							<li class="table-sz-vsmall"><span><%= admin.id %></span></li>
+							<li class="table-sz-small"><span><%= admin.region %></span></li>
+							<li class="table-sz-norm"><span><%= admin.role %></span></li>
+							<li class="table-sz-button"><a class="btn btn-secondary" href="./<%- admin.id %>/" role="button">View</a></li>
+							<li class="table-sz-button"><a class="btn btn-secondary" href="./<%- admin.id %>/edit/" role="button">Edit</a></li>
+							<li class="table-sz-button"><a class="btn btn-danger" href="./<%- admin.id %>/archive/" role="button">Archive</a></li>
+						</ul></li>
+						<% } %>
+					</ul>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

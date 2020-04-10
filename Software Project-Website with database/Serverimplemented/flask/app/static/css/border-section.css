@@ -1,0 +1,118 @@
+/*border radius css file*/
+.corner-radius-top,
+.corner-radius,
+.page-pagination a:first-child,
+.course-description,
+.woocommerce td.actions input[name="update_cart"],
+.blog-post .post-info,
+.pricing-table .header-pt {
+	border-top-left-radius: 10px;
+	-ms-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+}
+.corner-radius-bottom,
+.corner-radius,
+.widget-search form input[type='search'],
+.page-pagination a:last-child,
+.service-alt .description,
+.woocommerce td.actions input[name="proceed"],
+.widget-search form .search-submit {
+	border-bottom-right-radius: 10px;
+	-ms-border-bottom-right-radius: 10px;
+	-moz-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+}
+.corner-radius,
+p.paragraph-border:first-letter,
+p.paragraph-background:first-letter,
+.info-boxes .info-box-icon,
+.tabs .container-tabs>img,
+.cws-button.border-radius,
+.link-cont a,
+.widget-categories li a,
+.widget-archives li a,
+.widget-meta li a,
+.widget-event .date,
+.widget-popular h6,
+.widget-popular .person,
+.widget-navigation>ul,
+#flickr-badge li,
+.header-megamenu,
+.quote-avatar-author img,
+.twitter .fa-twitter,
+.widget-subscribe a,
+img.avatar,
+.project-details .title-details,
+.course-description .course-date,
+.pricing-table,
+.service-main,
+.tp-caption .sl-title,
+#page-meta,
+#list-or-grid>div,
+.price_slider_wrapper,
+.widget_shopping_cart_content ul li a img,
+.widget-selers img,
+.woocommerce-tabs .tabs li,
+.woocommerce .shipping-calculator-form,
+.woocommerce .cart-collaterals .cart_totals table,
+.category-button,
+.category-item .category-info,
+.widget-course-details .category-info,
+.category-search>i,
+.category-search,
+.calendar-header,
+.head-sitemap,
+.social-icon,
+.banner-offer,
+.service-icon,
+.twitter-1 i.twitt,
+.widget-search form input[type='search']{
+	border-top-left-radius: 10px;
+	-ms-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-ms-border-bottom-right-radius: 10px;
+	-moz-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+}
+.owl-controls .owl-buttons .owl-prev,
+.owl-controls .owl-buttons .owl-next,
+a.ui-datepicker-prev.ui-corner-all,
+a.ui-datepicker-next.ui-corner-all,
+.header-comments:before,
+#flickr-badge .flickr-container span,
+.woocommerce table tbody .product-thumbnail img,
+.calendar-header .buttons-calendar-view>div,
+.calendar-header .buttons-calendar-view i{
+	border-top-left-radius: 6px;
+	-ms-border-top-left-radius: 6px;
+	-moz-border-top-left-radius: 6px;
+	-webkit-border-top-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	-ms-border-bottom-right-radius: 6px;
+	-moz-border-bottom-right-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+}
+aside .carousel-button .prev,
+.quotes-carousel .carousel-button .prev,
+.grid-col-4 .carousel-button .prev,
+.toggles .content-title:after,
+.carousel-button .prev{
+	border-top-left-radius: 5px;
+	-ms-border-top-left-radius: 5px;
+	-moz-border-top-left-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+}
+aside .carousel-button .next,
+.quotes-carousel .carousel-button .next,
+.grid-col-4 .carousel-button .next,
+.carousel-button .next,
+.toggles .content-title:after,
+.woocommerce .title .button-back i{
+	border-bottom-right-radius: 5px;
+	-ms-border-bottom-right-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+}

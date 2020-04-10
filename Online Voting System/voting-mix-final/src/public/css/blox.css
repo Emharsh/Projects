@@ -1,0 +1,418 @@
+/*! blox.css v0.2.0 | MIT License | Lucas Bradford */
+
+.table{
+	margin 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.table-container {
+	margin 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.border{
+	border: blue solid 0.2rem;
+	border-color: #005ea5;
+	border-radius: 1rem;
+}
+
+.sep-bot {
+	border-bottom: blue dashed 0.1rem;
+	border-color: #005ea5;
+}
+
+.table-container ul{
+	list-style: none;
+	padding: unset;
+	margin: 2px 0;
+}
+
+.table-container li {
+	list-style: none;
+	padding: unset;
+	margin: unset;
+	/*! margin: 5px 0; */
+	overflow: hidden;
+}
+
+.table-row:hover{
+	background-color: #ffbf47;
+	border-radius: 1rem;
+}
+
+.table-row{
+	display: flex;
+	flex-direction: row;
+	justify-content:space-evenly;
+	align-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.table-row{
+	display: flex;
+	flex-direction: row;
+	justify-content:space-evenly;
+	align-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.table-header {
+	font-size: 3rem;
+	margin-bottom: 0.5rem;
+}
+
+.table-col-header {
+	font-weight:bold;
+	font-size: 2rem
+}
+
+table-row-header {
+	font-weight:bold;
+}
+
+.table-row >*{
+	padding:0.2rem;
+	flex-grow:0;
+	min-width: 80px;
+	max-width: 100px;
+}
+
+.table-sz-thumb{
+	flex-grow:0;
+	min-width: 100px;
+	min-width: 100px;
+}
+
+.table-sz-smthumb{
+	flex-grow:0;
+	min-width: 70px;
+  min-height: 70px;
+	width: 70px;
+  height: 70px;
+}
+
+.table-sz-vsmall{
+	flex-shrink:2;
+  min-width: 50px;
+	max-width: 50px;
+}
+
+.table-sz-large{
+	flex-shrink:2;
+  min-width: 300px;
+	max-width: 500px;
+}
+
+.table-sz-norm{
+	flex-grow:0;
+	min-width: 200px;
+	max-width: 300px;
+}
+
+.table-sz-date{
+	flex-grow:0;
+	min-width: 110px;
+	max-width: 110px;
+}
+
+
+.table-sz-button{
+	flex-shrink:2;
+	min-width: 50px;
+	max-width: 50px;
+}
+
+
+
+blox{
+	display: flex;
+	flex-direction: column;
+}
+
+.blox-container{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.blox-form {
+	margin: 2px auto;
+}
+
+.blox-login {
+	max-width: 400px;
+	margin: 2px auto;
+}
+
+.blox-reg {
+	margin: 2px auto;
+}
+
+.blox-basic {
+  
+}
+
+.blox-buttons{
+	display: flex;
+	
+	justify-content: flex-end;
+}
+
+.blox-fields{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-items: flex-start;
+	justify-content: flex-start;
+}
+
+.blox-buttons{
+	display: flex;
+	flex-direction: row;
+	align-self: flex-end;
+}
+
+.blox-header{
+  margin: 0.2rem;
+}
+
+.blox-content{
+  margin: 0.2rem;
+}
+
+.blox-contents{
+	display: flex;
+	flex-direction: row;
+}
+
+.blox-item{
+	display: flex;
+	flex-direction: row;
+	padding: 0 0.3rem;
+}
+
+.blox-headers{
+	display: flex;
+	flex-direction: row;
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+.blox-headers .blox-field{
+	overflow:visible;
+}
+
+.blox-label{
+  padding: 0.2rem;
+	font-weight: bold;
+  vertical-align: middle;
+  display: flex;
+}
+
+.blox-label label{
+  display: block;
+	padding: 0;
+	margin: auto;
+  vertical-align: middle;
+}
+
+.blox-entry:not(.blox-headers):not(.blox-form) .blox-fields .blox-label{
+	display: none;
+}
+
+.blox-contents{
+	margin: 0.2rem;
+}
+
+.blox-row{
+	flex-direction: column;
+}
+
+.blox-col{
+	flex-direction: column;
+}
+
+.blox-entry{
+	padding: 0.3rem;
+	margin: 0.3rem;
+	border-radius: 0.5rem;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.blox-entry:not(.blox-headers):not(.blox-form):hover, .blox-entry:not(.blox-headers):not(.blox-form):active, .blox-entry:not(.blox-headers):not(.blox-form):focus{
+	background-color: #ffbf47;
+	cursor: pointer;
+}
+
+.form-row{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content: space-evenly;
+	align-items: flex-end;
+}
+
+.form-col{
+	display: flex;
+	flex-direction:column;
+}
+
+
+
+.form-group {
+	display: flex;
+	flex-direction:column;
+	margin: 5px;
+	width: max-content;
+}
+
+.form-group.long {
+	max-width: unset;
+}
+
+
+.form-subgroup {
+	display: flex;
+	flex-direction:row;
+	width: max-content;
+}
+
+.form-submit{
+	margin: 2px;
+	text-align: right;
+}
+
+.form-item{
+	width: max-content;
+}
+
+.blox-field.form-item {
+	width: max-content;
+}
+
+.form-item input[type="password"]{
+	width: max-content;
+}
+
+.blox-field {
+	padding:0.2rem;
+	width: 100px;
+	overflow: hidden;
+}
+
+.field-string{
+	width: 100px;
+}
+.field-number{
+	width: 20px;
+}
+.field-date{
+	width: 110px;
+}
+.blox-image{
+	width: 100px;
+}
+.field-object {
+	width: 50px;
+}
+
+.field-string-mid{
+	width: 100px;
+}
+.field-string-short{
+	width: 75px;
+}
+.field-string-long{
+	width: 200px;
+}
+.field-string-vshort{
+	width: 5px;
+}
+.field-string-vlong{
+	width: 300px;
+}
+
+.field-number-norm{
+	width: 20px;
+}
+.field-number-short{
+	width: 25px;
+}
+.field-number-long{
+	width: 50px;
+}
+
+.field-date-datetime{
+  flex-direction: column;
+	width: 90px;
+}
+.field-date-date{
+	width: 80px;
+}
+.field-date-time{
+	width: 90px;
+}
+
+.field-empty {
+	/* background-color: lightcyan; */
+}
+
+.field-empty > *{
+	color: grey;
+}
+
+
+.blox-button {
+	width: max-content;
+}
+
+.blox-button-submit{
+	width: max-content;
+}
+
+@media (max-width: 1200px) {
+	.blox-entry:not(.blox-headers):not(.blox-form) .blox-fields .blox-label{
+		display: block;
+	}
+	.blox-fields .blox-label{
+		width: 80px;
+		padding: 0;
+		margin: 0;
+	}
+	.blox-item{
+		padding: 0;
+	}
+	.blox-entry{
+		border: black 0.01rem solid;
+		width: unset;
+	}
+	.blox-headers {
+		display: none;
+	}
+	
+	.blox-fields {
+    flex-direction: column;
+    align-items: flex-start;
+	}
+	.blox-field {
+		padding:0;
+		min-width: 100px;
+		margin: 0;
+		overflow: hidden;
+		width: 15vw;
+	}
+
+	.blox-image{
+		
+	}
+}
+

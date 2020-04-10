@@ -1,0 +1,58 @@
+<!-- views/pages/vote.ejs -->
+
+<% let title = "Account" %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<%  if (globals.is_loggedin_admin) { %>
+	<div class="blox">
+		<div id="" class="blox-container border">
+			<div class="text-center">
+				<div>
+					<h3>About the Elections:</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean iaculis nulla non eleifend ornare.Aliquam erat volutpat. Vivamus eget sollicitudin purus, at cursus ligula. Curabitur eros augue, ultrices vel lorem in, iaculis malesuada eros. Nunc risus ex, ullamcorper id dui et, pretium accumsan lacus. 	Vestibulum vulputate ultrices purus commodo volutpat. Curabitur accumsan at lorem sed consequat. Sed ullamcorper sapien quis faucibus scelerisque. Maecenas tristique varius egestas. Quisque ullamcorper ex felis, laoreet gravida eros scelerisque eu. Mauris pellentesque eu tortor ultricies condimentum. Nulla pretium ipsum eget luctus sollicitudin. Donec auctor cursus orci ullamcorper aliquet. Suspendisse a	tincidunt dolor, ac dapibus arcu. Aliquam in dui ac lacus commodo facilisis. Morbi sed posuere libero.</p>
+				</div>
+				<div>
+					<h5 class="card-title">Edit Account</h5>
+					<a href="/register/" class="btn btn-secondary">Edit Account</a>
+				</div>
+				<div>
+					<h5 class="card-title">Other Thing</h5>
+					<a href="/register/" class="btn btn-secondary">Other Thing</a>
+				</div>
+        <%  if(elections) { %>
+				<div>
+					<h3>List of elections:</h3>
+					<ul>
+          
+					<%  for (const [ key, election ] of Object.entries(elections)) { %>
+						<li class="election-<%=election.id %>"><span><%=election.consituency %></span> - <span><%=election.type %></span> - <span><%=election.start_date %></span> - <span><%=election.end_date %></span> <button onclick="location.href='/elections?loc=<%=election.id %>'">Information</button> <button onclick="location.href='/account/vote?loc=<%=election.id %>'">Vote Now</button></li>
+					<% } %>
+					</ul>
+				</div>
+        <% } %>
+			</div>
+		</div>
+	</div>
+	<% } else { %>
+	<!--Sign in/Register-->
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="col-sm-6">
+			  <div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Log in</h5>
+					<p class="card-text">If you have registered before and would like to sign in, you can do it here.</p>
+					<a href="/admin/account/login/" class="btn btn-primary">Go log in</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% } %>
+
+</div>
+
+<%- include(globals.inc + globals.footer) %>

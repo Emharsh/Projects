@@ -1,0 +1,40 @@
+<!-- views/pages/admin/create-candidate.ejs -->
+
+<% let title = "Create Candidate" %>
+
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+  <div class="row">
+    <div class="text-center">
+      <div id="form-messages" name="form-messages"></div>
+      <form method="POST" id="ajax-form" name="ajax-form" action='./' completed='../'>
+        <div class="form-group">
+          <label for="name">Candidate name</label>
+          <input type="text" class="form-control" id="name" placeholder="Candidate name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="party">Party:</label>
+          <select class="form-control" id="party" name="party">
+            <% for (const party of parties) { %>
+              <option value="<%= party.id %>"><%= party.name %></option>
+            <% } %>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Picture URL</label>
+          <input type="text" class="form-control" id="pictureUrl" placeholder="http/ftp(s)://..." name="pictureUrl" pattern="(?((http)|(ftp))s?://.+)?">
+        </div>
+    </div>
+    <button type="button" id="submit-form" class="btn btn-secondary" onclick="return submitFormAsJson();">Create candidate</button>
+    </form>
+  </div>
+</div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

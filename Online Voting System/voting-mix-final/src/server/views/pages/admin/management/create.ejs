@@ -1,0 +1,71 @@
+<!-- views/pages/admin/register.ejs -->
+
+<% let title = "Register Admin" %>
+
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+  <div class="row">
+    <div class="text-center">
+      <% if (typeof lowerRanks !== 'undefined' && lowerRanks.length > 0) { %>
+      <div id="form-messages" name="form-messages"></div>
+      <form method="POST" id="ajax-form" name="ajax-form" action='./' completed='../'>
+        <div class="form-group">
+          <label for="username">Admin username</label>
+          <input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" class="form-control"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{10,30}$" min="10" max="30"
+            onchange="this.setCustomValidity(this.validity.patternMismatch ? 
+            'Password must be minimum 10 characters and maximum 30, including one capitol, one lower case, one number and one symbol in:!@#$%^&*_=+-' : ''); 
+            document.getElementById('password_two').pattern = '^' + this.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$';"
+            placeholder="Password" required>
+
+          <label for="password_two">Password Again</label>
+          <input class="form-control" id="password_two" name="password_two" type="password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{10,30}$"
+            onchange="this.setCustomValidity(this.validity.patternMismatch ? 'This password does not match' : '');"
+            placeholder="Verify Password" required>
+        </div>
+
+        <div class="form-group">
+          <label for="role">Role:</label>
+          <select class="form-control" id="role" name="role">
+            <% for (const role of lowerRanks) { %>
+              <% let roleString = role.replace('_', ' ') %>
+              <option value="<%= role %>"><%= roleString.charAt(0).toUpperCase() + roleString.slice(1) %> admin</option>
+            <% } %>
+          </select>
+        </div>
+        <div class="form-group">
+          <% let regionPattern = '^' %>
+          <% let patternMismatchMessage = 'The region postcode must be at least 1 character!' %>
+          <% if (admin.region) { 
+            regionPattern += admin.region;
+            patternMismatchMessage = 'You can add admins only for postcode region ' + admin.region + 
+            '! Your input should be \\\'' + admin.region + '\\\' followed by the area-specific code.'
+          } %>
+          <% regionPattern += '.+$' %>
+          <label for="username">Region postcode</label>
+          <input type="text" class="form-control" id="region" placeholder="Postcode" name="region" 
+          pattern="<%- regionPattern %>"
+          onchange="this.setCustomValidity(this.validity.patternMismatch ? '<%= patternMismatchMessage %>' : '');"
+          required>
+        </div>
+    </div>
+    <button type="button" id="submit-form" class="btn btn-secondary" onclick="return submitFormAsJson();">Register admin</button>
+    </form>
+    <% } else { %>
+    <div class="alert alert-danger">You don't have the privileges to add new admins!</div>
+    <% } %>
+  </div>
+</div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

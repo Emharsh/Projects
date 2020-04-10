@@ -1,0 +1,60 @@
+<!-- views/pages/account/register.ejs -->
+
+<% let title = "Register" %>
+<% let id = "preregister" %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+<div id="content">
+	<div class="blox">
+		<div id="" class="blox-container border">
+			<div class='blox-form blox-reg'>
+				<form method="POST" id="form-<%-page.id%>" action="<%= authServiceUrl %>/preregister" completed="/">
+					<div id="form-messages" name="form-messages">
+						<div id="form-feedback" class="alert hidden" role="alert"></div>
+					</div>
+					<div class="form-row">
+						<div class="form-group">
+							<div class="form-item">
+								<label for="register-dob">Date of Birth</label>
+								<input type="date" class="form-control" name="dob" id="register-dob"  max="<%-page.max_date%>"  min="<%-page.min_date%>" value="<%-page.start_date%>"  required>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<label for="registerNIN">National Insurance Number</label>
+								<input type="text" class="form-control" name="nin" id="registerNIN" placeholder="e.g. SM401183D" pattern="^[A-Z]{2}[0-9]{6}[A-Z]$" onchange="" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<label for="registerZip">Postcode</label>
+								<input type="text" class="form-control" name="zip" id="registerZip" placeholder="e.g. CF24 4NQ" pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? ?[0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<a id="checkpostcode" type="button" class="btn btn-primary btn-confirm" onclick="checkpostcode('registerZip')">Check</a>
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group">
+							<span class="hidden" type="text" id="jsondata1" />
+						</div>
+						<div class="form-group">
+							<input class="hidden" type="text" id="jsondata2" />
+						</div>
+					</div>
+					<div class="form-submit">
+						<button id="submit-<%-page.id%>" type="submit" class="btn btn-primary btn-confirm">Register</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/static/js/preregister.js" defer></script>
+<%- include(globals.inc + globals.footer) %>

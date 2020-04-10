@@ -1,0 +1,80 @@
+<!-- views/pages/parties.ejs -->
+
+<% let title = "Parties" %>
+<% let id = "parties" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+<div id="content">
+  <div class="blox">
+    <div id="<%=page.id%>">
+      <div class="blox-row">
+		      <div class="blox-header">
+			      <span>Header here</span>
+		      </div>
+		      <div class="blox-info">
+			      <span>Info Here</span>
+		      </div>
+	      <div id="entries-<%=page.id%>" class="blox-container border">
+          <div class="blox-entry blox-headers sep-bot">
+            <div class="blox-fields">
+              <div class="blox-item">
+				        <div class="blox-contents blox-field blox-field-col field-image field-image-logo"></div>
+              </div>
+              <div class="blox-item">
+				        <div class="blox-contents blox-field blox-field-col field-string field-string-long"><span>Party Name</span></div>
+              </div>
+            </div>
+          </div>
+	        <% for (const party of parties) { %>
+		      <div class="blox-entry">
+			      <div class="blox-fields">
+              <div class="blox-item">
+				        <div class="blox-label"></div>
+				        <div class="blox-contents blox-field field-image field-image-logo"  onclick="toggle('toggle-<%- party.id %>')" ><img class="party-logo" src="<%= party.picture %>" /></div>
+              </div>
+              <div class="blox-item">
+				        <div class="blox-label"><span>Name</span></div>
+				        <div class="blox-contents blox-field field-string field-string-long" onclick="toggle('toggle-<%- party.id %>')" ><%= party.name %></div>
+              </div>
+            </div>
+			      <div class="blox-buttons">
+		          <div class="blox-item"> 
+                <div class="blox-contents blox-field blox-button">
+                  <a class="btn button-toggle" role="button" onclick="toggle('toggle-<%- party.id %>')" ><i class="fas fa-eye-slash"></i> </a>
+                </div>
+		          </div>
+			      </div>
+		      </div>
+          <div id="toggle-<%- party.id %>" class="blox-entry blox-togglebox hidden">
+			      <div class="blox-fields">
+              <div class="blox-item">
+				        <div class="blox-label"></div>
+				        <div class="blox-contents blox-field field-image field-image-logo"><img class="party-logo" src="<%= party.picture %>" /></div>
+              </div>
+              <div class="blox-item">
+				        <div class="blox-label"><span>Name</span></div>
+				        <div class="blox-contents blox-field <%- item.classes %>"><%= party.name %></div>
+              </div>
+            </div>
+			      <div class="blox-buttons">
+		          <div class="blox-item"> 
+                <div class="blox-contents blox-field blox-button">
+                  <a class="btn button-toggle" role="button" onclick="toggle()" ><span></span> </a>
+                </div>
+		          </div>
+			      </div>
+		      </div>
+	        <% } %>
+	      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>
+
+

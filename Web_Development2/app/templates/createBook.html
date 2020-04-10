@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+  <h2>LIBRARY</h2>
+  <h3>"When in doubt, ask a Librarian"</h3>
+  <div class="jumbotron">
+    <script>
+    //Include the event handler
+    window.addEventListener("load", pl.view.createBook.setupUserInterface);
+    </script>
+    <p><strong>Create a new book record</strong></p>
+    <form id="Book">
+      <p><label>Code: <input name="Code" /></label></p>
+      <p><label>Name: <input name="Name" /></label></p>
+      <p><label>Year: <input name="year" /></label></p>
+      <p><button type="button" name="commit">Save</button></p>
+    </form>
+    <button type="submit" class="bin btn-primary btn-lg btn-block"onclick="window.location = 'http://127.0.0.1:5000/profile'">Back</button>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,104 @@
+<!-- views/pages/admin/view_election.ejs -->
+
+
+<% let title = "Edit Election" %>
+<% let id = "edit-election" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="edit-<%-page.id%>" class="blox-container border">
+			<div class="blox-form blox-basic">
+				<form method="post"  id="form-<%-page.id%>" action="./" completed="">
+					<div id="form-messages" name="form-messages">
+						<div id="form-feedback" class="alert hidden" role="alert"></div>
+					</div>
+					<div class="form-row">
+            <div class="form-group">
+							<div class="form-item">
+								<label for="id">ID</label>
+								<input type="text" class="form-control" name="id" id="election-id" value="<%= election.id %>" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<label for="name">Election Name</label>
+								<input type="text" class="form-control" name="name" id="election-name" value="<%= election.name %>" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Start</label>
+							<div class="form-subgroup">
+								<div class="form-item">
+									<label for="start-date">Date</label>
+									<input type="date" class="form-control" name="start-date" value="<%= election.start_date.date %>" id="election-start-date" required>
+								</div>
+								<div class="form-item">
+									<label for="start-time">Time</label>
+									<input type="time" class="form-control" name="start-time" value="<%= election.start_date.time %>" id="election-start-time" required>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>End</label>
+							<div class="form-subgroup">
+								<div class="form-item">
+									<label for="end-date">Date</label>
+									<input type="date" class="form-control" name="end-date" value="<%= election.end_date.date %>" id="election-end-date" required>
+								</div>
+								<div class="form-item">
+									<label for="end-time">Time</label>
+									<input type="time" class="form-control" name="end-time" value="<%= election.end_date.time %>" id="election-end-time" required>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-item">
+								<label for="type">Type</label>
+								<select class="form-control" name="type" id="election-type" required>
+									<% for (const type of types) { %>
+										<option value="<%= type.id_election_types %>"
+                      <% if (type.id_election_types === election.type) { %>
+											  selected="selected"
+										  <% } %>
+                      ><%= type.name %></option>
+									<% } %>
+								</select>
+							</div>
+						</div>
+            <div class="form-group">
+							<div class="form-item">
+								<label for="electoral_regions_id">Electoral Area</label>
+            		<select class="form-control" name="electoral_regions_id" id="election-region-id" required>
+									<% for (const area of regions) { %>
+										<option value="<%= area.id_regions %>"
+                      <% if (area.id_regions === election.electoral_regions_id) { %>
+											  selected="selected"
+										  <% } %>
+                      ><%= area.name %></option>
+									<% } %>
+								</select>
+            	</div>
+						</div>
+					</div>
+					<div class="form-submit">
+						<button id="submit-<%-page.id%>" type="submit" class="btn btn-secondary btn-confirm">Confirm Changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="buttons-<%-page.id%>" class="blox-container">
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../../" role="button">Return to All</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-primary" href="../" role="button">Return to Election</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-danger" href="../end/" role="button">End</a></div>
+			<div class="blox-item blox-row"><a class="btn btn-danger" href="../archive/" role="button">Archive</a></div>
+		</div>
+	</div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

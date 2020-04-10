@@ -1,0 +1,46 @@
+<!-- views/pages/login.ejs -->
+
+<% let title = "Log in" %>
+<% let id = "voter-login" %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="" class="blox-container border">
+			<div class="blox-form blox-login">
+				<form method="post" id="form-<%-page.id%>" action="<%- authServiceUrl  %>" completed='../' onsubmit="return login(this)">
+					<div id="form-messages" name="form-messages"></div>
+					<div class="form-col">
+						<div class="form-group long">
+							<div class="form-item">
+								<label for="signinNINumber">National Insurance Number</label>
+								<input type="text" class="form-control" id="signinNINumber" aria-describedby="emailHelp" placeholder="National Insurance Number" name="nin" required minlength="9" maxlength="9" pattern="^[A-Z]{2}[0-9]{6}[A-Z]$">
+							</div>
+						</div>
+						<div class="form-group long">
+							<div class="form-item">
+								<label for="signinPassword">Personal Access Token (PAT)</label>
+								<input type="password" class="form-control" id="signinPassword" placeholder="Password" name="pat" required minlength="15" maxlength="15" pattern="^[a-zA-Z!@#*?_]{15}$"> 
+							</div>
+						</div>
+						<div class="form-group long">
+							<div class="form-item">
+								<label for="signinOnlineID">Upload your Online ID</label>
+								<input type="file" accept=".oid" class="form-control-file" id="oid" required>
+							</div>
+						</div>
+					</div>
+					<div class="form-submit">
+						<button id="submit-<%-page.id%>" type="submit" class="btn btn-primary btn-confirm" onsubmit="return false">Sign in</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/static/js/crypto-helper.js"></script>
+<%- include(globals.inc + globals.footer) %>

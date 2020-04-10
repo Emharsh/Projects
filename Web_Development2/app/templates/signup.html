@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <h2>Sign up</h2>
+
+    {% for message in form.firstname.errors %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.lastname.errors %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.email.errors %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.password.errors %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    <form class="form-signin" action="{{ url_for('signup') }}" method=post>
+      {{ form.hidden_tag() }}
+
+      {{ form.firstname.label }}
+      {{ form.firstname(id="firstname", class="form-control") }}
+
+      {{ form.lastname.label }}
+      {{ form.lastname(id="lastname", class="form-control") }}
+
+      {{ form.email.label }}
+      {{ form.email(id="email", class="form-control") }}
+
+      {{ form.password.label }}
+      {{ form.password(id="password", class="form-control")}}
+
+      {{ form.submit(id ="btnSignUp", class="btn btn-lg btn-primary btn-block") }}
+    </form>
+  </div>
+</div>
+{% endblock %}

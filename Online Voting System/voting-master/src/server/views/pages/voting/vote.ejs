@@ -1,0 +1,123 @@
+<!-- views/pages/vote.ejs -->
+
+<% let title = "Vote" %>
+
+<%- include(globals.inc + globals.head) %>
+
+<div id="content">
+  <div class="blox">
+    <div id="<%-page.id%>">
+      <div class="blox-row">
+		      <div class="blox-header">
+			      <span>Your Elections</span>
+		      </div>
+		      <div class="blox-info">
+			      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean iaculis nulla non eleifend ornare.Aliquam erat volutpat. 
+              Vivamus eget sollicitudin purus, at cursus ligula. Curabitur eros augue, ultrices vel lorem in, iaculis malesuada eros. 
+              Nunc risus ex, ullamcorper id dui et, pretium accumsan lacus. Vestibulum vulputate ultrices purus commodo volutpat. 
+              Curabitur accumsan at lorem sed consequat.</span>
+		      </div>
+	      <div id="entries-<%-page.id%>" class="blox-container border">
+          <div class="blox-entry blox-headers sep-bot">
+            <div class="blox-fields">
+              <div class="blox-item">
+				        <div class="blox-contents blox-field blox-field-col field-string field-string-long"><span>Election Name</span></div>
+              </div>
+              <div class="blox-item">
+				        <div class="blox-contents blox-field blox-field-col field-string field-string-long"><span>Area</span></div>
+              </div>
+              <div class="blox-item">
+				        <div class="blox-contents blox-field blox-field-col field-string field-string-long"><span>Type</span></div>
+              </div>
+              <div class="blox-item">
+				        <div class="blox-contents blox-field blox-field-col field-date field-date-datetime"><span>Start</span></div>
+              </div>
+              <div class="blox-item">
+				        <div class="blox-contents blox-field blox-field-col field-date field-date-datetime"><span>End</span></div>
+              </div>
+              <div class="blox-item">
+				        <div class="blox-contents blox-field blox-field-col field-icon"><span>Your Status</span></div>
+              </div>
+            </div>
+          </div>
+				  <%  for (const election of elections) { %>
+          <%  
+          election.status = false;
+          let voted = false;
+          for (const ballot of election.ballots){
+            if(ballot.onlineidentity_id === onlineIdentityId){
+              voted = true;
+            }
+          }
+          
+          const todaysDate = new Date();        
+          
+          election.statusIcon = settings.icons.disp.ballotBox;
+          election.statusAlt = "Ballet Box";
+          if(election.start_date >= todaysDate){
+            election.statusIcon = settings.icons.disp.calender;
+            election.statusAlt = "Election voting has not started yet";
+          } else if (voted) {
+            election.statusIcon = settings.icons.disp.clipboardDone;
+            election.statusAlt = "Election voting is open and you have voted";
+          } else if (election.end_date <= todaysDate) {
+            election.statusIcon = settings.icons.disp.calenderEnd;
+            election.statusAlt = "Election voting has ended and you have not voted";
+          } else {
+            election.statusIcon = settings.icons.disp.clipboardList;
+            election.statusAlt = "Election voting is open and you have not voted yet";
+            election.status = true;
+          }
+          %>
+				  <div class="blox-entry entry-election-<%- election.id %>">
+			      <div class="blox-fields">
+              <div class="blox-item">
+				        <div class="blox-label"><span>Name</span></div>
+				        <div class="blox-contents blox-field field-string field-string-long"><%- election.name %></div>
+              </div>
+              <div class="blox-item">
+				        <div class="blox-label"><span><%- election.electionTypes.region_name_singular %></span></div>
+				        <div class="blox-contents blox-field field-string field-string-long"><%- election.electoralRegion.name %></div>
+              </div>
+              <div class="blox-item">
+				        <div class="blox-label"><span>Type</span></div>
+				        <div class="blox-contents blox-field field-string field-string-long"><%- election.electionTypes.name %></div>
+              </div>
+              <div class="blox-item">
+				        <div class="blox-label"><span>Start</span></div>
+				        <div class="blox-contents blox-field field-date field-date-datetime">
+                  <span class="date"><%- election.start_date.toLocaleDateString('en-GB') %></span>
+                  <span class="time"><%- election.start_date.toLocaleTimeString('en-GB') %></span>
+				        </div>
+              </div>
+              <div class="blox-item">
+				        <div class="blox-label"><span>End</span></div>
+				        <div class="blox-contents blox-field field-date field-date-datetime">
+                  <span class="date"><%- election.end_date.toLocaleDateString('en-GB') %></span>
+                  <span class="time"><%- election.end_date.toLocaleTimeString('en-GB') %></span>
+				        </div>
+              </div>
+              <div class="blox-item">
+				        <div class="blox-label"><span>Your Status</span></div>
+				        <div class="blox-contents blox-field field-icon">
+                  <div class="icon" title="<%- election.statusAlt %>"> <%-election.statusIcon %></div>
+				        </div>
+              </div>
+            </div>
+             <%  if (election.status) { %>
+			      <div class="blox-buttons">
+		          <div class="blox-item"> 
+                <div class="blox-contents blox-field blox-button">
+                  <a class="btn btn-primary button-next" role="button" href="/vote/election-<%- election.id %>/" >View Election</a>
+                </div>
+		          </div>
+			      </div>
+            <% } %>
+		      </div>
+          <% } %>
+			  </div>
+		  </div>
+	  </div>
+  </div>
+</div>
+<%- include(globals.inc + globals.footer) %>

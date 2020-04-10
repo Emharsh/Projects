@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+  <h2>GeoLocation</h2>
+  <p>Geolocation is the identification of the real-world geographic location of an object,
+    such as a radar source, mobile phone or Internet-connected computer terminal. In its simplest form
+    geolocation involves the generation of a set of geographic coordinates and is closely related to the
+    use of positioning systems, but its usefulness is enhanced by the use of these coordinates to determine
+    a meaningful location, such as a street address.</p>
+  <div class="jumbotron">
+    <iframe height="320" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=University+of+Leeds,+Leeds,+WY,+UK&amp;aq=0&amp;sll=53.806666,-1.555108&amp;vpsrc=6&amp;ie=UTF8&amp;hq=Universit+of+Leeds,+Leeds,+West+Yorkshire,+UK&amp;ll=53.806666,-1.555108&amp;spn=0.033797,0.06403&amp;t=m&amp;output=embed">
+    </iframe><br>
+    <button class = "GeoButton" onclick="geoFindMe()">Show my location</button>
+    <div id="out"></div>
+  </div>
+</div>
+{% endblock %}

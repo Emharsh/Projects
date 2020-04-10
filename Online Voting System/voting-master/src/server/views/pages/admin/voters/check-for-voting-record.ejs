@@ -1,0 +1,48 @@
+<!-- views/pages/admin/check-for-voting-record.ejs -->
+
+
+<% let title = "Check for voting record" %>
+<% let id = "check-voting-record" %>
+<% global.admin_loggedin = true; %>
+
+<%- include(globals.inc + globals.head)%>
+
+
+<div id="content">
+  <div class="blox">
+    <div id="edit-<%-page.id%>" class="blox-container border">
+      <div class="blox-form blox-basic">
+        <form id="form-<%-page.id%>" method="POST" action="/admin/check-for-voting-record" completed="">
+          <div id="form-messages" name="form-messages">
+            <div id="form-feedback" class="alert hidden" role="alert"></div>
+          </div>
+          <div class="form-row">
+						<div class="form-group">
+							<div class="form-item">
+								<label for="nin">National Insurance Number</label>
+								<input type="text" class="form-control" name="nin" id="nin" placeholder="e.g. SM401183D" pattern="^[A-Z]{2}[0-9]{6}[A-Z]$" onchange="" required>
+							</div>
+						</div>
+            <div class="form-group">
+              <div class="form-item">
+                <label for="election">Election</label>
+                <select class="form-control" id="election" name="electionId">
+                  <% for (const election of elections) { %>
+                  <option value="<%= election.id %>"><%= election.name %>
+                  </option>
+                  <% } %>
+                </select>
+              </div>
+            </div>
+          </div>
+           
+          <div class="form-submit">
+            <button id="submit-<%-page.id%>" type="submit" class="btn btn-secondary btn-confirm">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

@@ -1,0 +1,129 @@
+<!-- views/pages/admin/view_results.ejs -->
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+    <div class="blox-row">
+	    <div id="blox-form-<%- page.id%>" class="blox-container">
+		    <div class="blox-item"> 
+          <div class="blox-entry blox-form">
+            <form method="GET" action="./">
+            <div class="blox-fields">
+              <div class="blox-item">
+                <div class="blox-label">
+                  <label for="nin">Search NI Number</label>
+                </div>
+						    <div class="blox-contents blox-field form-item field-string field-string-short">
+                  <input type="search" class="form-control" name="nin" id="search-nin" placeholder="NI Number">
+						    </div>
+              </div>
+              <div class="blox-item">
+                <div class="blox-label">
+                  <label for="postcode">Postcode</label>
+                </div>
+                <div class="blox-contents blox-field form-item field-string field-string-short">
+                  <input type="search" class="form-control" name="postcode" id="search-postcode" placeholder="Postcode">
+						    </div>
+              </div>
+              <div class="blox-item">
+                <div class="blox-contents blox-field blox-button blox-button-norm">
+                  <button class="btn btn-primary" role="button" type="submit">Search</button>
+                </div>
+              </div>
+	          </div>
+            </form>
+          </div>
+		    </div>
+	    </div>
+    </div>
+    <div class="blox-row">
+		<div id="entries-<%-page.id%>" class="blox-container border">
+			<div class="blox-entry blox-headers sep-bot">
+          <div class="blox-fields">
+            <div class="blox-item">
+							<div class="blox-contents blox-field blox-field-col field-string field-string-short"><span>NiNo</span></div>
+            </div>
+            <div class="blox-item">
+							<div class="blox-contents blox-field blox-field-col field-number field-number-short"><span>ID</span></div>
+            </div>
+            <div class="blox-item">
+							<div class="blox-contents blox-field blox-field-col field-date field-date-date"><span>DoB</span></div>
+            </div>
+            <div class="blox-item">
+							<div class="blox-contents blox-field blox-field-col field-string field-string-mid"><span>postcode</span></div>
+            </div>
+            <div class="blox-item">
+              <div class="blox-contents blox-field blox-field-col field-icon field-icon-icon"><span>Registered</span></div>
+            </div>
+          </div>
+          <div class="blox-buttons">
+            <div class="blox-item">
+			        <div class="blox-contents blox-field blox-field-col blox-button blox-button-norm"><span></span></div>
+            </div>
+            <div class="blox-item">
+			        <div class="blox-contents blox-field blox-field-col blox-button blox-button-norm"><span></span></div>
+            </div>
+            <div class="blox-item">
+              <div class="blox-contents blox-field blox-field-col blox-button blox-button-norm"><span></span></div>
+            </div>
+            <div class="blox-item">
+              <div class="blox-contents blox-field blox-field-col blox-button blox-button-norm"><span></span></div>
+            </div>
+          </div>
+        </div>
+				<% for (const voter of voters) { 
+        if (voter.enc_onlineidentity_id){
+            voter.registered = settings.icons.funct.True;
+        } else {
+            voter.registered = settings.icons.funct.False;
+        }
+        %>
+        <div class="blox-entry">
+          <div class="blox-fields">
+            <div class="blox-item">
+              <div class="blox-label"><span>NiNo</span></div>
+						  <div class="blox-contents blox-field blox-field-col field-string field-string-short"><span><%- voter.nino %></span></div>
+            </div>
+            <div class="blox-item">
+              <div class="blox-label"><span>ID</span></div>
+						  <div class="blox-contents blox-field blox-field-col field-number field-number-short"><span><%- voter.id %></span></div>
+            </div>
+            <div class="blox-item">
+              <div class="blox-label"><span>DoB</span></div>
+						  <div class="blox-contents blox-field blox-field-col field-date field-date-date"><span><%- voter.dob.toLocaleDateString('en-GB') %></span></div>
+            </div>
+            <div class="blox-item">
+              <div class="blox-label"><span>postcode</span></div>
+						  <div class="blox-contents blox-field blox-field-col field-string field-string-mid"><span><%- voter.postcode %></span></div>
+            </div>
+            <div class="blox-item">
+              <div class="blox-label"><span>Registered</span></div>
+              <div class="blox-contents blox-field blox-field-col field-icon field-icon-icon"><span><%- voter.registered %></span></div>
+            </div>
+          </div>
+          <div class="blox-buttons">
+            <div class="blox-item">
+						  <div class="blox-contents blox-field blox-button blox-button-norm"><a class="btn btn-secondary" href="./<%- voter.id %>/" role="button">View</a></div>
+            </div>
+            <div class="blox-item">
+						  <div class="blox-contents blox-field blox-button blox-button-norm"><a class="btn btn-secondary" href="./<%- voter.id %>/confirm/" role="button">Confirm</a></div>
+            </div>
+            <div class="blox-item">
+              <div class="blox-contents blox-field blox-button blox-button-norm"><a class="btn btn-secondary" href="./<%- voter.id %>/edit/" role="button">Edit</a></div>
+            </div>
+            <div class="blox-item">
+						  <div class="blox-contents blox-field blox-button blox-button-norm"><a class="btn btn-danger" href="./<%- voter.id %>/archive/" role="button">Archive</a></div>
+            </div>
+          </div>
+        </div>
+      <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%- include(globals.inc + globals.footer) %>

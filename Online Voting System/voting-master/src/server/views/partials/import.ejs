@@ -1,0 +1,30 @@
+<% 
+let sectionLoads = settings.pageLoads[section];
+for(type in sectionLoads){
+	var parts = sectionLoads[type];
+	var ele = "link";
+	var mid = "";
+	var end = "";
+	if (type === "script"){
+		ele = "script";
+		end = "</script>";
+	}
+	if ((config.serviceType === "development") && ("dev" in parts)) {
+		display(parts.dev, ele, mid, end);
+	} else {
+		if ("deploy" in parts) {
+			display(parts.deploy, ele, mid, end);
+		}
+	}
+	if ("all" in parts){
+		display(parts.all, ele, mid, end);
+	}
+} 
+function display(items, ele, mid, end){
+	for(item in items){ 
+		let start = '<' + ele + ' ' + items[item] + ' >';
+		let out = start + mid + end;
+		%><%-out%><%
+	}
+} 
+%>

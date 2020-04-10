@@ -1,0 +1,29 @@
+<!-- background for every templates -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/style.css')}}"></link>
+
+  {% if title %}
+  <title>{{ title }}</title>
+  {% else %}
+  <title> No title specified</title>
+  {% endif %}
+</head>
+<!-- navigation bars -->
+<body>
+  <ul class="topnav" id="menu">
+    <li><a href="/"><strong>TODO LIST</strong></a></li>
+    <li><a href="/Create_Tasks">Create Tasks</a></li>
+    <li><a href="/View_All_Tasks">View All Tasks</a></li>
+    <li><a href="/View_Uncomplete_Tasks">View Uncomplete Tasks</a></li>
+    <li><a href="/View_Complete_Tasks">View Complete Tasks</a></li>
+  </ul>
+  <!-- templates content -->
+  <div>
+    {% block content %}{% endblock %}
+  </div>
+  <div class="footer">Harshit Verma | University of Leeds <br>
+  <li>Web Application Development</li></div>
+</body>
+</html>

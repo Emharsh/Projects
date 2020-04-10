@@ -1,0 +1,39 @@
+<!-- views/pages/admin/login.ejs -->
+
+<% let title = "Login" %>
+<% let id = "admin-login" %>
+
+<%- include(globals.inc + globals.head) %>
+
+
+
+<div id="content">
+	<div class="blox">
+		<div id="" class="blox-container border">
+			<div class="blox-form blox-login">
+				<form method="post" id="form-<%-page.id%>" name="ajax-form" action='./' completed='../'>
+					<div id="form-messages" name="form-messages"></div>
+					<div class="form-col">
+						<div class="form-group long">
+							<div class="form-item">
+								<label for="username">Admin username</label>
+								<input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
+							</div>
+						</div>
+						<div class="form-group long">
+							<div class="form-item">
+								<label for="password">Password</label>
+								<input type="password" class="form-control" id="password" placeholder="Password" name="password" required minlength="10" maxlength="30" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{10,30}$"> <!--Password of at least 1 capitol, 1 lowercase, 1 number and 1 symbol !@#$%^&*_=+- , minimum 10 characters and maximum 30-->
+							</div>
+						</div>
+					</div>
+					<div class="form-submit">
+						<button type="submit" id="submit-<%-page.id%>" class="btn btn-primary btn-confirm" onclick="return submitFormAsJson();">Sign in</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include(globals.inc + globals.footer) %>

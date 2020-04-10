@@ -1,0 +1,341 @@
+<!--*******COMP1011:Programming for the web********
+   	***************Assignment 03 ******************
+   	***************Harshit Verma*******************
+   	*************HTML and JavaScript***************
+   	***********************************************-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+//Create function generateGrid
+function generateGrid() { //Open the function
+  // variable d that get element of id fb-grid
+	var d = document.getElementById("fb-grid");
+	//variable table which create an elemet table
+	var table = document.createElement("table");
+	d.appendChild(table);
+	for (var i = 0; i < 10; i++) {//open first for loop
+		//variable row which create an elemet tr
+		var row = document.createElement("tr");
+		for (var j = 1; j <= 10; j++) {//open second for loop
+			var cell = document.createElement("td");
+			//creating grid
+			cell.innerHTML = i * 10 + j ;
+			//Attribution for the grid
+			cell.setAttribute("id", "cell_" + (i * 10 + j ));
+			//Adds new child at the end of the children that means 'allow message to be displayed on page'
+			row.appendChild(cell);
+		}//close second for loop
+		//allow message to be displayed on page
+		table.appendChild(row);
+	}//close first for loop
+}//close the function
+
+//PART_01
+/*Understand the structure of the template file provided in the resource download.
+Define a variable called current number which will store the value of the number
+the current game is on. Define a function called addMessage that takes one argument
+and displays the argument as the first child of the div element with id play.*/
+
+var current_number = 1; //Assign current number value to 1
+
+//addMessage funtion with argument that display message on the page.
+function addMessage(message){//Open the function
+  //variable element which create an elemet p
+  var element = document.createElement('p');
+  //Assign innerHTML to the argument
+  element.innerHTML = message
+  // variable div that get element of id play
+  var div = document.getElementById('play');
+  //allow message to be displayed on page
+  div.appendChild(element)
+}//End of the function
+/*******************************************************************************
+*****************************END_OF_PART_01*************************************
+********************************************************************************/
+
+
+//PART_02, PART_05 AND PART_08
+/*Define a function called play that is invoked when the button in the template is
+pressed.
+AND
+Add functionality to the function play to check if the user provided the correct value
+div element with id play, the new child should be added as the first element of the
+div element. Once the users input has been checked the variable current number
+should be advanced by one and then the ai turn function should be called, then the
+variable current number should be advanced by one again.
+AND
+Modify the function play so that if the the user enters an incorrect input then the
+grid is reset and the variable current number is set to 1.*/
+
+
+//define a funtion 'play'
+function play(){//Open the function
+
+  //variable user_input that get the input entered
+  var user_input = document.getElementById('submission').value;
+
+  //Call the function check_answer()
+  check_answer();
+  //if current_answer is true
+  if (check_answer() == true){//open the if statement
+		//Call the function addMessage with one argument
+		addMessage ("Fizz_Buzz_Game") //first message
+    addMessage ("*** Well Done! Your answer was correct ***") //second message
+    //Call the function colourCurrentCell()
+    colourCurrentCell();
+    //Increment of current_number at each time game is played
+    current_number++;
+    //Call the ai_turn() function
+    ai_turn();
+    //Call the colourCurrentCell() function
+    colourCurrentCell();
+    //Increment of current_number at each time game is played
+    current_number++;
+				//Call the function addMessage with one argument
+		addMessage ("..............................................................")
+  }//Close the if statement
+
+  else{//Open the else statement
+
+    //Call the addMessage function with one argument
+		addMessage ("Fizz_Buzz_Game")//first message
+    addMessage ("***Opppssss! Your answer was incorrect***"); //second message
+    //Call the reset_grid function
+    reset_grid();
+		//Call the function addMessage with one argument
+		addMessage ("..............................................................")
+    //Assign current_answer to 1 again.
+    current_number = 1;
+  }//close else statement
+  //variable that get the input entered
+  user_input = document.getElementById('submission').value = "";
+}//close function play()
+/*******************************************************************************
+****************************END_OF_PART_02_&_05_&_08****************************
+********************************************************************************/
+
+//PART_03
+/*Define a function called check answer to check if the input the user provided is
+correct with respect to current number. The function should return true if the
+input is correct and false otherwise. The input is provided by the input element
+with id equal to submission.*/
+
+//define function check_answer()
+function check_answer(){//open the function
+  //variable user_input that get input entered
+  var user_input = document.getElementById('submission').value;
+  //Using if statement, if current_number is divisible by 3 and 5 then return true
+  if ((current_number % 3 == 0) && (current_number % 5 == 0)){//open first if statement
+    //if input is fizzbuzz or Fizzbuzz
+    if ((user_input == "fizzbuzz") || (user_input == "Fizzbuzz")){//open second if  statement
+      //then return true
+      return true;
+    }//close second if statement
+    else{//open esle statement
+      //else return false
+      return false;
+    }//close else statement
+  }//close first if statement
+
+  //Using else if statement, if current_number is divisible by 5
+  else if (current_number % 5 == 0) { //Open esle if statement
+    //Using if statement, if input is buzz o Buzz
+    if (user_input == "buzz" || user_input == "Buzz"){ //Open if statement
+      //then return true
+      return true;
+    }//close if statement
+    else {//open else statement
+      //else return false
+      return false;
+    }//close else statement
+  }//close else if statement
+
+  //Using else if statement, if current_number is divisible by 3
+  else if (current_number % 3 == 0){ //open else if statement
+    //Using if statement. if input is fizz or Fizz
+    if (user_input == "fizz" || user_input == "Fizz"){ //open if statement
+      //then return true
+      return true;
+    }//close if statement
+    else {//open else statement
+      //else return false
+      return false;
+    }//close else statement
+  }//close esle if statement
+
+  //Using else if statement, if user_input is equal to current_number
+  else if (user_input == current_number){//open else if statement
+    // return true
+    return true;
+  } // close esle if statement
+  else{//open the function
+    //return false
+    return false;
+  }//close else statement
+}//close the function check_answer()
+/*******************************************************************************
+*****************************END_OF_PART_03*************************************
+********************************************************************************/
+
+//PART_04 AND PART_10
+/*Define a function called ai turn which returns a string that is the correct response
+with respect to current number.
+AND
+Add functionaliy to the function ai turn that makes the function return the wrong
+value with a 5% chance.*/
+
+//Define the function ai_turn
+function ai_turn(){ //open the function
+	//Return a random number between 0 (inclusive) and 1 (exclusive)
+  ai =Math.random(); //Assign to ai
+	//Using if statement
+  if (ai <= 0.05)
+  {//open the if statement
+		//current_number - 1
+    current_number - 1;
+		//call the function
+    reset_grid();
+		//Assign current_answer to 1 again.
+    current_number = 1;
+  }//close the if statement
+
+	//Using else if statement
+  else if ((current_number % 3 == 0) && (current_number % 5 == 0)){//open the else if statement
+		//Call the addMessage function with one argument
+    addMessage ("fizzbuzz");
+		//return fizzbuzz
+    return ("fizzbuzz");
+  }//close esle if statement
+
+	//Using else if statement
+  else if (current_number % 5 == 0){//open else if statement
+		//Call the addMessage function with one argument
+    addMessage  ("buzz");
+		//Return buzz
+    return ("buzz");
+  }//cloee else if statement
+
+	//Usin else if statement
+  else if (current_number % 3 == 0){//open else if statement
+		//Call the addMessage function with one argument
+    addMessage  ("fizz");
+		//return fizz
+    return ("fizz");
+  }//close else if statement
+
+  else {//open else statement
+		//Call the addMessage function with one argument
+    addMessage (current_number);
+		//return current_number
+		return ("current_number");
+  }//close else statement
+
+}//close function ai_turn()
+/*******************************************************************************
+*****************************END_OF_PART_04_&_10********************************
+********************************************************************************/
+
+//PART_06
+/*The template contains a JavaScript function that generates a HTML table, each cells
+of the table contains a number. The id of each of the cells is cell x, where x is a
+number between 1 and 100. Define a function called reset grid which changes the
+background colour of the table cells to be white.*/
+
+//Define the function reset_grid()
+function reset_grid()
+{//open the function
+	//for the number 1 to 100 in grid
+  for (current_number; current_number >= 1; current_number--)
+  // reset all the color to white
+  document.getElementById("cell_" + current_number).style.backgroundColor = "white";
+}//close the function
+/*******************************************************************************
+*****************************END_OF_PART_06*************************************
+********************************************************************************/
+
+//PART_07
+/*Define a function called colourCurrentCell which changes the background colour of
+the table cell associated with the variable current number. If the number is divisable
+by 3 then the cells background colour should be set to blue, if it is divisible by 5
+then the cells background colour should be set to yellow and if it is divisible by 3
+and 5 then the cells background colour should be set to green otherwise the cells
+background should be set to CornflowerBlue. Modify the play function to display
+the correct colour when then player has provided the correct response.*/
+
+//Define the function colourCurrentCell()
+function colourCurrentCell(){//open the function
+	//Using if statement
+  if (current_number % 3 == 0 && current_number % 5 == 0){//open if statement
+		//change colour of grid to green according to current number
+    document.getElementById("cell_" + current_number).style.backgroundColor = "green";
+  }//close if statement
+  //Using else if statement
+  else if (current_number % 5 == 0 ){//open else if statement
+		//change colour of grid to yellow according to current number
+    document.getElementById("cell_" + current_number).style.backgroundColor = "yellow";
+  }//close else if statement
+	//using else if statement
+  else if (current_number % 3 == 0){//open else if statement
+
+		//change colour of grid to blue according to current number
+    document.getElementById("cell_" + current_number).style.backgroundColor = "blue";
+  }//close else if statement
+
+  else {//open else statement
+		//change colour of grid to CornflowerBlue according to current number
+    document.getElementById("cell_" + current_number).style.backgroundColor = "CornflowerBlue";
+  }//close else statement
+}//close the function
+/*******************************************************************************
+*****************************END_OF_PART_07*************************************
+********************************************************************************/
+
+//PART_09
+/*Add an event handler to the input element with id submission to allow the user to
+press enter instead of using the button to submit their response.*/
+
+//Define the function enterkey(event)
+function enterkey(event)
+{//open the function
+	//Using if statement
+  if (event.keyCode == 13)
+  {//open if statement
+		//call the function
+   play();
+	 //variable that get the input entered
+	 user_input = document.getElementById('submission').value = "";
+  }//close if statement
+}//close the function
+/*******************************************************************************
+*****************************END_OF_PART_09*************************************
+********************************************************************************/
+
+//Define function
+window.onload = function(){//open the function()
+	//call function generateGrid()
+  generateGrid();
+}; //close the function
+
+</script>
+<title>Fizzbuzz Game</title>
+</head>
+<body style="background-color:lightgrey;">
+<div style = "width: 45%;float:left;">
+<h2>******FizzBuzz Game******</h2>
+<h3><u>Lets Play</u></h3>
+<input id="submission" onkeydown = enterkey(event)>
+<button type="button" onclick="play()">Submit/Press Enter</button>
+<div id="play"></div></div><div id="fb-grid" style="width: 45%;float:left;"></div>
+</body>
+</html>
+
+<!--****************************************************************************
+*																																							 *
+*														   COMPLETED																			 *
+*													END_OF_ASSIGNMENT_03															   *
+*																																							 *
+*****************************************************************************-->
