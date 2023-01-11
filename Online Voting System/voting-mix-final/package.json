@@ -52,7 +52,7 @@
     "hybrid-crypto-js": "^0.1.6",
     "install": "^0.12.2",
     "jwk-to-pem": "2.0.1",
-    "knex": "0.16.4-next2",
+    "knex": "2.4.0",
     "my-local-ip": "^1.0.0",
     "mysql2": "1.6.5",
     "npm": "^6.9.0",
